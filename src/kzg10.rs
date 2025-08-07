@@ -3,74 +3,113 @@ use ark_ff::{UniformRand, Field};
 use ark_poly::{univariate::{DenseOrSparsePolynomial, DensePolynomial}, DenseUVPolynomial, Polynomial};
 use ark_std::{test_rng, Zero};
 use ark_ec::pairing::{Pairing};
-use std::ops::Mul;
+use std::{marker::PhantomData, ops::Mul};
 
-#[derive(Debug)]
 pub struct KZG10<E: Pairing> {
-    sk: E::ScalarField,
-    max_deg: i32,
-    pk_g2: E::G2,
-    pk_g1_tuple: Vec<E::G1>,
+    max_deg: usize,
+    _phantom: PhantomData<E>
 }
 
-impl <E: Pairing> PolyCommit<E, (Vec<E::G1>, E::G2), E::ScalarField, E::G1, Vec<E::G1>> for KZG10<E> {
+pub struct KzgPK<E: Pairing> {
+    g1_vec: Vec<E::G1>,
+    g2_1: E::G2,
+    g2_x: E::G2
+}
+
+impl <E: Pairing> PolyCommit<E> for KZG10<E> {
+    type PK = KzgPK<E>;
+    type SK = E::ScalarField;
+    type Commitment = Vec<E::G1>;
+    type Evaluation = Vec<E::ScalarField>;
+    type Proof = Vec<Vec<E::G1>>;
+    type VerifierParams = ();
+
     fn new() -> Self {
-        Self { 
-            sk: E::ScalarField::zero(), 
-            max_deg: 0, 
-            pk_g2: E::G2::zero(), 
-            pk_g1_tuple: vec![]
+        Self {
+            max_deg: 0,
+            _phantom: PhantomData
         }
     }
 
-    fn setup(&mut self, max_deg: i32) -> ((Vec<E::G1>, E::G2), E::ScalarField) {
-        self.sk = E::ScalarField::rand(&mut test_rng());
+    fn setup(&mut self, max_deg: usize) -> (Self::PK, Self::SK) {
+        let sk =  E::ScalarField::rand(&mut test_rng());
+        let g1 = E::G1::rand(&mut test_rng());
+        let g2 = E::G2::rand(&mut test_rng());
+        let mut g1_vec = vec![];
         self.max_deg = max_deg;
-        let g: <E as Pairing>::G1 = E::G1::rand(&mut test_rng());
         for i in 0..(max_deg + 1) {
-            self.pk_g1_tuple.push(g.mul(self.sk.pow(&[i as u64])));
+            g1_vec.push(g1.mul(sk.pow(&[i as u64])));
         };
-        self.pk_g2 = E::G2::rand(&mut test_rng());
-        return ((self.pk_g1_tuple.clone(), self.pk_g2), self.sk);
+        (Self::PK {g1_vec: g1_vec, g2_1: g2, g2_x: g2.mul(sk)}, sk)
     }
 
-    fn commit(&self, pk: &(Vec<E::G1>, E::G2), poly: &DensePolynomial<<E as Pairing>::ScalarField>) -> E::G1 {
-        let mut c = E::G1::zero();
-        for i in 0..poly.len() {
-            c += pk.0[i].mul(poly[i]);         
+    fn commit(&self, pk: &Self::PK, polynomials: &[DensePolynomial<E::ScalarField>]) -> Self::Commitment {
+        let mut commitments = vec![];
+        for polynomial in polynomials {
+            if polynomial.degree() > self.max_deg {
+                panic!("Polynomial exceeds maximum degree!");
+            }
+            let mut commitment = E::G1::zero();
+            for i in 0..(polynomial.degree() + 1) {
+                commitment += pk.g1_vec[i].mul(polynomial[i]);
+            }
+            commitments.push(commitment);
         }
-        c
+
+        if commitments.len() != polynomials.len() {
+            panic!("Commitment failed!")
+        }
+        
+        commitments
+    }
+
+    fn evaluate(&self, poly: &[DensePolynomial<E::ScalarField>], z: &[E::ScalarField]) -> Vec<Self::Evaluation> {
+        let v = poly.iter().map(|p| z.iter().map(|z| p.evaluate(z)).collect()).collect::<Vec<Vec<E::ScalarField>>>();
+
+        if v.len() * v[0].len() != poly.len() * z.len() {
+            panic!("Evaluation failed!");
+        }
+
+        v
     }
 
     // it is assumed that poly(z) = v
-    fn open(&self, pk: &(Vec<E::G1>, E::G2), poly: &[DensePolynomial<<E as Pairing>::ScalarField>], z: &[<E as Pairing>::ScalarField], _v: &[<E as Pairing>::ScalarField]) -> Vec<E::G1> {
+    fn open(&self, pk: &Self::PK, poly: &[DensePolynomial<<E as Pairing>::ScalarField>], z: &[<E as Pairing>::ScalarField], _: &[Self::Evaluation], _: ()) -> Self::Proof {
         let mut proofs = vec![];
         for i in 0..poly.len() {
+            let mut poly_proofs = vec![];
             for j in 0..z.len() {
                 // for each (polynomial phi, point i) combination, we calculate the polynomial phi(x)-phi(y) and (x-y), and then divide them through.
                 let phi_x = &poly[i];
                 let y = z[j];
                 let phi_y = DensePolynomial::from_coefficients_slice(&[poly[i].evaluate(&y)]);
+
                 let phi_x_minus_phi_y = phi_x - phi_y;
                 let x_minus_y = DensePolynomial::from_coefficients_slice(&[-y, E::ScalarField::ONE]);
-                let (quotient, _rem) = DenseOrSparsePolynomial::from(phi_x_minus_phi_y).divide_with_q_and_r(&DenseOrSparsePolynomial::from(x_minus_y)).unwrap();
+
+                let (quot, _rem) = DenseOrSparsePolynomial::from(phi_x_minus_phi_y).divide_with_q_and_r(&DenseOrSparsePolynomial::from(x_minus_y)).unwrap();
+
                 let mut c = E::G1::zero();
-                for i in 0..quotient.coeffs.len() {
-                    c += pk.0[i].mul(quotient.coeffs[i]);         
+                for i in 0..quot.coeffs.len() {
+                    c += pk.g1_vec[i].mul(quot.coeffs[i]);
                 }
-                proofs.push(c);
+                poly_proofs.push(c);
             }
+            proofs.push(poly_proofs);
+        }
+
+        if proofs.len() * proofs[0].len() != poly.len() * z.len() {
+            panic!("Opening/proof witness creation failed!");
         }
 
         proofs
     }
 
-    fn verify(&self, c: &[E::G1], pk: &(Vec<E::G1>, E::G2), p: &Vec<E::G1>, z: &[<E as Pairing>::ScalarField], v: &[<E as Pairing>::ScalarField]) -> bool {
+    fn verify(c: &Self::Commitment, pk: &Self::PK, p: &Self::Proof, z: &[E::ScalarField], v: &[Self::Evaluation]) -> bool {
         for i in 0..c.len() {
             for j in 0..z.len() {
-                let index = i * z.len() + j;
-                let lhs = E::pairing(c[i] - pk.0[0].mul(v[index]), pk.1.mul(E::ScalarField::ONE));
-                let rhs = E::pairing(p[index], pk.1.mul(self.sk - z[j]));
+                let lhs = E::pairing(c[i] - pk.g1_vec[0].mul(&v[i][j]), pk.g2_1);
+                let rhs = E::pairing(&p[i][j], pk.g2_x - pk.g2_1.mul(z[j]));
                 if lhs != rhs {
                     return false;
                 }
@@ -79,3 +118,4 @@ impl <E: Pairing> PolyCommit<E, (Vec<E::G1>, E::G2), E::ScalarField, E::G1, Vec<
         true
     }
 }
+
