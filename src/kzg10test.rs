@@ -12,7 +12,7 @@ pub fn test() {
     let (pk, _sk) = kzg.setup(16);
     
     let mut polynomials: Vec<DensePolynomial<Fr>> = vec![];
-    for _ in 0..1 {
+    for _ in 0..10 {
         polynomials.push(DensePolynomial::<Fr>::rand(16, &mut rng));
     }
     let mut commitments = vec![];
@@ -21,9 +21,8 @@ pub fn test() {
     }
 
     let mut points: Vec<Fr> = vec![];
-    for _i in 0..1 {
-        // points.push(Fr::rand(&mut rng));
-        points.push(Fr::ONE);
+    for _i in 0..10 {
+        points.push(Fr::rand(&mut rng));
     }
     let values: Vec<Fr> = polynomials.clone().into_iter().map(|poly| points.clone().into_iter().map(move |point| poly.evaluate(&point))).flatten().collect();
     let proofs = kzg.open(&pk, &polynomials, &points, &values);

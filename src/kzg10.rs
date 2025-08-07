@@ -75,7 +75,6 @@ impl <E: Pairing> PolyCommit<E, (Vec<E::G1>, E::G2), E::ScalarField, E::G1, Vec<
                     return false;
                 }
             }
-            // println!("{}", i);
         }
         true
     }
