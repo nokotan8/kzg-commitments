@@ -1,10 +1,11 @@
-use crate::poly_commit::PolyCommit;
-use crate::kzg10::KZG10;
+use kzg_commitments::poly_commit::PolyCommit;
+use kzg_commitments::kzg10::KZG10;
 use ark_ff::{AdditiveGroup, UniformRand, Field};
 use ark_poly::{univariate::DensePolynomial, DenseUVPolynomial, Polynomial};
 use ark_std::{rand::Rng, test_rng};
 use ark_bls12_381::{Bls12_381, Fr};
 
+#[test]
 pub fn test() {
     let mut rng = test_rng();
     rng.r#gen::<i32>();
