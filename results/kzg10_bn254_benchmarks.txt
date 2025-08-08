@@ -1,0 +1,85 @@
+// 100 iterations
+kzg10/poly count: 1 | poly deg: 8 | point count: 1
+2.9805 ms 2.9819 ms 2.9837 ms
+
+kzg10/poly count: 1 | poly deg: 16 | point count: 1
+4.1400 ms 4.1408 ms 4.1417 ms
+
+kzg10/poly count: 1 | poly deg: 32 | point count: 1
+6.5229 ms 6.5262 ms 6.5304 ms
+
+kzg10/poly count: 1 | poly deg: 64 | point count: 1
+11.254 ms 11.258 ms 11.264 ms
+
+kzg10/poly count: 2 | poly deg: 8 | point count: 2
+9.0878 ms 9.1180 ms 9.1703 ms
+
+kzg10/poly count: 2 | poly deg: 16 | point count: 2
+11.835 ms 11.844 ms 11.854 ms
+
+kzg10/poly count: 2 | poly deg: 32 | point count: 2
+17.382 ms 17.388 ms 17.397 ms
+
+kzg10/poly count: 2 | poly deg: 64 | point count: 2
+28.510 ms 28.533 ms 28.557 ms
+
+kzg10/poly count: 4 | poly deg: 8 | point count: 4
+32.903 ms 32.993 ms 33.098 ms
+
+kzg10/poly count: 4 | poly deg: 16 | point count: 4
+41.079 ms 41.161 ms 41.259 ms
+
+kzg10/poly count: 4 | poly deg: 32 | point count: 4
+57.914 ms 58.056 ms 58.217 ms
+
+kzg10/poly count: 4 | poly deg: 64 | point count: 4
+90.841 ms 90.847 ms 90.854 ms
+
+kzg10/poly count: 8 | poly deg: 8 | point count: 8
+124.79 ms 124.81 ms 124.83 ms
+
+kzg10/poly count: 8 | poly deg: 16 | point count: 8
+154.22 ms 154.28 ms 154.35 ms
+
+kzg10/poly count: 8 | poly deg: 32 | point count: 8
+213.15 ms 213.66 ms 214.26 ms
+
+kzg10/poly count: 8 | poly deg: 64 | point count: 8
+327.67 ms 328.24 ms 328.94 ms
+
+kzg10/poly count: 16 | poly deg: 8 | point count: 16
+492.44 ms 493.03 ms 493.72 ms
+
+kzg10/poly count: 16 | poly deg: 16 | point count: 16
+600.03 ms 600.20 ms 600.39 ms
+
+kzg10/poly count: 16 | poly deg: 32 | point count: 16
+816.75 ms 817.10 ms 817.50 ms
+
+kzg10/poly count: 16 | poly deg: 64 | point count: 16
+1.2489 s 1.2496 s 1.2504 s
+
+kzg10/poly count: 32 | poly deg: 8 | point count: 32
+1.9481 s 1.9490 s 1.9500 s
+
+kzg10/poly count: 32 | poly deg: 16 | point count: 32
+2.3749 s 2.3772 s 2.3797 s
+
+kzg10/poly count: 32 | poly deg: 32 | point count: 32
+3.2167 s 3.2194 s 3.2225 s
+
+kzg10/poly count: 32 | poly deg: 64 | point count: 32
+4.8963 s 4.8998 s 4.9036 s
+
+kzg10/poly count: 64 | poly deg: 8 | point count: 64
+7.7707 s 7.7740 s 7.7775 s
+
+// 25 iterations
+kzg10/poly count: 64 | poly deg: 16 | point count: 64
+9.4141 s 9.4219 s 9.4304 s
+
+kzg10/poly count: 64 | poly deg: 32 | point count: 64
+12.758 s 12.769 s 12.780 s
+
+kzg10/poly count: 64 | poly deg: 64 | point count: 64
+19.354 s 19.367 s 19.382 s
