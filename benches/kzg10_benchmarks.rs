@@ -65,8 +65,8 @@ fn kzg10_helper<Curve: Pairing>(
 }
 
 fn kzg10_benchmark_curve<Curve: Pairing>(cr: &mut Criterion, id: String) {
-    let poly_deg_vals = [8, 16, 32, 64, 128];
-    let poly_count_vals = [1, 2, 4, 8, 16, 32, 64, 128];
+    let poly_deg_vals = [8, 16, 32, 64];
+    let poly_count_vals = [1, 2, 4, 8, 16, 32, 64];
 
     let mut group = cr.benchmark_group(id);
 
@@ -104,7 +104,7 @@ fn kzg10_benchmark_curve<Curve: Pairing>(cr: &mut Criterion, id: String) {
         }
     }
 
-    // 32 - 128
+    // 32 - 64
     group.sample_size(25);
     for &poly_count in &poly_count_vals[5..] {
         for &poly_deg in &poly_deg_vals {
