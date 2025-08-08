@@ -74,7 +74,7 @@ impl <E: Pairing> PolyCommit<E> for KZG10<E> {
     }
 
     // it is assumed that poly(z) = v
-    fn open(&self, pk: &Self::PK, poly: &[DensePolynomial<<E as Pairing>::ScalarField>], z: &[<E as Pairing>::ScalarField], _: &[Self::Evaluation], _: ()) -> Self::Proof {
+    fn open(&self, pk: &Self::PK, poly: &[DensePolynomial<<E as Pairing>::ScalarField>], z: &[<E as Pairing>::ScalarField], _: &[Self::Evaluation], _: &()) -> Self::Proof {
         let mut proofs = vec![];
         for i in 0..poly.len() {
             let mut poly_proofs = vec![];
@@ -105,7 +105,7 @@ impl <E: Pairing> PolyCommit<E> for KZG10<E> {
         proofs
     }
 
-    fn verify(c: &Self::Commitment, pk: &Self::PK, p: &Self::Proof, z: &[E::ScalarField], v: &[Self::Evaluation]) -> bool {
+    fn verify(c: &Self::Commitment, pk: &Self::PK, p: &Self::Proof, z: &[E::ScalarField], v: &[Self::Evaluation], _ver_params: &()) -> bool {
         for i in 0..c.len() {
             for j in 0..z.len() {
                 let lhs = E::pairing(c[i] - pk.g1_vec[0].mul(&v[i][j]), pk.g2_1);

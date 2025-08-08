@@ -59,7 +59,7 @@ fn kzg10_helper<Curve: Pairing>(
 
     let v = kzg.evaluate(&poly, &z);
 
-    let p = kzg.open(&pk, &poly, &z, &v, ());
+    let p = kzg.open(&pk, &poly, &z, &v, &());
 
     return (kzg, poly, z, pk, c, v, p);
 }
@@ -90,7 +90,7 @@ fn kzg10_benchmark_curve<Curve: Pairing>(cr: &mut Criterion, id: String) {
                 format!("OPEN {} | {}", poly_count, poly_deg),
                 ref_tuple,
                 |b, &(ref kzg, ref poly, ref z, ref pk, ref _c, ref v, ref _p)| {
-                    b.iter(|| kzg.open(&pk, &poly, &z, &v, ()));
+                    b.iter(|| kzg.open(&pk, &poly, &z, &v, &()));
                 },
             );
 
@@ -98,7 +98,7 @@ fn kzg10_benchmark_curve<Curve: Pairing>(cr: &mut Criterion, id: String) {
                 format!("VERIFY {} | {}", poly_count, poly_deg),
                 ref_tuple,
                 |b, &(ref _kzg, ref _poly, ref z, ref pk, ref c, ref v, ref p)| {
-                    b.iter(|| KZG10::verify(&c, &pk, &p, &z, &v));
+                    b.iter(|| KZG10::verify(&c, &pk, &p, &z, &v, &()));
                 },
             );
         }
@@ -124,7 +124,7 @@ fn kzg10_benchmark_curve<Curve: Pairing>(cr: &mut Criterion, id: String) {
                 format!("OPEN {} | {}", poly_count, poly_deg),
                 ref_tuple,
                 |b, &(ref kzg, ref poly, ref z, ref pk, ref _c, ref v, ref _p)| {
-                    b.iter(|| kzg.open(&pk, &poly, &z, &v, ()));
+                    b.iter(|| kzg.open(&pk, &poly, &z, &v, &()));
                 },
             );
 
@@ -132,7 +132,7 @@ fn kzg10_benchmark_curve<Curve: Pairing>(cr: &mut Criterion, id: String) {
                 format!("VERIFY {} | {}", poly_count, poly_deg),
                 ref_tuple,
                 |b, &(ref _kzg, ref _poly, ref z, ref pk, ref c, ref v, ref p)| {
-                    b.iter(|| KZG10::verify(&c, &pk, &p, &z, &v));
+                    b.iter(|| KZG10::verify(&c, &pk, &p, &z, &v, &()));
                 },
             );
         }

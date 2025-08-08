@@ -4,7 +4,7 @@ use ark_bls12_381::{Bls12_381, Fr};
 use ark_ff::UniformRand;
 use ark_poly::{DenseUVPolynomial, univariate::DensePolynomial};
 use ark_std::test_rng;
-use kzg_commitments::kzg10::{KZG10, KzgPK};
+use kzg_commitments::kzg10::{KZG10, KZG_PK};
 use kzg_commitments::poly_commit::PolyCommit;
 use ark_std::rand::Rng;
 
@@ -39,9 +39,9 @@ fn kzg10_helper(poly_count: usize, poly_deg: usize, point_count: usize) -> bool 
 
     let v = kzg.evaluate(&poly, &z);
 
-    let p = kzg.open(&pk, &poly, &z, &v, ());
+    let p = kzg.open(&pk, &poly, &z, &v, &());
 
-    KZG10::verify(&c, &pk, &p, &z, &v)
+    KZG10::verify(&c, &pk, &p, &z, &v, &())
 }
 
 #[test]
@@ -87,7 +87,7 @@ pub fn test() {
     type G2 = <ark_ec::models::bls12::Bls12<ark_bls12_381::Config> as ark_ec::pairing::Pairing>::G2;
     
     let (pk, _) = kzg.setup(max_deg);
-    let pk_ = KzgPK::<Bls12_381> {
+    let pk_ = KZG_PK::<Bls12_381> {
         g1_vec: vec![G1::rand(&mut rng); t],
         g2_1: G2::rand(&mut rng),
         g2_x: G2::rand(&mut rng)
@@ -99,24 +99,24 @@ pub fn test() {
     let v = kzg.evaluate(&poly, &z);
     let v_ = kzg.evaluate(&poly_, &z);
 
-    let p = kzg.open(&pk, &poly, &z, &v, ());
-    let p_ = kzg.open(&pk, &poly, &z_, &v, ());
+    let p = kzg.open(&pk, &poly, &z, &v, &());
+    let p_ = kzg.open(&pk, &poly, &z_, &v, &());
 
-    let b = KZG10::verify(&c, &pk, &p, &z, &v);
+    let b = KZG10::verify(&c, &pk, &p, &z, &v, &());
     assert_eq!(b, true);
     
-    let b_ = KZG10::verify(&c_, &pk, &p, &z, &v);
+    let b_ = KZG10::verify(&c_, &pk, &p, &z, &v, &());
     assert_eq!(b_, false);
     
-    let b_ = KZG10::verify(&c, &pk_, &p, &z, &v);
+    let b_ = KZG10::verify(&c, &pk_, &p, &z, &v, &());
     assert_eq!(b_, false);
 
-    let b_ = KZG10::verify(&c, &pk, &p_, &z, &v);
+    let b_ = KZG10::verify(&c, &pk, &p_, &z, &v, &());
     assert_eq!(b_, false);
 
-    let b_ = KZG10::verify(&c, &pk, &p, &z_, &v);
+    let b_ = KZG10::verify(&c, &pk, &p, &z_, &v, &());
     assert_eq!(b_, false);
 
-    let b_ = KZG10::verify(&c, &pk, &p, &z, &v_);
+    let b_ = KZG10::verify(&c, &pk, &p, &z, &v_, &());
     assert_eq!(b_, false);
 }
