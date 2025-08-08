@@ -93,49 +93,67 @@ impl<E: Pairing> PolyCommit<E> for DJBA21<E> {
     }
 
 
-    fn open(&self, pk: &Self::PK, poly: &[DensePolynomial<E::ScalarField>], z: &[E::ScalarField], v: &[Self::Evaluation], ver_params: Self::VerifierParams) -> Self::Proof {
-        let mut f = DensePolynomial::from_coefficients_vec(vec![E::ScalarField::ZERO; poly[0].degree()+1]);
-        let mut L = DensePolynomial::from_coefficients_vec(vec![E::ScalarField::ZERO; poly[0].degree()+1]);
+    fn open(&self, pk: &Self::PK, poly: &[DensePolynomial<E::ScalarField>], z: &[E::ScalarField], v: &[Self::Evaluation], ver_params: &Self::VerifierParams) -> Self::Proof {
+        // let mut f = DensePolynomial::from_coefficients_vec(vec![E::ScalarField::ZERO; poly[0].degree()+1]);
+        // let mut L = DensePolynomial::from_coefficients_vec(vec![E::ScalarField::ZERO; poly[0].degree()+1]);
 
+        let mut f = vec![E::ScalarField::ZERO; poly[0].degree()+1];
+        let mut L = vec![E::ScalarField::ZERO; poly[0].degree()+1];
+
+        // use std::time::Instant;
         let mut accum = E::ScalarField::ONE;
         for i in 0..z.len() {
-            f = f + poly[i].clone() * accum;
-            // for (j, c) in 0..poly[i].coeffs().enumerate() {
-            //     f[j] += c * accum;
-            // }
+            // f = f + poly[i].clone() * accum;
+            for (j, c) in poly[i].coeffs().iter().enumerate() {
+                f[j] += *c * accum;
+            }
 
-            f = f - v[i].clone() * accum;
-            // for (j, t) in 0..v[i].coeffs().enumerate() {
-            //     f[j] -= t * accum;
-            // }
+            // f = f - v[i].clone() * accum;
+            for (j, t) in v[i].coeffs().iter().enumerate() {
+                f[j] -= *t * accum;
+            }
 
-            L = L + poly[i].clone() * accum;
+            // L = L + poly[i].clone() * accum;
+            for (j, c) in poly[i].coeffs().iter().enumerate() {
+                L[j] += *c * accum;
+            }
             L[0] -= v[i].evaluate(&ver_params.1) * accum;
 
             accum *= ver_params.0;
         }
 
+        // let now = Instant::now();
         let mut zt = DensePolynomial::from_coefficients_slice(&[E::ScalarField::ONE]);
         for val in z {
             zt = zt * DensePolynomial::from_coefficients_slice(&[val.neg(), E::ScalarField::ONE]);
         }
+        // println!("ZT EVALUATION: {:?}", now.elapsed());
 
-        let mut w_partial = f / zt.clone();
+        let mut w_partial = DensePolynomial::from_coefficients_vec(f) / zt.clone();
 
+        // let now = Instant::now();
         let W = eval_poly_over_g1::<E>(&w_partial, &pk.g1);
+        // println!("SECTION 1: {:?}", now.elapsed());
 
         w_partial = w_partial * zt.evaluate(&ver_params.1);
 
-        L = L - w_partial;
+        // L = L - w_partial;
+        for (j, c) in w_partial.coeffs().iter().enumerate() {
+            L[j] -= c;
+        }
 
+        let mut L = DensePolynomial::from_coefficients_vec(L);
+
+        // let now = Instant::now();
         L = L / DensePolynomial::from_coefficients_slice(&[ver_params.1.neg(), E::ScalarField::ONE]);
+        // println!("DIVISION: {:?}", now.elapsed());
 
         let Wp = eval_poly_over_g1::<E>(&L, &pk.g1);
         
         (W, Wp)
     }
 
-    fn verify(c: &Self::Commitment, pk: &Self::PK, p: &Self::Proof, z: &[E::ScalarField], v: &[Self::Evaluation], ver_params: Self::VerifierParams) -> bool {
+    fn verify(c: &Self::Commitment, pk: &Self::PK, p: &Self::Proof, z: &[E::ScalarField], v: &[Self::Evaluation], ver_params: &Self::VerifierParams) -> bool {
         let (W, Wp) = *p;
 
         let mut F = E::G1::ZERO;

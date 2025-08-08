@@ -7,6 +7,7 @@ use ark_ec::AdditiveGroup;
 use std::ops::Mul;
 use std::ops::Neg;
 
+#[inline(always)]
 pub fn eval_poly_over_g1<E: Pairing>(poly: &DensePolynomial<E::ScalarField>, srs: &Vec<E::G1>) -> E::G1 {
     let mut ret = E::G1::ZERO;
     for (coeff, g) in poly.coeffs().iter().zip(srs.iter()) {
