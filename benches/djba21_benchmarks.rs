@@ -74,8 +74,9 @@ fn djba21_helper<Curve: Pairing>(
 
 fn djba21_benchmark_curve<Curve: Pairing>(c: &mut Criterion, id: String) {
     let poly_deg_vals = [8, 16, 32, 64, 128, 256];
+    // let poly_deg_vals = [64, 128, 256];
     // fast
-    let poly_count_vals = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1028];
+    let poly_count_vals = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512];
 
     let mut group = c.benchmark_group(id);
 
@@ -150,7 +151,7 @@ fn djba21_benchmark_curve<Curve: Pairing>(c: &mut Criterion, id: String) {
     }
 
     // // 256 - 1028
-    group.sample_size(100);
+    group.sample_size(25);
     for &poly_count in &poly_count_vals[8..] {
         for &poly_deg in &poly_deg_vals {
             let (djb, poly, z, ver_param, pk, c, v, p) =
@@ -188,7 +189,7 @@ fn djba21_benchmark_curve<Curve: Pairing>(c: &mut Criterion, id: String) {
 }
 
 fn djba21_benchmark_all(c: &mut Criterion) {
-    djba21_benchmark_curve::<Bls12_381>(c, "djba21-bls12381".to_string());
+    // djba21_benchmark_curve::<Bls12_381>(c, "djba21-bls12381".to_string());
     djba21_benchmark_curve::<Bn254>(c, "djba21-bn254".to_string());
     djba21_benchmark_curve::<Bls12_377>(c, "djba21-bls12377".to_string());
 }
