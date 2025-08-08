@@ -28,9 +28,9 @@ fn kzg10_helper(poly_count: usize, poly_deg: usize, point_count: usize) -> bool 
 
     let v = kzg.evaluate(&poly, &z);
 
-    let p = kzg.open(&pk, &poly, &z, &v, ());
+    let p = kzg.open(&pk, &poly, &z, &v, &());
 
-    KZG10::verify(&c, &pk, &p, &z, &v)
+    KZG10::verify(&c, &pk, &p, &z, &v, &())
 }
 
 fn benchmark_kzg10(c: &mut Criterion) {
