@@ -5,19 +5,19 @@ use ark_std::{test_rng, Zero};
 use ark_ec::pairing::{Pairing};
 use std::{marker::PhantomData, ops::{Mul, Neg}};
 
-pub struct KZG10<E: Pairing> {
+pub struct GWC19<E: Pairing> {
     max_deg: usize,
     _phantom: PhantomData<E>
 }
 
-pub struct KzgPK<E: Pairing> {
+pub struct GwcPK<E: Pairing> {
     pub g1_vec: Vec<E::G1>,
     pub g2_1: E::G2,
     pub g2_x: E::G2
 }
 
-impl <E: Pairing> PolyCommit<E> for KZG10<E> {
-    type PK = KzgPK<E>;
+impl <E: Pairing> PolyCommit<E> for GWC19<E> {
+    type PK = GwcPK<E>;
     type SK = E::ScalarField;
     type Commitment = Vec<E::G1>;
     type Evaluation = Vec<E::ScalarField>;
