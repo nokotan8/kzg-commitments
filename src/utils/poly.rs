@@ -65,17 +65,23 @@ pub fn lagrange_interpolate<E: Pairing>(points: &[(E::ScalarField, E::ScalarFiel
 
     let mut ret = DensePolynomial::from_coefficients_slice(&[E::ScalarField::ZERO]);
 
-    let mut tot = DensePolynomial::from_coefficients_slice(&[E::ScalarField::ONE]);
-    for (x, _) in points {
-        tot = tot * DensePolynomial::from_coefficients_slice(&[x.neg(), E::ScalarField::ONE]);
+    let mut ztVec: Vec<DensePolynomial<E::ScalarField>> = points.iter().map(|(x, _)| DensePolynomial::from_coefficients_slice(&[x.neg(), E::ScalarField::ONE])).collect();
+    let mut accum = 2;
+    for i in 0..points.len().ilog2() {
+        for j in 0..(points.len()/accum) {
+            ztVec[j] = ztVec[2*j].clone() * ztVec[2*j+1].clone();
+        }
+        accum *= 2;
     }
+
+    let tot = ztVec[0].clone();
 
     for (x, y) in points {
         let cur = tot.clone() / DensePolynomial::from_coefficients_slice(&[x.neg(), E::ScalarField::ONE]);
 
         let denom = cur.evaluate(x).inverse().unwrap();
 
-        ret = ret + cur * denom * *y;
+        ret = ret + cur * (denom * *y);
     }
 
     ret

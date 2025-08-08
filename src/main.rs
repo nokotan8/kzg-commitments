@@ -3,7 +3,7 @@ use ark_ff::UniformRand;
 use ark_poly::{univariate::DensePolynomial, DenseUVPolynomial};
 use ark_std::{rand::Rng, test_rng};
 use ark_bls12_381::{Bls12_381, Fr};
-use kzg_commitments::utils::poly::multipoint_eval;
+use kzg_commitments::utils::poly::{multipoint_eval, multipoint_eval_preproc};
 use ark_poly::Polynomial;
 
 use kzg_commitments::djba21::{DJBA21, DJBA21_PK};
@@ -14,10 +14,10 @@ fn main() {
 
     // let t = 8;
     // let d = 8;
-    // let t = 128;
-    // let d = 256;
-    let t = 256;
-    let d = 512;
+    let t = 128;
+    let d = 256;
+    // let t = 256;
+    // let d = 512;
     // let t = 1024;
     // let d = 2048;
     
@@ -29,7 +29,8 @@ fn main() {
     //     points.push(Fr::from(i));
     // }
 
-    // let dog = multipoint_eval::<Bls12_381>(&poly, &points);
+    // let ztVec = multipoint_eval_preproc::<Bls12_381>(&points);
+    // let dog = multipoint_eval::<Bls12_381>(&poly, &points, &ztVec);
     // for (x, y) in dog {
     //     println!("{}: {}", x, y);
     //     assert!(poly.evaluate(&x) == y);
