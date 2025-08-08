@@ -1,0 +1,2637 @@
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+djba21-bls12381/COMMIT 1 | 8
+                        time:   [745.10 µs 747.66 µs 751.29 µs]
+                        change: [−0.5733% −0.2681% +0.0433%] (p = 0.09 > 0.05)
+                        No change in performance detected.
+Found 12 outliers among 100 measurements (12.00%)
+  4 (4.00%) high mild
+  8 (8.00%) high severe
+djba21-bls12381/OPEN 1 | 8
+                        time:   [1.3314 ms 1.3341 ms 1.3379 ms]
+                        change: [−0.0931% +0.2142% +0.4597%] (p = 0.16 > 0.05)
+                        No change in performance detected.
+Found 17 outliers among 100 measurements (17.00%)
+  5 (5.00%) low mild
+  2 (2.00%) high mild
+  10 (10.00%) high severe
+djba21-bls12381/VERIFY 1 | 8
+                        time:   [2.0391 ms 2.0452 ms 2.0567 ms]
+                        change: [−0.3594% −0.0584% +0.7061%] (p = 0.84 > 0.05)
+                        No change in performance detected.
+Found 5 outliers among 100 measurements (5.00%)
+  1 (1.00%) high mild
+  4 (4.00%) high severe
+djba21-bls12381/COMMIT 1 | 16
+                        time:   [1.4066 ms 1.4124 ms 1.4198 ms]
+                        change: [−3.9424% −1.5508% +0.5769%] (p = 0.20 > 0.05)
+                        No change in performance detected.
+Found 20 outliers among 100 measurements (20.00%)
+  3 (3.00%) high mild
+  17 (17.00%) high severe
+djba21-bls12381/OPEN 1 | 16
+                        time:   [2.6990 ms 2.7234 ms 2.7512 ms]
+                        change: [+1.9404% +2.8673% +3.9863%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 16 outliers among 100 measurements (16.00%)
+  8 (8.00%) high mild
+  8 (8.00%) high severe
+djba21-bls12381/VERIFY 1 | 16
+                        time:   [2.0439 ms 2.0537 ms 2.0680 ms]
+                        change: [−0.8907% −0.2036% +0.4741%] (p = 0.61 > 0.05)
+                        No change in performance detected.
+Found 10 outliers among 100 measurements (10.00%)
+  1 (1.00%) high mild
+  9 (9.00%) high severe
+djba21-bls12381/COMMIT 1 | 32
+                        time:   [2.9256 ms 2.9291 ms 2.9334 ms]
+                        change: [−0.2447% −0.0936% +0.0735%] (p = 0.27 > 0.05)
+                        No change in performance detected.
+Found 14 outliers among 100 measurements (14.00%)
+  4 (4.00%) high mild
+  10 (10.00%) high severe
+djba21-bls12381/OPEN 1 | 32
+                        time:   [5.6617 ms 5.6832 ms 5.7179 ms]
+                        change: [−0.2973% +0.1102% +0.6704%] (p = 0.76 > 0.05)
+                        No change in performance detected.
+Found 7 outliers among 100 measurements (7.00%)
+  2 (2.00%) high mild
+  5 (5.00%) high severe
+djba21-bls12381/VERIFY 1 | 32
+                        time:   [2.0470 ms 2.0738 ms 2.1063 ms]
+                        change: [−0.3277% +0.9682% +2.6763%] (p = 0.22 > 0.05)
+                        No change in performance detected.
+Found 17 outliers among 100 measurements (17.00%)
+  5 (5.00%) high mild
+  12 (12.00%) high severe
+djba21-bls12381/COMMIT 1 | 64
+                        time:   [5.8023 ms 5.8163 ms 5.8344 ms]
+                        change: [+0.1275% +0.4144% +0.7165%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 17 outliers among 100 measurements (17.00%)
+  13 (13.00%) high mild
+  4 (4.00%) high severe
+djba21-bls12381/OPEN 1 | 64
+                        time:   [11.445 ms 11.520 ms 11.621 ms]
+                        change: [+0.5835% +1.2786% +2.0986%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 12 outliers among 100 measurements (12.00%)
+  8 (8.00%) high mild
+  4 (4.00%) high severe
+djba21-bls12381/VERIFY 1 | 64
+                        time:   [2.0565 ms 2.0668 ms 2.0784 ms]
+Found 14 outliers among 100 measurements (14.00%)
+  7 (7.00%) high mild
+  7 (7.00%) high severe
+djba21-bls12381/COMMIT 1 | 128
+                        time:   [11.557 ms 11.598 ms 11.658 ms]
+Found 9 outliers among 100 measurements (9.00%)
+  4 (4.00%) high mild
+  5 (5.00%) high severe
+djba21-bls12381/OPEN 1 | 128
+                        time:   [22.931 ms 22.994 ms 23.100 ms]
+Found 16 outliers among 100 measurements (16.00%)
+  5 (5.00%) high mild
+  11 (11.00%) high severe
+djba21-bls12381/VERIFY 1 | 128
+                        time:   [2.0529 ms 2.0554 ms 2.0583 ms]
+Found 7 outliers among 100 measurements (7.00%)
+  4 (4.00%) high mild
+  3 (3.00%) high severe
+djba21-bls12381/COMMIT 1 | 256
+                        time:   [23.080 ms 23.369 ms 23.736 ms]
+Found 20 outliers among 100 measurements (20.00%)
+  2 (2.00%) high mild
+  18 (18.00%) high severe
+djba21-bls12381/OPEN 1 | 256
+                        time:   [46.189 ms 46.317 ms 46.479 ms]
+Found 10 outliers among 100 measurements (10.00%)
+  3 (3.00%) high mild
+  7 (7.00%) high severe
+djba21-bls12381/VERIFY 1 | 256
+                        time:   [2.0508 ms 2.0547 ms 2.0590 ms]
+Found 17 outliers among 100 measurements (17.00%)
+  9 (9.00%) high mild
+  8 (8.00%) high severe
+djba21-bls12381/COMMIT 2 | 8
+                        time:   [1.4920 ms 1.5000 ms 1.5104 ms]
+Found 16 outliers among 100 measurements (16.00%)
+  1 (1.00%) high mild
+  15 (15.00%) high severe
+djba21-bls12381/OPEN 2 | 8
+                        time:   [1.2476 ms 1.2497 ms 1.2525 ms]
+Found 18 outliers among 100 measurements (18.00%)
+  7 (7.00%) low mild
+  3 (3.00%) high mild
+  8 (8.00%) high severe
+djba21-bls12381/VERIFY 2 | 8
+                        time:   [2.1566 ms 2.1868 ms 2.2237 ms]
+Found 11 outliers among 100 measurements (11.00%)
+  3 (3.00%) high mild
+  8 (8.00%) high severe
+djba21-bls12381/COMMIT 2 | 16
+                        time:   [3.0507 ms 3.0659 ms 3.0855 ms]
+Found 5 outliers among 100 measurements (5.00%)
+  2 (2.00%) high mild
+  3 (3.00%) high severe
+djba21-bls12381/OPEN 2 | 16
+                        time:   [2.7926 ms 2.8109 ms 2.8347 ms]
+Found 11 outliers among 100 measurements (11.00%)
+  4 (4.00%) high mild
+  7 (7.00%) high severe
+djba21-bls12381/VERIFY 2 | 16
+                        time:   [2.1429 ms 2.1478 ms 2.1534 ms]
+Found 17 outliers among 100 measurements (17.00%)
+  2 (2.00%) high mild
+  15 (15.00%) high severe
+djba21-bls12381/COMMIT 2 | 32
+                        time:   [5.9382 ms 5.9626 ms 5.9991 ms]
+Found 6 outliers among 100 measurements (6.00%)
+  3 (3.00%) high mild
+  3 (3.00%) high severe
+djba21-bls12381/OPEN 2 | 32
+                        time:   [5.6416 ms 5.6623 ms 5.6899 ms]
+Found 13 outliers among 100 measurements (13.00%)
+  2 (2.00%) high mild
+  11 (11.00%) high severe
+djba21-bls12381/VERIFY 2 | 32
+                        time:   [2.1304 ms 2.1349 ms 2.1411 ms]
+Found 13 outliers among 100 measurements (13.00%)
+  6 (6.00%) high mild
+  7 (7.00%) high severe
+djba21-bls12381/COMMIT 2 | 64
+                        time:   [11.600 ms 11.602 ms 11.604 ms]
+Found 2 outliers among 100 measurements (2.00%)
+  1 (1.00%) high mild
+  1 (1.00%) high severe
+djba21-bls12381/OPEN 2 | 64
+                        time:   [11.359 ms 11.362 ms 11.366 ms]
+Found 6 outliers among 100 measurements (6.00%)
+  4 (4.00%) high mild
+  2 (2.00%) high severe
+djba21-bls12381/VERIFY 2 | 64
+                        time:   [2.1619 ms 2.1696 ms 2.1781 ms]
+Found 13 outliers among 100 measurements (13.00%)
+  5 (5.00%) high mild
+  8 (8.00%) high severe
+djba21-bls12381/COMMIT 2 | 128
+                        time:   [23.275 ms 23.347 ms 23.425 ms]
+Found 6 outliers among 100 measurements (6.00%)
+  4 (4.00%) high mild
+  2 (2.00%) high severe
+djba21-bls12381/OPEN 2 | 128
+                        time:   [23.088 ms 23.147 ms 23.211 ms]
+Found 7 outliers among 100 measurements (7.00%)
+  7 (7.00%) high mild
+djba21-bls12381/VERIFY 2 | 128
+                        time:   [2.1452 ms 2.1531 ms 2.1624 ms]
+Found 17 outliers among 100 measurements (17.00%)
+  4 (4.00%) high mild
+  13 (13.00%) high severe
+djba21-bls12381/COMMIT 2 | 256
+                        time:   [46.329 ms 46.525 ms 46.753 ms]
+Found 15 outliers among 100 measurements (15.00%)
+  7 (7.00%) high mild
+  8 (8.00%) high severe
+djba21-bls12381/OPEN 2 | 256
+                        time:   [46.030 ms 46.159 ms 46.314 ms]
+Found 13 outliers among 100 measurements (13.00%)
+  5 (5.00%) high mild
+  8 (8.00%) high severe
+djba21-bls12381/VERIFY 2 | 256
+                        time:   [2.1514 ms 2.1582 ms 2.1658 ms]
+Found 13 outliers among 100 measurements (13.00%)
+  7 (7.00%) high mild
+  6 (6.00%) high severe
+djba21-bls12381/COMMIT 4 | 8
+                        time:   [3.2439 ms 3.2637 ms 3.2866 ms]
+Found 15 outliers among 100 measurements (15.00%)
+  9 (9.00%) high mild
+  6 (6.00%) high severe
+djba21-bls12381/OPEN 4 | 8
+                        time:   [1.1197 ms 1.1331 ms 1.1519 ms]
+Found 18 outliers among 100 measurements (18.00%)
+  2 (2.00%) high mild
+  16 (16.00%) high severe
+djba21-bls12381/VERIFY 4 | 8
+                        time:   [2.3408 ms 2.3478 ms 2.3567 ms]
+Found 13 outliers among 100 measurements (13.00%)
+  7 (7.00%) high mild
+  6 (6.00%) high severe
+djba21-bls12381/COMMIT 4 | 16
+                        time:   [6.0556 ms 6.0763 ms 6.1054 ms]
+Found 9 outliers among 100 measurements (9.00%)
+  2 (2.00%) high mild
+  7 (7.00%) high severe
+djba21-bls12381/OPEN 4 | 16
+                        time:   [2.6199 ms 2.6232 ms 2.6268 ms]
+Found 19 outliers among 100 measurements (19.00%)
+  3 (3.00%) high mild
+  16 (16.00%) high severe
+djba21-bls12381/VERIFY 4 | 16
+                        time:   [2.3397 ms 2.3455 ms 2.3522 ms]
+Found 11 outliers among 100 measurements (11.00%)
+  5 (5.00%) high mild
+  6 (6.00%) high severe
+djba21-bls12381/COMMIT 4 | 32
+                        time:   [11.797 ms 11.843 ms 11.912 ms]
+Found 7 outliers among 100 measurements (7.00%)
+  2 (2.00%) high mild
+  5 (5.00%) high severe
+djba21-bls12381/OPEN 4 | 32
+                        time:   [5.5841 ms 5.6176 ms 5.6639 ms]
+Found 5 outliers among 100 measurements (5.00%)
+  3 (3.00%) high mild
+  2 (2.00%) high severe
+djba21-bls12381/VERIFY 4 | 32
+                        time:   [2.3464 ms 2.3501 ms 2.3542 ms]
+Found 3 outliers among 100 measurements (3.00%)
+  2 (2.00%) high mild
+  1 (1.00%) high severe
+djba21-bls12381/COMMIT 4 | 64
+                        time:   [23.406 ms 23.498 ms 23.612 ms]
+Found 7 outliers among 100 measurements (7.00%)
+  2 (2.00%) high mild
+  5 (5.00%) high severe
+djba21-bls12381/OPEN 4 | 64
+                        time:   [11.298 ms 11.447 ms 11.634 ms]
+Found 11 outliers among 100 measurements (11.00%)
+  2 (2.00%) high mild
+  9 (9.00%) high severe
+djba21-bls12381/VERIFY 4 | 64
+                        time:   [2.3374 ms 2.3473 ms 2.3633 ms]
+Found 4 outliers among 100 measurements (4.00%)
+  1 (1.00%) high mild
+  3 (3.00%) high severe
+djba21-bls12381/COMMIT 4 | 128
+                        time:   [46.255 ms 46.352 ms 46.513 ms]
+Found 15 outliers among 100 measurements (15.00%)
+  6 (6.00%) high mild
+  9 (9.00%) high severe
+djba21-bls12381/OPEN 4 | 128
+                        time:   [22.928 ms 23.065 ms 23.240 ms]
+Found 12 outliers among 100 measurements (12.00%)
+  3 (3.00%) high mild
+  9 (9.00%) high severe
+djba21-bls12381/VERIFY 4 | 128
+                        time:   [2.3521 ms 2.3633 ms 2.3790 ms]
+Found 10 outliers among 100 measurements (10.00%)
+  3 (3.00%) high mild
+  7 (7.00%) high severe
+djba21-bls12381/COMMIT 4 | 256
+                        time:   [92.672 ms 93.650 ms 94.958 ms]
+Found 12 outliers among 100 measurements (12.00%)
+  8 (8.00%) high mild
+  4 (4.00%) high severe
+djba21-bls12381/OPEN 4 | 256
+                        time:   [45.885 ms 46.361 ms 47.005 ms]
+Found 16 outliers among 100 measurements (16.00%)
+  6 (6.00%) high mild
+  10 (10.00%) high severe
+djba21-bls12381/VERIFY 4 | 256
+                        time:   [2.3501 ms 2.3626 ms 2.3779 ms]
+Found 18 outliers among 100 measurements (18.00%)
+  3 (3.00%) high mild
+  15 (15.00%) high severe
+djba21-bls12381/COMMIT 8 | 8
+                        time:   [6.4544 ms 6.4921 ms 6.5417 ms]
+Found 15 outliers among 100 measurements (15.00%)
+  3 (3.00%) high mild
+  12 (12.00%) high severe
+djba21-bls12381/OPEN 8 | 8
+                        time:   [795.57 µs 799.15 µs 803.49 µs]
+Found 13 outliers among 100 measurements (13.00%)
+  7 (7.00%) high mild
+  6 (6.00%) high severe
+djba21-bls12381/VERIFY 8 | 8
+                        time:   [2.7503 ms 2.7670 ms 2.7850 ms]
+Found 9 outliers among 100 measurements (9.00%)
+  7 (7.00%) high mild
+  2 (2.00%) high severe
+djba21-bls12381/COMMIT 8 | 16
+                        time:   [12.147 ms 12.153 ms 12.160 ms]
+Found 8 outliers among 100 measurements (8.00%)
+  1 (1.00%) low mild
+  3 (3.00%) high mild
+  4 (4.00%) high severe
+djba21-bls12381/OPEN 8 | 16
+                        time:   [2.2842 ms 2.3027 ms 2.3238 ms]
+Found 6 outliers among 100 measurements (6.00%)
+  4 (4.00%) high mild
+  2 (2.00%) high severe
+djba21-bls12381/VERIFY 8 | 16
+                        time:   [2.7311 ms 2.7507 ms 2.7780 ms]
+Found 12 outliers among 100 measurements (12.00%)
+  4 (4.00%) high mild
+  8 (8.00%) high severe
+djba21-bls12381/COMMIT 8 | 32
+                        time:   [23.690 ms 23.786 ms 23.918 ms]
+Found 16 outliers among 100 measurements (16.00%)
+  5 (5.00%) high mild
+  11 (11.00%) high severe
+djba21-bls12381/OPEN 8 | 32
+                        time:   [5.1339 ms 5.1350 ms 5.1361 ms]
+Found 11 outliers among 100 measurements (11.00%)
+  4 (4.00%) high mild
+  7 (7.00%) high severe
+djba21-bls12381/VERIFY 8 | 32
+                        time:   [2.7278 ms 2.7372 ms 2.7532 ms]
+Found 7 outliers among 100 measurements (7.00%)
+  2 (2.00%) high mild
+  5 (5.00%) high severe
+djba21-bls12381/COMMIT 8 | 64
+                        time:   [46.517 ms 46.540 ms 46.568 ms]
+Found 6 outliers among 100 measurements (6.00%)
+  1 (1.00%) high mild
+  5 (5.00%) high severe
+djba21-bls12381/OPEN 8 | 64
+                        time:   [10.908 ms 10.913 ms 10.920 ms]
+Found 3 outliers among 100 measurements (3.00%)
+  2 (2.00%) high mild
+  1 (1.00%) high severe
+djba21-bls12381/VERIFY 8 | 64
+                        time:   [2.7249 ms 2.7345 ms 2.7477 ms]
+Found 11 outliers among 100 measurements (11.00%)
+  5 (5.00%) high mild
+  6 (6.00%) high severe
+djba21-bls12381/COMMIT 8 | 128
+                        time:   [92.535 ms 93.530 ms 94.872 ms]
+Found 11 outliers among 100 measurements (11.00%)
+  5 (5.00%) high mild
+  6 (6.00%) high severe
+djba21-bls12381/OPEN 8 | 128
+                        time:   [22.474 ms 22.574 ms 22.705 ms]
+Found 13 outliers among 100 measurements (13.00%)
+  5 (5.00%) high mild
+  8 (8.00%) high severe
+djba21-bls12381/VERIFY 8 | 128
+                        time:   [2.7648 ms 2.7768 ms 2.7914 ms]
+Found 15 outliers among 100 measurements (15.00%)
+  4 (4.00%) high mild
+  11 (11.00%) high severe
+djba21-bls12381/COMMIT 8 | 256
+                        time:   [184.06 ms 184.23 ms 184.43 ms]
+Found 11 outliers among 100 measurements (11.00%)
+  2 (2.00%) high mild
+  9 (9.00%) high severe
+djba21-bls12381/OPEN 8 | 256
+                        time:   [45.630 ms 46.121 ms 46.767 ms]
+Found 16 outliers among 100 measurements (16.00%)
+  3 (3.00%) high mild
+  13 (13.00%) high severe
+djba21-bls12381/VERIFY 8 | 256
+                        time:   [2.7481 ms 2.7511 ms 2.7551 ms]
+Found 19 outliers among 100 measurements (19.00%)
+  10 (10.00%) high mild
+  9 (9.00%) high severe
+djba21-bls12381/COMMIT 16 | 8
+                        time:   [13.123 ms 13.204 ms 13.292 ms]
+Found 7 outliers among 100 measurements (7.00%)
+  6 (6.00%) high mild
+  1 (1.00%) high severe
+djba21-bls12381/OPEN 16 | 8
+                        time:   [748.02 µs 749.36 µs 751.10 µs]
+Found 6 outliers among 100 measurements (6.00%)
+  2 (2.00%) high mild
+  4 (4.00%) high severe
+djba21-bls12381/VERIFY 16 | 8
+                        time:   [3.4345 ms 3.4349 ms 3.4354 ms]
+Found 6 outliers among 100 measurements (6.00%)
+  4 (4.00%) high mild
+  2 (2.00%) high severe
+djba21-bls12381/COMMIT 16 | 16
+                        time:   [24.315 ms 24.331 ms 24.350 ms]
+Found 10 outliers among 100 measurements (10.00%)
+  4 (4.00%) high mild
+  6 (6.00%) high severe
+djba21-bls12381/OPEN 16 | 16
+                        time:   [1.5238 ms 1.5355 ms 1.5520 ms]
+Found 11 outliers among 100 measurements (11.00%)
+  7 (7.00%) high mild
+  4 (4.00%) high severe
+djba21-bls12381/VERIFY 16 | 16
+                        time:   [3.5273 ms 3.5279 ms 3.5287 ms]
+Found 10 outliers among 100 measurements (10.00%)
+  6 (6.00%) low mild
+  2 (2.00%) high mild
+  2 (2.00%) high severe
+djba21-bls12381/COMMIT 16 | 32
+                        time:   [47.970 ms 48.143 ms 48.330 ms]
+Found 4 outliers among 100 measurements (4.00%)
+  3 (3.00%) high mild
+  1 (1.00%) high severe
+djba21-bls12381/OPEN 16 | 32
+                        time:   [4.5572 ms 4.5744 ms 4.5938 ms]
+Found 10 outliers among 100 measurements (10.00%)
+  3 (3.00%) high mild
+  7 (7.00%) high severe
+djba21-bls12381/VERIFY 16 | 32
+                        time:   [3.5252 ms 3.5282 ms 3.5317 ms]
+Found 12 outliers among 100 measurements (12.00%)
+  3 (3.00%) high mild
+  9 (9.00%) high severe
+djba21-bls12381/COMMIT 16 | 64
+                        time:   [93.745 ms 93.939 ms 94.168 ms]
+Found 7 outliers among 100 measurements (7.00%)
+  6 (6.00%) high mild
+  1 (1.00%) high severe
+djba21-bls12381/OPEN 16 | 64
+                        time:   [10.287 ms 10.305 ms 10.326 ms]
+Found 15 outliers among 100 measurements (15.00%)
+  10 (10.00%) high mild
+  5 (5.00%) high severe
+djba21-bls12381/VERIFY 16 | 64
+                        time:   [3.5162 ms 3.5190 ms 3.5222 ms]
+Found 7 outliers among 100 measurements (7.00%)
+  4 (4.00%) high mild
+  3 (3.00%) high severe
+djba21-bls12381/COMMIT 16 | 128
+                        time:   [185.30 ms 185.94 ms 186.73 ms]
+Found 15 outliers among 100 measurements (15.00%)
+  7 (7.00%) high mild
+  8 (8.00%) high severe
+djba21-bls12381/OPEN 16 | 128
+                        time:   [21.902 ms 21.959 ms 22.022 ms]
+Found 9 outliers among 100 measurements (9.00%)
+  7 (7.00%) high mild
+  2 (2.00%) high severe
+djba21-bls12381/VERIFY 16 | 128
+                        time:   [3.5531 ms 3.5645 ms 3.5770 ms]
+Found 16 outliers among 100 measurements (16.00%)
+  6 (6.00%) high mild
+  10 (10.00%) high severe
+djba21-bls12381/COMMIT 16 | 256
+                        time:   [369.80 ms 370.64 ms 371.56 ms]
+Found 10 outliers among 100 measurements (10.00%)
+  6 (6.00%) high mild
+  4 (4.00%) high severe
+djba21-bls12381/OPEN 16 | 256
+                        time:   [45.079 ms 45.158 ms 45.256 ms]
+Found 6 outliers among 100 measurements (6.00%)
+  3 (3.00%) high mild
+  3 (3.00%) high severe
+djba21-bls12381/VERIFY 16 | 256
+                        time:   [3.5174 ms 3.5188 ms 3.5204 ms]
+Found 9 outliers among 100 measurements (9.00%)
+  5 (5.00%) high mild
+  4 (4.00%) high severe
+djba21-bls12381/COMMIT 32 | 8
+                        time:   [25.717 ms 25.728 ms 25.744 ms]
+Found 2 outliers among 50 measurements (4.00%)
+  1 (2.00%) high mild
+  1 (2.00%) high severe
+djba21-bls12381/OPEN 32 | 8
+                        time:   [860.13 µs 860.70 µs 861.46 µs]
+Found 7 outliers among 50 measurements (14.00%)
+  1 (2.00%) high mild
+  6 (12.00%) high severe
+djba21-bls12381/VERIFY 32 | 8
+                        time:   [5.0886 ms 5.0976 ms 5.1090 ms]
+Found 7 outliers among 50 measurements (14.00%)
+  3 (6.00%) high mild
+  4 (8.00%) high severe
+djba21-bls12381/COMMIT 32 | 16
+                        time:   [48.648 ms 48.679 ms 48.717 ms]
+Found 5 outliers among 50 measurements (10.00%)
+  2 (4.00%) high mild
+  3 (6.00%) high severe
+djba21-bls12381/OPEN 32 | 16
+                        time:   [1.5524 ms 1.5526 ms 1.5530 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  1 (2.00%) low mild
+  1 (2.00%) high mild
+  2 (4.00%) high severe
+djba21-bls12381/VERIFY 32 | 16
+                        time:   [5.0825 ms 5.0963 ms 5.1100 ms]
+Found 9 outliers among 50 measurements (18.00%)
+  1 (2.00%) high mild
+  8 (16.00%) high severe
+djba21-bls12381/COMMIT 32 | 32
+                        time:   [95.176 ms 95.422 ms 95.693 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  4 (8.00%) high mild
+djba21-bls12381/OPEN 32 | 32
+                        time:   [3.2450 ms 3.2553 ms 3.2669 ms]
+Found 5 outliers among 50 measurements (10.00%)
+  3 (6.00%) high mild
+  2 (4.00%) high severe
+djba21-bls12381/VERIFY 32 | 32
+                        time:   [5.2034 ms 5.2307 ms 5.2612 ms]
+Found 3 outliers among 50 measurements (6.00%)
+  2 (4.00%) high mild
+  1 (2.00%) high severe
+djba21-bls12381/COMMIT 32 | 64
+                        time:   [186.11 ms 186.13 ms 186.15 ms]
+Found 1 outliers among 50 measurements (2.00%)
+  1 (2.00%) low mild
+djba21-bls12381/OPEN 32 | 64
+                        time:   [9.0426 ms 9.0632 ms 9.0871 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  2 (4.00%) high mild
+  2 (4.00%) high severe
+djba21-bls12381/VERIFY 32 | 64
+                        time:   [5.1707 ms 5.1750 ms 5.1817 ms]
+Found 2 outliers among 50 measurements (4.00%)
+  2 (4.00%) high mild
+djba21-bls12381/COMMIT 32 | 128
+                        time:   [369.62 ms 369.96 ms 370.43 ms]
+Found 7 outliers among 50 measurements (14.00%)
+  4 (8.00%) high mild
+  3 (6.00%) high severe
+djba21-bls12381/OPEN 32 | 128
+                        time:   [20.721 ms 20.808 ms 20.954 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  2 (4.00%) high mild
+  2 (4.00%) high severe
+djba21-bls12381/VERIFY 32 | 128
+                        time:   [5.2247 ms 5.2561 ms 5.2969 ms]
+Found 7 outliers among 50 measurements (14.00%)
+  3 (6.00%) high mild
+  4 (8.00%) high severe
+djba21-bls12381/COMMIT 32 | 256
+                        time:   [739.43 ms 741.34 ms 743.40 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  4 (8.00%) high mild
+djba21-bls12381/OPEN 32 | 256
+                        time:   [44.061 ms 44.183 ms 44.334 ms]
+Found 6 outliers among 50 measurements (12.00%)
+  3 (6.00%) high mild
+  3 (6.00%) high severe
+djba21-bls12381/VERIFY 32 | 256
+                        time:   [5.1649 ms 5.1676 ms 5.1717 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  3 (6.00%) high mild
+  1 (2.00%) high severe
+djba21-bls12381/COMMIT 64 | 8
+                        time:   [51.730 ms 51.856 ms 51.994 ms]
+Found 1 outliers among 50 measurements (2.00%)
+  1 (2.00%) high mild
+djba21-bls12381/OPEN 64 | 8
+                        time:   [1.1195 ms 1.1213 ms 1.1238 ms]
+Found 5 outliers among 50 measurements (10.00%)
+  4 (8.00%) high mild
+  1 (2.00%) high severe
+djba21-bls12381/VERIFY 64 | 8
+                        time:   [8.7058 ms 8.7745 ms 8.8532 ms]
+Found 6 outliers among 50 measurements (12.00%)
+  4 (8.00%) high mild
+  2 (4.00%) high severe
+djba21-bls12381/COMMIT 64 | 16
+                        time:   [97.585 ms 97.793 ms 98.056 ms]
+Found 3 outliers among 50 measurements (6.00%)
+  1 (2.00%) high mild
+  2 (4.00%) high severe
+djba21-bls12381/OPEN 64 | 16
+                        time:   [1.9207 ms 1.9223 ms 1.9245 ms]
+Found 6 outliers among 50 measurements (12.00%)
+  3 (6.00%) high mild
+  3 (6.00%) high severe
+djba21-bls12381/VERIFY 64 | 16
+                        time:   [8.6355 ms 8.6623 ms 8.6922 ms]
+Found 3 outliers among 50 measurements (6.00%)
+  2 (4.00%) high mild
+  1 (2.00%) high severe
+djba21-bls12381/COMMIT 64 | 32
+                        time:   [190.27 ms 190.96 ms 191.72 ms]
+Found 1 outliers among 50 measurements (2.00%)
+  1 (2.00%) high mild
+djba21-bls12381/OPEN 64 | 32
+                        time:   [3.4701 ms 3.4771 ms 3.4864 ms]
+Found 7 outliers among 50 measurements (14.00%)
+  5 (10.00%) high mild
+  2 (4.00%) high severe
+djba21-bls12381/VERIFY 64 | 32
+                        time:   [8.6243 ms 8.6295 ms 8.6366 ms]
+Found 5 outliers among 50 measurements (10.00%)
+  2 (4.00%) high mild
+  3 (6.00%) high severe
+djba21-bls12381/COMMIT 64 | 64
+                        time:   [372.34 ms 374.22 ms 376.70 ms]
+Found 9 outliers among 50 measurements (18.00%)
+  1 (2.00%) low mild
+  1 (2.00%) high mild
+  7 (14.00%) high severe
+djba21-bls12381/OPEN 64 | 64
+                        time:   [6.5961 ms 6.6122 ms 6.6418 ms]
+Found 6 outliers among 50 measurements (12.00%)
+  6 (12.00%) high severe
+djba21-bls12381/VERIFY 64 | 64
+                        time:   [8.8830 ms 8.9206 ms 8.9628 ms]
+Found 8 outliers among 50 measurements (16.00%)
+  5 (10.00%) high mild
+  3 (6.00%) high severe
+djba21-bls12381/COMMIT 64 | 128
+                        time:   [743.27 ms 745.10 ms 747.15 ms]
+Found 2 outliers among 50 measurements (4.00%)
+  2 (4.00%) high mild
+djba21-bls12381/OPEN 64 | 128
+                        time:   [18.416 ms 18.685 ms 19.064 ms]
+Found 9 outliers among 50 measurements (18.00%)
+  1 (2.00%) high mild
+  8 (16.00%) high severe
+djba21-bls12381/VERIFY 64 | 128
+                        time:   [8.7064 ms 8.7202 ms 8.7368 ms]
+Found 6 outliers among 50 measurements (12.00%)
+  2 (4.00%) high mild
+  4 (8.00%) high severe
+djba21-bls12381/COMMIT 64 | 256
+                        time:   [1.4760 s 1.4805 s 1.4863 s]
+Found 9 outliers among 50 measurements (18.00%)
+  4 (8.00%) high mild
+  5 (10.00%) high severe
+djba21-bls12381/OPEN 64 | 256
+                        time:   [42.051 ms 42.154 ms 42.283 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  2 (4.00%) high mild
+  2 (4.00%) high severe
+djba21-bls12381/VERIFY 64 | 256
+                        time:   [8.7741 ms 8.8310 ms 8.9066 ms]
+Found 9 outliers among 50 measurements (18.00%)
+  2 (4.00%) high mild
+  7 (14.00%) high severe
+djba21-bls12381/COMMIT 128 | 8
+                        time:   [103.26 ms 103.68 ms 104.40 ms]
+Found 8 outliers among 50 measurements (16.00%)
+  4 (8.00%) high mild
+  4 (8.00%) high severe
+djba21-bls12381/OPEN 128 | 8
+                        time:   [1.8054 ms 1.8169 ms 1.8322 ms]
+Found 6 outliers among 50 measurements (12.00%)
+  3 (6.00%) high mild
+  3 (6.00%) high severe
+djba21-bls12381/VERIFY 128 | 8
+                        time:   [17.013 ms 17.096 ms 17.197 ms]
+Found 5 outliers among 50 measurements (10.00%)
+  2 (4.00%) high mild
+  3 (6.00%) high severe
+djba21-bls12381/COMMIT 128 | 16
+                        time:   [196.34 ms 197.30 ms 198.46 ms]
+Found 2 outliers among 50 measurements (4.00%)
+  1 (2.00%) high mild
+  1 (2.00%) high severe
+djba21-bls12381/OPEN 128 | 16
+                        time:   [2.5851 ms 2.6057 ms 2.6359 ms]
+Found 5 outliers among 50 measurements (10.00%)
+  5 (10.00%) high severe
+djba21-bls12381/VERIFY 128 | 16
+                        time:   [17.017 ms 17.064 ms 17.116 ms]
+Found 6 outliers among 50 measurements (12.00%)
+  4 (8.00%) high mild
+  2 (4.00%) high severe
+djba21-bls12381/COMMIT 128 | 32
+                        time:   [379.94 ms 380.88 ms 381.98 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  3 (6.00%) high mild
+  1 (2.00%) high severe
+djba21-bls12381/OPEN 128 | 32
+                        time:   [4.2631 ms 4.2882 ms 4.3201 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  3 (6.00%) high mild
+  1 (2.00%) high severe
+djba21-bls12381/VERIFY 128 | 32
+                        time:   [17.092 ms 17.153 ms 17.230 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  2 (4.00%) high mild
+  2 (4.00%) high severe
+djba21-bls12381/COMMIT 128 | 64
+                        time:   [747.44 ms 750.61 ms 754.98 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  2 (4.00%) high mild
+  2 (4.00%) high severe
+djba21-bls12381/OPEN 128 | 64
+                        time:   [7.3440 ms 7.3886 ms 7.4404 ms]
+Found 7 outliers among 50 measurements (14.00%)
+  1 (2.00%) high mild
+  6 (12.00%) high severe
+djba21-bls12381/VERIFY 128 | 64
+                        time:   [17.159 ms 17.264 ms 17.407 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  2 (4.00%) high mild
+  2 (4.00%) high severe
+djba21-bls12381/COMMIT 128 | 128
+                        time:   [1.4816 s 1.4865 s 1.4929 s]
+Found 3 outliers among 50 measurements (6.00%)
+  1 (2.00%) high mild
+  2 (4.00%) high severe
+djba21-bls12381/OPEN 128 | 128
+                        time:   [13.984 ms 14.027 ms 14.080 ms]
+Found 8 outliers among 50 measurements (16.00%)
+  3 (6.00%) high mild
+  5 (10.00%) high severe
+djba21-bls12381/VERIFY 128 | 128
+                        time:   [17.449 ms 17.495 ms 17.544 ms]
+Found 2 outliers among 50 measurements (4.00%)
+  2 (4.00%) high mild
+djba21-bls12381/COMMIT 128 | 256
+                        time:   [2.9543 s 2.9582 s 2.9624 s]
+djba21-bls12381/OPEN 128 | 256
+                        time:   [38.048 ms 38.158 ms 38.326 ms]
+Found 2 outliers among 50 measurements (4.00%)
+  1 (2.00%) high mild
+  1 (2.00%) high severe
+djba21-bls12381/VERIFY 128 | 256
+                        time:   [17.349 ms 17.402 ms 17.478 ms]
+Found 7 outliers among 50 measurements (14.00%)
+  2 (4.00%) high mild
+  5 (10.00%) high severe
+djba21-bls12381/COMMIT 256 | 8
+                        time:   [206.59 ms 206.91 ms 207.32 ms]
+Found 19 outliers among 100 measurements (19.00%)
+  11 (11.00%) high mild
+  8 (8.00%) high severe
+djba21-bls12381/OPEN 256 | 8
+                        time:   [3.1093 ms 3.1130 ms 3.1171 ms]
+Found 5 outliers among 100 measurements (5.00%)
+  4 (4.00%) high mild
+  1 (1.00%) high severe
+djba21-bls12381/VERIFY 256 | 8
+                        time:   [39.094 ms 39.219 ms 39.387 ms]
+Found 11 outliers among 100 measurements (11.00%)
+  5 (5.00%) high mild
+  6 (6.00%) high severe
+djba21-bls12381/COMMIT 256 | 16
+                        time:   [391.08 ms 392.42 ms 394.44 ms]
+Found 9 outliers among 100 measurements (9.00%)
+  4 (4.00%) high mild
+  5 (5.00%) high severe
+djba21-bls12381/OPEN 256 | 16
+                        time:   [3.9503 ms 3.9513 ms 3.9524 ms]
+Found 10 outliers among 100 measurements (10.00%)
+  4 (4.00%) high mild
+  6 (6.00%) high severe
+djba21-bls12381/VERIFY 256 | 16
+                        time:   [39.480 ms 39.626 ms 39.812 ms]
+Found 4 outliers among 100 measurements (4.00%)
+  2 (2.00%) high mild
+  2 (2.00%) high severe
+djba21-bls12381/COMMIT 256 | 32
+                        time:   [756.17 ms 757.35 ms 759.21 ms]
+Found 14 outliers among 100 measurements (14.00%)
+  8 (8.00%) high mild
+  6 (6.00%) high severe
+djba21-bls12381/OPEN 256 | 32
+                        time:   [5.7468 ms 5.8305 ms 5.9336 ms]
+Found 14 outliers among 100 measurements (14.00%)
+  2 (2.00%) high mild
+  12 (12.00%) high severe
+djba21-bls12381/VERIFY 256 | 32
+                        time:   [39.293 ms 39.420 ms 39.574 ms]
+Found 17 outliers among 100 measurements (17.00%)
+  17 (17.00%) high severe
+djba21-bls12381/COMMIT 256 | 64
+                        time:   [1.4944 s 1.4960 s 1.4976 s]
+Found 1 outliers among 100 measurements (1.00%)
+  1 (1.00%) high mild
+djba21-bls12381/OPEN 256 | 64
+                        time:   [9.1499 ms 9.1620 ms 9.1773 ms]
+Found 13 outliers among 100 measurements (13.00%)
+  4 (4.00%) high mild
+  9 (9.00%) high severe
+djba21-bls12381/VERIFY 256 | 64
+                        time:   [39.356 ms 39.440 ms 39.549 ms]
+Found 12 outliers among 100 measurements (12.00%)
+  3 (3.00%) high mild
+  9 (9.00%) high severe
+djba21-bls12381/COMMIT 256 | 128
+                        time:   [2.9587 s 2.9638 s 2.9699 s]
+Found 19 outliers among 100 measurements (19.00%)
+  1 (1.00%) high mild
+  18 (18.00%) high severe
+djba21-bls12381/OPEN 256 | 128
+                        time:   [16.054 ms 16.056 ms 16.058 ms]
+Found 4 outliers among 100 measurements (4.00%)
+  3 (3.00%) high mild
+  1 (1.00%) high severe
+djba21-bls12381/VERIFY 256 | 128
+                        time:   [39.657 ms 39.660 ms 39.663 ms]
+djba21-bls12381/COMMIT 256 | 256
+                        time:   [5.8816 s 5.8841 s 5.8874 s]
+Found 4 outliers among 100 measurements (4.00%)
+  1 (1.00%) high mild
+  3 (3.00%) high severe
+djba21-bls12381/OPEN 256 | 256
+                        time:   [30.532 ms 30.534 ms 30.536 ms]
+Found 5 outliers among 100 measurements (5.00%)
+  3 (3.00%) low mild
+  2 (2.00%) high mild
+djba21-bls12381/VERIFY 256 | 256
+                        time:   [40.130 ms 40.132 ms 40.135 ms]
+Found 7 outliers among 100 measurements (7.00%)
+  3 (3.00%) low mild
+  2 (2.00%) high mild
+  2 (2.00%) high severe
+djba21-bls12381/COMMIT 512 | 8
+                        time:   [411.67 ms 412.50 ms 414.12 ms]
+Found 2 outliers among 100 measurements (2.00%)
+  2 (2.00%) high severe
+djba21-bls12381/OPEN 512 | 8
+                        time:   [5.9578 ms 5.9583 ms 5.9587 ms]
+Found 1 outliers among 100 measurements (1.00%)
+  1 (1.00%) high mild
+djba21-bls12381/VERIFY 512 | 8
+                        time:   [106.98 ms 107.69 ms 108.69 ms]
+Found 3 outliers among 100 measurements (3.00%)
+  3 (3.00%) high severe
+djba21-bls12381/COMMIT 512 | 16
+                        time:   [777.93 ms 777.97 ms 778.02 ms]
+Found 3 outliers among 100 measurements (3.00%)
+  3 (3.00%) high mild
+djba21-bls12381/OPEN 512 | 16
+                        time:   [6.9707 ms 6.9714 ms 6.9721 ms]
+Found 1 outliers among 100 measurements (1.00%)
+  1 (1.00%) high mild
+djba21-bls12381/VERIFY 512 | 16
+                        time:   [106.91 ms 106.93 ms 106.96 ms]
+Found 2 outliers among 100 measurements (2.00%)
+  2 (2.00%) high severe
+djba21-bls12381/COMMIT 512 | 32
+                        time:   [1.5112 s 1.5113 s 1.5114 s]
+Found 4 outliers among 100 measurements (4.00%)
+  2 (2.00%) low mild
+  2 (2.00%) high mild
+djba21-bls12381/OPEN 512 | 32
+                        time:   [8.9919 ms 8.9924 ms 8.9929 ms]
+Found 2 outliers among 100 measurements (2.00%)
+  2 (2.00%) high mild
+djba21-bls12381/VERIFY 512 | 32
+                        time:   [107.27 ms 107.29 ms 107.32 ms]
+Found 9 outliers among 100 measurements (9.00%)
+  1 (1.00%) low severe
+  7 (7.00%) low mild
+  1 (1.00%) high severe
+djba21-bls12381/COMMIT 512 | 64
+                        time:   [2.9752 s 2.9761 s 2.9777 s]
+Found 3 outliers among 100 measurements (3.00%)
+  1 (1.00%) low mild
+  1 (1.00%) high mild
+  1 (1.00%) high severe
+djba21-bls12381/OPEN 512 | 64
+                        time:   [13.048 ms 13.049 ms 13.050 ms]
+djba21-bls12381/VERIFY 512 | 64
+                        time:   [107.45 ms 107.46 ms 107.48 ms]
+Found 2 outliers among 100 measurements (2.00%)
+  1 (1.00%) low mild
+  1 (1.00%) high severe
+djba21-bls12381/COMMIT 512 | 128
+                        time:   [5.9048 s 5.9066 s 5.9091 s]
+Found 5 outliers among 100 measurements (5.00%)
+  3 (3.00%) high mild
+  2 (2.00%) high severe
+djba21-bls12381/OPEN 512 | 128
+                        time:   [21.113 ms 21.116 ms 21.120 ms]
+Found 9 outliers among 100 measurements (9.00%)
+  3 (3.00%) high mild
+  6 (6.00%) high severe
+djba21-bls12381/VERIFY 512 | 128
+                        time:   [108.13 ms 108.14 ms 108.15 ms]
+Found 1 outliers among 100 measurements (1.00%)
+  1 (1.00%) low mild
+djba21-bls12381/COMMIT 512 | 256
+                        time:   [11.759 s 11.761 s 11.765 s]
+Found 9 outliers among 100 measurements (9.00%)
+  2 (2.00%) low mild
+  4 (4.00%) high mild
+  3 (3.00%) high severe
+djba21-bls12381/OPEN 512 | 256
+                        time:   [37.273 ms 37.276 ms 37.279 ms]
+Found 5 outliers among 100 measurements (5.00%)
+  2 (2.00%) low mild
+  2 (2.00%) high mild
+  1 (1.00%) high severe
+djba21-bls12381/VERIFY 512 | 256
+                        time:   [109.15 ms 109.81 ms 110.81 ms]
+Found 5 outliers among 100 measurements (5.00%)
+  3 (3.00%) high mild
+  2 (2.00%) high severe
+
+----------------------------------------------------------------------
+
+djba21-bls12381/COMMIT 1028 | 8
+                        time:   [826.88 ms 826.99 ms 827.10 ms]
+Found 1 outliers among 100 measurements (1.00%)
+  1 (1.00%) high mild
+
+djba21-bls12381/OPEN 1028 | 8
+                        time:   [12.265 ms 12.269 ms 12.274 ms]
+Found 4 outliers among 100 measurements (4.00%)
+  4 (4.00%) high severe
+djba21-bls12381/VERIFY 1028 | 8
+                        time:   [349.24 ms 349.29 ms 349.35 ms]
+Found 3 outliers among 100 measurements (3.00%)
+  2 (2.00%) high mild
+  1 (1.00%) high severe
+djba21-bls12381/COMMIT 1028 | 16
+                        time:   [1.5630 s 1.5649 s 1.5674 s]
+Found 4 outliers among 100 measurements (4.00%)
+  1 (1.00%) high mild
+  3 (3.00%) high severe
+djba21-bls12381/OPEN 1028 | 16
+                        time:   [13.600 ms 13.602 ms 13.604 ms]
+Found 4 outliers among 100 measurements (4.00%)
+  3 (3.00%) high mild
+  1 (1.00%) high severe
+djba21-bls12381/VERIFY 1028 | 16
+                        time:   [349.41 ms 349.48 ms 349.55 ms]
+Found 3 outliers among 100 measurements (3.00%)
+  1 (1.00%) high mild
+  2 (2.00%) high severe
+djba21-bls12381/COMMIT 1028 | 32
+                        time:   [3.0351 s 3.0368 s 3.0391 s]
+Found 11 outliers among 100 measurements (11.00%)
+  2 (2.00%) high mild
+  9 (9.00%) high severe
+djba21-bls12381/OPEN 1028 | 32
+                        time:   [16.349 ms 16.412 ms 16.482 ms]
+Found 12 outliers among 100 measurements (12.00%)
+  3 (3.00%) high mild
+  9 (9.00%) high severe
+djba21-bls12381/VERIFY 1028 | 32
+                        time:   [350.94 ms 351.47 ms 352.06 ms]
+Found 14 outliers among 100 measurements (14.00%)
+  6 (6.00%) high mild
+  8 (8.00%) high severe
+
+----------------------------------------------------------------------
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+djba21-bn254/COMMIT 1 | 8
+                        time:   [381.55 µs 384.49 µs 388.40 µs]
+Found 9 outliers among 100 measurements (9.00%)
+  2 (2.00%) high mild
+  7 (7.00%) high severe
+djba21-bn254/OPEN 1 | 8 time:   [678.67 µs 679.07 µs 679.89 µs]
+Found 14 outliers among 100 measurements (14.00%)
+  2 (2.00%) high mild
+  12 (12.00%) high severe
+djba21-bn254/VERIFY 1 | 8
+                        time:   [1.3312 ms 1.3313 ms 1.3315 ms]
+Found 4 outliers among 100 measurements (4.00%)
+  2 (2.00%) high mild
+  2 (2.00%) high severe
+djba21-bn254/COMMIT 1 | 16
+                        time:   [722.91 µs 723.12 µs 723.38 µs]
+Found 9 outliers among 100 measurements (9.00%)
+  1 (1.00%) high mild
+  8 (8.00%) high severe
+djba21-bn254/OPEN 1 | 16
+                        time:   [1.3423 ms 1.3428 ms 1.3434 ms]
+Found 8 outliers among 100 measurements (8.00%)
+  4 (4.00%) high mild
+  4 (4.00%) high severe
+djba21-bn254/VERIFY 1 | 16
+                        time:   [1.3368 ms 1.3587 ms 1.3880 ms]
+Found 12 outliers among 100 measurements (12.00%)
+  4 (4.00%) high mild
+  8 (8.00%) high severe
+djba21-bn254/COMMIT 1 | 32
+                        time:   [1.6049 ms 1.6316 ms 1.6737 ms]
+Found 15 outliers among 100 measurements (15.00%)
+  7 (7.00%) high mild
+  8 (8.00%) high severe
+djba21-bn254/OPEN 1 | 32
+                        time:   [3.0822 ms 3.1217 ms 3.1715 ms]
+Found 5 outliers among 100 measurements (5.00%)
+  5 (5.00%) high severe
+djba21-bn254/VERIFY 1 | 32
+                        time:   [1.3316 ms 1.3348 ms 1.3385 ms]
+Found 8 outliers among 100 measurements (8.00%)
+  3 (3.00%) high mild
+  5 (5.00%) high severe
+djba21-bn254/COMMIT 1 | 64
+                        time:   [3.1736 ms 3.1756 ms 3.1778 ms]
+Found 6 outliers among 100 measurements (6.00%)
+  2 (2.00%) high mild
+  4 (4.00%) high severe
+djba21-bn254/OPEN 1 | 64
+                        time:   [6.3396 ms 6.4234 ms 6.5256 ms]
+Found 15 outliers among 100 measurements (15.00%)
+  2 (2.00%) high mild
+  13 (13.00%) high severe
+djba21-bn254/VERIFY 1 | 64
+                        time:   [1.3353 ms 1.3483 ms 1.3656 ms]
+Found 9 outliers among 100 measurements (9.00%)
+  2 (2.00%) high mild
+  7 (7.00%) high severe
+djba21-bn254/COMMIT 1 | 128
+                        time:   [6.2932 ms 6.2947 ms 6.2965 ms]
+Found 1 outliers among 100 measurements (1.00%)
+  1 (1.00%) high severe
+djba21-bn254/OPEN 1 | 128
+                        time:   [12.536 ms 12.546 ms 12.559 ms]
+Found 10 outliers among 100 measurements (10.00%)
+  6 (6.00%) high mild
+  4 (4.00%) high severe
+djba21-bn254/VERIFY 1 | 128
+                        time:   [1.3339 ms 1.3349 ms 1.3361 ms]
+Found 3 outliers among 100 measurements (3.00%)
+  3 (3.00%) high severe
+djba21-bn254/COMMIT 1 | 256
+                        time:   [12.606 ms 12.787 ms 13.000 ms]
+Found 11 outliers among 100 measurements (11.00%)
+  3 (3.00%) high mild
+  8 (8.00%) high severe
+djba21-bn254/OPEN 1 | 256
+                        time:   [25.172 ms 25.500 ms 25.902 ms]
+Found 12 outliers among 100 measurements (12.00%)
+  1 (1.00%) high mild
+  11 (11.00%) high severe
+djba21-bn254/VERIFY 1 | 256
+                        time:   [1.3384 ms 1.3594 ms 1.3898 ms]
+Found 11 outliers among 100 measurements (11.00%)
+  5 (5.00%) high mild
+  6 (6.00%) high severe
+djba21-bn254/COMMIT 2 | 8
+                        time:   [766.02 µs 767.07 µs 768.55 µs]
+Found 8 outliers among 100 measurements (8.00%)
+  4 (4.00%) high mild
+  4 (4.00%) high severe
+djba21-bn254/OPEN 2 | 8 time:   [638.63 µs 638.83 µs 639.09 µs]
+Found 7 outliers among 100 measurements (7.00%)
+  4 (4.00%) high mild
+  3 (3.00%) high severe
+djba21-bn254/VERIFY 2 | 8
+                        time:   [1.3878 ms 1.3883 ms 1.3889 ms]
+Found 3 outliers among 100 measurements (3.00%)
+  1 (1.00%) high mild
+  2 (2.00%) high severe
+djba21-bn254/COMMIT 2 | 16
+                        time:   [1.6552 ms 1.6689 ms 1.6888 ms]
+Found 7 outliers among 100 measurements (7.00%)
+  1 (1.00%) high mild
+  6 (6.00%) high severe
+djba21-bn254/OPEN 2 | 16
+                        time:   [1.4786 ms 1.4805 ms 1.4832 ms]
+Found 15 outliers among 100 measurements (15.00%)
+  1 (1.00%) high mild
+  14 (14.00%) high severe
+djba21-bn254/VERIFY 2 | 16
+                        time:   [1.3985 ms 1.3995 ms 1.4004 ms]
+Found 3 outliers among 100 measurements (3.00%)
+  3 (3.00%) high mild
+djba21-bn254/COMMIT 2 | 32
+                        time:   [3.2215 ms 3.2235 ms 3.2259 ms]
+Found 8 outliers among 100 measurements (8.00%)
+  2 (2.00%) high mild
+  6 (6.00%) high severe
+djba21-bn254/OPEN 2 | 32
+                        time:   [3.0873 ms 3.0915 ms 3.0966 ms]
+Found 9 outliers among 100 measurements (9.00%)
+  2 (2.00%) high mild
+  7 (7.00%) high severe
+djba21-bn254/VERIFY 2 | 32
+                        time:   [1.3908 ms 1.3932 ms 1.3961 ms]
+Found 15 outliers among 100 measurements (15.00%)
+  4 (4.00%) high mild
+  11 (11.00%) high severe
+djba21-bn254/COMMIT 2 | 64
+                        time:   [6.3443 ms 6.3489 ms 6.3545 ms]
+Found 16 outliers among 100 measurements (16.00%)
+  3 (3.00%) high mild
+  13 (13.00%) high severe
+djba21-bn254/OPEN 2 | 64
+                        time:   [6.2305 ms 6.3033 ms 6.4003 ms]
+Found 12 outliers among 100 measurements (12.00%)
+  1 (1.00%) low mild
+  1 (1.00%) high mild
+  10 (10.00%) high severe
+djba21-bn254/VERIFY 2 | 64
+                        time:   [1.3928 ms 1.4073 ms 1.4264 ms]
+Found 10 outliers among 100 measurements (10.00%)
+  4 (4.00%) high mild
+  6 (6.00%) high severe
+djba21-bn254/COMMIT 2 | 128
+                        time:   [12.581 ms 12.582 ms 12.585 ms]
+Found 1 outliers among 100 measurements (1.00%)
+  1 (1.00%) high severe
+djba21-bn254/OPEN 2 | 128
+                        time:   [12.515 ms 12.516 ms 12.519 ms]
+Found 3 outliers among 100 measurements (3.00%)
+  1 (1.00%) high mild
+  2 (2.00%) high severe
+djba21-bn254/VERIFY 2 | 128
+                        time:   [1.3891 ms 1.3907 ms 1.3927 ms]
+Found 11 outliers among 100 measurements (11.00%)
+  3 (3.00%) high mild
+  8 (8.00%) high severe
+djba21-bn254/COMMIT 2 | 256
+                        time:   [25.004 ms 25.012 ms 25.026 ms]
+Found 3 outliers among 100 measurements (3.00%)
+  2 (2.00%) high mild
+  1 (1.00%) high severe
+djba21-bn254/OPEN 2 | 256
+                        time:   [25.358 ms 25.672 ms 26.053 ms]
+Found 14 outliers among 100 measurements (14.00%)
+  6 (6.00%) high mild
+  8 (8.00%) high severe
+djba21-bn254/VERIFY 2 | 256
+                        time:   [1.3981 ms 1.4030 ms 1.4091 ms]
+Found 14 outliers among 100 measurements (14.00%)
+  2 (2.00%) high mild
+  12 (12.00%) high severe
+djba21-bn254/COMMIT 4 | 8
+                        time:   [1.7552 ms 1.7559 ms 1.7569 ms]
+Found 4 outliers among 100 measurements (4.00%)
+  1 (1.00%) high mild
+  3 (3.00%) high severe
+djba21-bn254/OPEN 4 | 8 time:   [563.55 µs 563.79 µs 564.10 µs]
+Found 12 outliers among 100 measurements (12.00%)
+  5 (5.00%) high mild
+  7 (7.00%) high severe
+djba21-bn254/VERIFY 4 | 8
+                        time:   [1.5063 ms 1.5115 ms 1.5179 ms]
+Found 13 outliers among 100 measurements (13.00%)
+  3 (3.00%) high mild
+  10 (10.00%) high severe
+djba21-bn254/COMMIT 4 | 16
+                        time:   [3.3433 ms 3.3511 ms 3.3595 ms]
+Found 11 outliers among 100 measurements (11.00%)
+  10 (10.00%) high mild
+  1 (1.00%) high severe
+djba21-bn254/OPEN 4 | 16
+                        time:   [1.4101 ms 1.4122 ms 1.4150 ms]
+Found 7 outliers among 100 measurements (7.00%)
+  4 (4.00%) high mild
+  3 (3.00%) high severe
+djba21-bn254/VERIFY 4 | 16
+                        time:   [1.5115 ms 1.5142 ms 1.5175 ms]
+Found 7 outliers among 100 measurements (7.00%)
+  1 (1.00%) high mild
+  6 (6.00%) high severe
+djba21-bn254/COMMIT 4 | 32
+                        time:   [6.4628 ms 6.4692 ms 6.4767 ms]
+Found 9 outliers among 100 measurements (9.00%)
+  5 (5.00%) high mild
+  4 (4.00%) high severe
+djba21-bn254/OPEN 4 | 32
+                        time:   [3.0144 ms 3.0161 ms 3.0182 ms]
+Found 12 outliers among 100 measurements (12.00%)
+  3 (3.00%) high mild
+  9 (9.00%) high severe
+djba21-bn254/VERIFY 4 | 32
+                        time:   [1.5122 ms 1.5139 ms 1.5159 ms]
+Found 14 outliers among 100 measurements (14.00%)
+  4 (4.00%) high mild
+  10 (10.00%) high severe
+djba21-bn254/COMMIT 4 | 64
+                        time:   [12.714 ms 12.719 ms 12.725 ms]
+Found 2 outliers among 100 measurements (2.00%)
+  2 (2.00%) high mild
+djba21-bn254/OPEN 4 | 64
+                        time:   [6.1467 ms 6.1578 ms 6.1715 ms]
+Found 12 outliers among 100 measurements (12.00%)
+  2 (2.00%) high mild
+  10 (10.00%) high severe
+djba21-bn254/VERIFY 4 | 64
+                        time:   [1.5182 ms 1.5407 ms 1.5730 ms]
+Found 14 outliers among 100 measurements (14.00%)
+  3 (3.00%) high mild
+  11 (11.00%) high severe
+djba21-bn254/COMMIT 4 | 128
+                        time:   [25.137 ms 25.147 ms 25.162 ms]
+Found 6 outliers among 100 measurements (6.00%)
+  5 (5.00%) high mild
+  1 (1.00%) high severe
+djba21-bn254/OPEN 4 | 128
+                        time:   [12.442 ms 12.457 ms 12.475 ms]
+Found 11 outliers among 100 measurements (11.00%)
+  4 (4.00%) high mild
+  7 (7.00%) high severe
+djba21-bn254/VERIFY 4 | 128
+                        time:   [1.4979 ms 1.4985 ms 1.4991 ms]
+Found 2 outliers among 100 measurements (2.00%)
+  2 (2.00%) high mild
+djba21-bn254/COMMIT 4 | 256
+                        time:   [50.069 ms 50.090 ms 50.124 ms]
+Found 2 outliers among 100 measurements (2.00%)
+  1 (1.00%) high mild
+  1 (1.00%) high severe
+djba21-bn254/OPEN 4 | 256
+                        time:   [25.048 ms 25.302 ms 25.631 ms]
+Found 7 outliers among 100 measurements (7.00%)
+  3 (3.00%) high mild
+  4 (4.00%) high severe
+djba21-bn254/VERIFY 4 | 256
+                        time:   [1.5082 ms 1.5271 ms 1.5540 ms]
+Found 5 outliers among 100 measurements (5.00%)
+  1 (1.00%) high mild
+  4 (4.00%) high severe
+djba21-bn254/COMMIT 8 | 8
+                        time:   [3.5145 ms 3.5161 ms 3.5182 ms]
+Found 3 outliers among 100 measurements (3.00%)
+  3 (3.00%) high severe
+djba21-bn254/OPEN 8 | 8 time:   [423.64 µs 423.81 µs 424.02 µs]
+Found 9 outliers among 100 measurements (9.00%)
+  2 (2.00%) high mild
+  7 (7.00%) high severe
+djba21-bn254/VERIFY 8 | 8
+                        time:   [1.7487 ms 1.7517 ms 1.7552 ms]
+Found 11 outliers among 100 measurements (11.00%)
+  8 (8.00%) high mild
+  3 (3.00%) high severe
+djba21-bn254/COMMIT 8 | 16
+                        time:   [6.6502 ms 6.6562 ms 6.6646 ms]
+Found 5 outliers among 100 measurements (5.00%)
+  3 (3.00%) high mild
+  2 (2.00%) high severe
+djba21-bn254/OPEN 8 | 16
+                        time:   [1.2477 ms 1.2499 ms 1.2523 ms]
+Found 12 outliers among 100 measurements (12.00%)
+  8 (8.00%) high mild
+  4 (4.00%) high severe
+djba21-bn254/VERIFY 8 | 16
+                        time:   [1.7319 ms 1.7332 ms 1.7353 ms]
+Found 6 outliers among 100 measurements (6.00%)
+  4 (4.00%) high mild
+  2 (2.00%) high severe
+djba21-bn254/COMMIT 8 | 32
+                        time:   [12.947 ms 13.115 ms 13.316 ms]
+Found 11 outliers among 100 measurements (11.00%)
+  3 (3.00%) high mild
+  8 (8.00%) high severe
+djba21-bn254/OPEN 8 | 32
+                        time:   [2.8527 ms 2.8624 ms 2.8734 ms]
+Found 10 outliers among 100 measurements (10.00%)
+  5 (5.00%) high mild
+  5 (5.00%) high severe
+djba21-bn254/VERIFY 8 | 32
+                        time:   [1.7773 ms 1.7990 ms 1.8272 ms]
+Found 10 outliers among 100 measurements (10.00%)
+  5 (5.00%) high mild
+  5 (5.00%) high severe
+djba21-bn254/COMMIT 8 | 64
+                        time:   [25.530 ms 25.598 ms 25.673 ms]
+Found 4 outliers among 100 measurements (4.00%)
+  3 (3.00%) high mild
+  1 (1.00%) high severe
+djba21-bn254/OPEN 8 | 64
+                        time:   [5.9640 ms 5.9687 ms 5.9747 ms]
+Found 15 outliers among 100 measurements (15.00%)
+  2 (2.00%) high mild
+  13 (13.00%) high severe
+djba21-bn254/VERIFY 8 | 64
+                        time:   [1.7486 ms 1.7488 ms 1.7490 ms]
+Found 8 outliers among 100 measurements (8.00%)
+  5 (5.00%) high mild
+  3 (3.00%) high severe
+djba21-bn254/COMMIT 8 | 128
+                        time:   [50.268 ms 50.343 ms 50.430 ms]
+Found 15 outliers among 100 measurements (15.00%)
+  2 (2.00%) high mild
+  13 (13.00%) high severe
+djba21-bn254/OPEN 8 | 128
+                        time:   [12.399 ms 12.438 ms 12.482 ms]
+Found 11 outliers among 100 measurements (11.00%)
+  3 (3.00%) high mild
+  8 (8.00%) high severe
+djba21-bn254/VERIFY 8 | 128
+                        time:   [1.7544 ms 1.7581 ms 1.7627 ms]
+Found 17 outliers among 100 measurements (17.00%)
+  4 (4.00%) high mild
+  13 (13.00%) high severe
+djba21-bn254/COMMIT 8 | 256
+                        time:   [100.33 ms 100.44 ms 100.58 ms]
+Found 9 outliers among 100 measurements (9.00%)
+  2 (2.00%) high mild
+  7 (7.00%) high severe
+djba21-bn254/OPEN 8 | 256
+                        time:   [24.950 ms 24.984 ms 25.023 ms]
+Found 10 outliers among 100 measurements (10.00%)
+  7 (7.00%) high mild
+  3 (3.00%) high severe
+djba21-bn254/VERIFY 8 | 256
+                        time:   [1.7410 ms 1.7624 ms 1.7999 ms]
+Found 14 outliers among 100 measurements (14.00%)
+  5 (5.00%) high mild
+  9 (9.00%) high severe
+djba21-bn254/COMMIT 16 | 8
+                        time:   [7.0352 ms 7.0387 ms 7.0426 ms]
+Found 1 outliers among 100 measurements (1.00%)
+  1 (1.00%) high severe
+djba21-bn254/OPEN 16 | 8
+                        time:   [429.51 µs 430.30 µs 431.59 µs]
+Found 7 outliers among 100 measurements (7.00%)
+  3 (3.00%) high mild
+  4 (4.00%) high severe
+djba21-bn254/VERIFY 16 | 8
+                        time:   [2.1748 ms 2.1752 ms 2.1757 ms]
+djba21-bn254/COMMIT 16 | 16
+                        time:   [13.305 ms 13.325 ms 13.350 ms]
+Found 13 outliers among 100 measurements (13.00%)
+  1 (1.00%) high mild
+  12 (12.00%) high severe
+djba21-bn254/OPEN 16 | 16
+                        time:   [823.53 µs 826.42 µs 830.43 µs]
+Found 15 outliers among 100 measurements (15.00%)
+  4 (4.00%) high mild
+  11 (11.00%) high severe
+djba21-bn254/VERIFY 16 | 16
+                        time:   [2.2432 ms 2.2520 ms 2.2614 ms]
+Found 4 outliers among 100 measurements (4.00%)
+  4 (4.00%) high mild
+djba21-bn254/COMMIT 16 | 32
+                        time:   [25.863 ms 25.922 ms 25.987 ms]
+Found 16 outliers among 100 measurements (16.00%)
+  13 (13.00%) high mild
+  3 (3.00%) high severe
+djba21-bn254/OPEN 16 | 32
+                        time:   [2.5171 ms 2.5175 ms 2.5178 ms]
+Found 4 outliers among 100 measurements (4.00%)
+  3 (3.00%) high mild
+  1 (1.00%) high severe
+djba21-bn254/VERIFY 16 | 32
+                        time:   [2.2360 ms 2.2422 ms 2.2496 ms]
+Found 6 outliers among 100 measurements (6.00%)
+  1 (1.00%) high mild
+  5 (5.00%) high severe
+djba21-bn254/COMMIT 16 | 64
+                        time:   [51.032 ms 51.175 ms 51.334 ms]
+Found 9 outliers among 100 measurements (9.00%)
+  4 (4.00%) high mild
+  5 (5.00%) high severe
+djba21-bn254/OPEN 16 | 64
+                        time:   [5.7145 ms 5.7270 ms 5.7411 ms]
+Found 7 outliers among 100 measurements (7.00%)
+  5 (5.00%) high mild
+  2 (2.00%) high severe
+djba21-bn254/VERIFY 16 | 64
+                        time:   [2.2216 ms 2.2269 ms 2.2332 ms]
+Found 11 outliers among 100 measurements (11.00%)
+  6 (6.00%) high mild
+  5 (5.00%) high severe
+djba21-bn254/COMMIT 16 | 128
+                        time:   [100.63 ms 100.69 ms 100.78 ms]
+Found 6 outliers among 100 measurements (6.00%)
+  1 (1.00%) high mild
+  5 (5.00%) high severe
+djba21-bn254/OPEN 16 | 128
+                        time:   [12.057 ms 12.183 ms 12.342 ms]
+Found 9 outliers among 100 measurements (9.00%)
+  2 (2.00%) high mild
+  7 (7.00%) high severe
+djba21-bn254/VERIFY 16 | 128
+                        time:   [2.2197 ms 2.2200 ms 2.2202 ms]
+Found 5 outliers among 100 measurements (5.00%)
+  2 (2.00%) high mild
+  3 (3.00%) high severe
+djba21-bn254/COMMIT 16 | 256
+                        time:   [200.88 ms 201.03 ms 201.20 ms]
+Found 17 outliers among 100 measurements (17.00%)
+  7 (7.00%) high mild
+  10 (10.00%) high severe
+djba21-bn254/OPEN 16 | 256
+                        time:   [24.681 ms 24.905 ms 25.206 ms]
+Found 9 outliers among 100 measurements (9.00%)
+  2 (2.00%) high mild
+  7 (7.00%) high severe
+djba21-bn254/VERIFY 16 | 256
+                        time:   [2.2286 ms 2.2560 ms 2.2893 ms]
+Found 13 outliers among 100 measurements (13.00%)
+  4 (4.00%) high mild
+  9 (9.00%) high severe
+djba21-bn254/COMMIT 32 | 8
+                        time:   [14.042 ms 14.046 ms 14.053 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  1 (2.00%) high mild
+  3 (6.00%) high severe
+djba21-bn254/OPEN 32 | 8
+                        time:   [552.28 µs 552.68 µs 553.29 µs]
+Found 2 outliers among 50 measurements (4.00%)
+  2 (4.00%) high severe
+djba21-bn254/VERIFY 32 | 8
+                        time:   [3.1733 ms 3.1744 ms 3.1756 ms]
+Found 2 outliers among 50 measurements (4.00%)
+  2 (4.00%) high severe
+djba21-bn254/COMMIT 32 | 16
+                        time:   [26.545 ms 26.563 ms 26.585 ms]
+Found 3 outliers among 50 measurements (6.00%)
+  1 (2.00%) high mild
+  2 (4.00%) high severe
+djba21-bn254/OPEN 32 | 16
+                        time:   [935.52 µs 943.66 µs 952.97 µs]
+Found 1 outliers among 50 measurements (2.00%)
+  1 (2.00%) high severe
+djba21-bn254/VERIFY 32 | 16
+                        time:   [3.1518 ms 3.1542 ms 3.1570 ms]
+Found 2 outliers among 50 measurements (4.00%)
+  2 (4.00%) high mild
+djba21-bn254/COMMIT 32 | 32
+                        time:   [51.452 ms 51.497 ms 51.553 ms]
+Found 6 outliers among 50 measurements (12.00%)
+  3 (6.00%) high mild
+  3 (6.00%) high severe
+djba21-bn254/OPEN 32 | 32
+                        time:   [1.8917 ms 1.8930 ms 1.8944 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  3 (6.00%) high mild
+  1 (2.00%) high severe
+djba21-bn254/VERIFY 32 | 32
+                        time:   [3.2282 ms 3.2309 ms 3.2347 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  2 (4.00%) high mild
+  2 (4.00%) high severe
+djba21-bn254/COMMIT 32 | 64
+                        time:   [101.60 ms 101.75 ms 101.93 ms]
+Found 6 outliers among 50 measurements (12.00%)
+  2 (4.00%) high mild
+  4 (8.00%) high severe
+djba21-bn254/OPEN 32 | 64
+                        time:   [5.1314 ms 5.1402 ms 5.1500 ms]
+Found 8 outliers among 50 measurements (16.00%)
+  3 (6.00%) high mild
+  5 (10.00%) high severe
+djba21-bn254/VERIFY 32 | 64
+                        time:   [3.2319 ms 3.2388 ms 3.2480 ms]
+Found 8 outliers among 50 measurements (16.00%)
+  2 (4.00%) high mild
+  6 (12.00%) high severe
+djba21-bn254/COMMIT 32 | 128
+                        time:   [201.49 ms 201.63 ms 201.83 ms]
+Found 6 outliers among 50 measurements (12.00%)
+  1 (2.00%) high mild
+  5 (10.00%) high severe
+djba21-bn254/OPEN 32 | 128
+                        time:   [11.481 ms 11.486 ms 11.492 ms]
+Found 1 outliers among 50 measurements (2.00%)
+  1 (2.00%) high mild
+djba21-bn254/VERIFY 32 | 128
+                        time:   [3.2049 ms 3.2107 ms 3.2167 ms]
+Found 7 outliers among 50 measurements (14.00%)
+  2 (4.00%) high mild
+  5 (10.00%) high severe
+djba21-bn254/COMMIT 32 | 256
+                        time:   [403.62 ms 404.76 ms 406.05 ms]
+Found 5 outliers among 50 measurements (10.00%)
+  4 (8.00%) high mild
+  1 (2.00%) high severe
+djba21-bn254/OPEN 32 | 256
+                        time:   [24.379 ms 24.433 ms 24.497 ms]
+Found 5 outliers among 50 measurements (10.00%)
+  5 (10.00%) high severe
+djba21-bn254/VERIFY 32 | 256
+                        time:   [3.2262 ms 3.2486 ms 3.2848 ms]
+Found 9 outliers among 50 measurements (18.00%)
+  4 (8.00%) high mild
+  5 (10.00%) high severe
+djba21-bn254/COMMIT 64 | 8
+                        time:   [28.224 ms 28.623 ms 29.193 ms]
+Found 7 outliers among 50 measurements (14.00%)
+  3 (6.00%) high mild
+  4 (8.00%) high severe
+djba21-bn254/OPEN 64 | 8
+                        time:   [818.46 µs 822.33 µs 826.91 µs]
+Found 3 outliers among 50 measurements (6.00%)
+  2 (4.00%) high mild
+  1 (2.00%) high severe
+djba21-bn254/VERIFY 64 | 8
+                        time:   [5.4068 ms 5.4192 ms 5.4337 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  2 (4.00%) high mild
+  2 (4.00%) high severe
+djba21-bn254/COMMIT 64 | 16
+                        time:   [53.656 ms 53.934 ms 54.240 ms]
+Found 1 outliers among 50 measurements (2.00%)
+  1 (2.00%) high mild
+djba21-bn254/OPEN 64 | 16
+                        time:   [1.3206 ms 1.3309 ms 1.3424 ms]
+Found 8 outliers among 50 measurements (16.00%)
+  2 (4.00%) high mild
+  6 (12.00%) high severe
+djba21-bn254/VERIFY 64 | 16
+                        time:   [5.4203 ms 5.4421 ms 5.4652 ms]
+Found 7 outliers among 50 measurements (14.00%)
+  2 (4.00%) high mild
+  5 (10.00%) high severe
+djba21-bn254/COMMIT 64 | 32
+                        time:   [103.06 ms 103.29 ms 103.61 ms]
+Found 6 outliers among 50 measurements (12.00%)
+  2 (4.00%) high mild
+  4 (8.00%) high severe
+djba21-bn254/OPEN 64 | 32
+                        time:   [2.2205 ms 2.2393 ms 2.2589 ms]
+Found 6 outliers among 50 measurements (12.00%)
+  1 (2.00%) high mild
+  5 (10.00%) high severe
+djba21-bn254/VERIFY 64 | 32
+                        time:   [5.4426 ms 5.4617 ms 5.4845 ms]
+Found 6 outliers among 50 measurements (12.00%)
+  1 (2.00%) high mild
+  5 (10.00%) high severe
+djba21-bn254/COMMIT 64 | 64
+                        time:   [203.92 ms 204.65 ms 205.53 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  1 (2.00%) high mild
+  3 (6.00%) high severe
+djba21-bn254/OPEN 64 | 64
+                        time:   [4.0118 ms 4.0199 ms 4.0306 ms]
+Found 3 outliers among 50 measurements (6.00%)
+  2 (4.00%) high mild
+  1 (2.00%) high severe
+djba21-bn254/VERIFY 64 | 64
+                        time:   [5.5274 ms 5.5389 ms 5.5540 ms]
+Found 5 outliers among 50 measurements (10.00%)
+  2 (4.00%) high mild
+  3 (6.00%) high severe
+djba21-bn254/COMMIT 64 | 128
+                        time:   [405.37 ms 406.06 ms 406.79 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  4 (8.00%) high mild
+djba21-bn254/OPEN 64 | 128
+                        time:   [10.534 ms 10.540 ms 10.547 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  2 (4.00%) high mild
+  2 (4.00%) high severe
+djba21-bn254/VERIFY 64 | 128
+                        time:   [5.5323 ms 5.5411 ms 5.5524 ms]
+Found 7 outliers among 50 measurements (14.00%)
+  2 (4.00%) high mild
+  5 (10.00%) high severe
+djba21-bn254/COMMIT 64 | 256
+                        time:   [805.21 ms 806.19 ms 807.31 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  2 (4.00%) high mild
+  2 (4.00%) high severe
+djba21-bn254/OPEN 64 | 256
+                        time:   [23.633 ms 23.687 ms 23.752 ms]
+Found 5 outliers among 50 measurements (10.00%)
+  3 (6.00%) high mild
+  2 (4.00%) high severe
+djba21-bn254/VERIFY 64 | 256
+                        time:   [5.4902 ms 5.5570 ms 5.7026 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  3 (6.00%) high mild
+  1 (2.00%) high severe
+djba21-bn254/COMMIT 128 | 8
+                        time:   [56.050 ms 56.053 ms 56.057 ms]
+Found 1 outliers among 50 measurements (2.00%)
+  1 (2.00%) high mild
+djba21-bn254/OPEN 128 | 8
+                        time:   [1.5002 ms 1.5004 ms 1.5006 ms]
+Found 1 outliers among 50 measurements (2.00%)
+  1 (2.00%) high mild
+djba21-bn254/VERIFY 128 | 8
+                        time:   [11.031 ms 11.032 ms 11.034 ms]
+Found 1 outliers among 50 measurements (2.00%)
+  1 (2.00%) high severe
+djba21-bn254/COMMIT 128 | 16
+                        time:   [106.08 ms 106.12 ms 106.20 ms]
+Found 2 outliers among 50 measurements (4.00%)
+  1 (2.00%) high mild
+  1 (2.00%) high severe
+djba21-bn254/OPEN 128 | 16
+                        time:   [1.9883 ms 1.9888 ms 1.9892 ms]
+Found 3 outliers among 50 measurements (6.00%)
+  2 (4.00%) high mild
+  1 (2.00%) high severe
+djba21-bn254/VERIFY 128 | 16
+                        time:   [11.090 ms 11.091 ms 11.092 ms]
+Found 2 outliers among 50 measurements (4.00%)
+  1 (2.00%) high mild
+  1 (2.00%) high severe
+djba21-bn254/COMMIT 128 | 32
+                        time:   [206.22 ms 206.24 ms 206.26 ms]
+djba21-bn254/OPEN 128 | 32
+                        time:   [2.9376 ms 2.9380 ms 2.9384 ms]
+Found 2 outliers among 50 measurements (4.00%)
+  2 (4.00%) high mild
+djba21-bn254/VERIFY 128 | 32
+                        time:   [11.113 ms 11.117 ms 11.123 ms]
+Found 5 outliers among 50 measurements (10.00%)
+  2 (4.00%) high mild
+  3 (6.00%) high severe
+djba21-bn254/COMMIT 128 | 64
+                        time:   [405.84 ms 405.89 ms 405.97 ms]
+Found 3 outliers among 50 measurements (6.00%)
+  1 (2.00%) high mild
+  2 (4.00%) high severe
+djba21-bn254/OPEN 128 | 64
+                        time:   [4.8105 ms 4.8113 ms 4.8124 ms]
+Found 3 outliers among 50 measurements (6.00%)
+  1 (2.00%) high mild
+  2 (4.00%) high severe
+djba21-bn254/VERIFY 128 | 64
+                        time:   [11.166 ms 11.172 ms 11.180 ms]
+Found 5 outliers among 50 measurements (10.00%)
+  2 (4.00%) high mild
+  3 (6.00%) high severe
+djba21-bn254/COMMIT 128 | 128
+                        time:   [806.09 ms 807.83 ms 810.23 ms]
+Found 11 outliers among 50 measurements (22.00%)
+  11 (22.00%) high severe
+djba21-bn254/OPEN 128 | 128
+                        time:   [8.7485 ms 8.7728 ms 8.8012 ms]
+Found 3 outliers among 50 measurements (6.00%)
+  2 (4.00%) high mild
+  1 (2.00%) high severe
+djba21-bn254/VERIFY 128 | 128
+                        time:   [11.367 ms 11.370 ms 11.374 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  2 (4.00%) high mild
+  2 (4.00%) high severe
+djba21-bn254/COMMIT 128 | 256
+                        time:   [1.6100 s 1.6126 s 1.6157 s]
+Found 3 outliers among 50 measurements (6.00%)
+  2 (4.00%) high mild
+  1 (2.00%) high severe
+djba21-bn254/OPEN 128 | 256
+                        time:   [22.503 ms 22.607 ms 22.728 ms]
+Found 5 outliers among 50 measurements (10.00%)
+  1 (2.00%) high mild
+  4 (8.00%) high severe
+djba21-bn254/VERIFY 128 | 256
+                        time:   [11.399 ms 11.421 ms 11.444 ms]
+djba21-bn254/COMMIT 256 | 8
+                        time:   [112.64 ms 114.21 ms 116.83 ms]
+Found 3 outliers among 25 measurements (12.00%)
+  1 (4.00%) high mild
+  2 (8.00%) high severe
+djba21-bn254/OPEN 256 | 8
+                        time:   [2.8844 ms 2.8976 ms 2.9216 ms]
+Found 1 outliers among 25 measurements (4.00%)
+  1 (4.00%) high severe
+djba21-bn254/VERIFY 256 | 8
+                        time:   [28.159 ms 28.384 ms 28.785 ms]
+Found 4 outliers among 25 measurements (16.00%)
+  3 (12.00%) high mild
+  1 (4.00%) high severe
+djba21-bn254/COMMIT 256 | 16
+                        time:   [213.01 ms 213.18 ms 213.37 ms]
+djba21-bn254/OPEN 256 | 16
+                        time:   [3.4295 ms 3.4338 ms 3.4374 ms]
+Found 1 outliers among 25 measurements (4.00%)
+  1 (4.00%) high mild
+djba21-bn254/VERIFY 256 | 16
+                        time:   [27.848 ms 27.930 ms 28.012 ms]
+djba21-bn254/COMMIT 256 | 32
+                        time:   [414.20 ms 415.13 ms 416.25 ms]
+Found 3 outliers among 25 measurements (12.00%)
+  2 (8.00%) high mild
+  1 (4.00%) high severe
+djba21-bn254/OPEN 256 | 32
+                        time:   [4.5113 ms 4.5211 ms 4.5348 ms]
+Found 1 outliers among 25 measurements (4.00%)
+  1 (4.00%) high mild
+djba21-bn254/VERIFY 256 | 32
+                        time:   [28.107 ms 28.295 ms 28.459 ms]
+Found 1 outliers among 25 measurements (4.00%)
+  1 (4.00%) high mild
+djba21-bn254/COMMIT 256 | 64
+                        time:   [813.24 ms 814.75 ms 817.16 ms]
+Found 2 outliers among 25 measurements (8.00%)
+  1 (4.00%) high mild
+  1 (4.00%) high severe
+djba21-bn254/OPEN 256 | 64
+                        time:   [6.7407 ms 6.7882 ms 6.8287 ms]
+djba21-bn254/VERIFY 256 | 64
+                        time:   [28.030 ms 28.110 ms 28.222 ms]
+djba21-bn254/COMMIT 256 | 128
+                        time:   [1.6122 s 1.6136 s 1.6154 s]
+Found 4 outliers among 25 measurements (16.00%)
+  3 (12.00%) high mild
+  1 (4.00%) high severe
+djba21-bn254/OPEN 256 | 128
+                        time:   [11.042 ms 11.080 ms 11.128 ms]
+Found 1 outliers among 25 measurements (4.00%)
+  1 (4.00%) high mild
+djba21-bn254/VERIFY 256 | 128
+                        time:   [28.269 ms 28.291 ms 28.326 ms]
+Found 1 outliers among 25 measurements (4.00%)
+  1 (4.00%) high mild
+djba21-bn254/COMMIT 256 | 256
+                        time:   [3.2228 s 3.2298 s 3.2383 s]
+Found 1 outliers among 25 measurements (4.00%)
+  1 (4.00%) high severe
+djba21-bn254/OPEN 256 | 256
+                        time:   [20.307 ms 20.361 ms 20.432 ms]
+Found 4 outliers among 25 measurements (16.00%)
+  4 (16.00%) high severe
+djba21-bn254/VERIFY 256 | 256
+                        time:   [29.003 ms 29.070 ms 29.163 ms]
+Found 3 outliers among 25 measurements (12.00%)
+  3 (12.00%) high severe
+djba21-bn254/COMMIT 512 | 8
+                        time:   [227.36 ms 228.95 ms 230.82 ms]
+Found 3 outliers among 25 measurements (12.00%)
+  3 (12.00%) high mild
+djba21-bn254/OPEN 512 | 8
+                        time:   [5.8985 ms 5.9267 ms 5.9529 ms]
+Found 2 outliers among 25 measurements (8.00%)
+  1 (4.00%) high mild
+  1 (4.00%) high severe
+djba21-bn254/VERIFY 512 | 8
+                        time:   [84.194 ms 84.410 ms 84.741 ms]
+Found 3 outliers among 25 measurements (12.00%)
+  3 (12.00%) high severe
+djba21-bn254/COMMIT 512 | 16
+                        time:   [426.79 ms 429.44 ms 432.64 ms]
+Found 3 outliers among 25 measurements (12.00%)
+  1 (4.00%) high mild
+  2 (8.00%) high severe
+djba21-bn254/OPEN 512 | 16
+                        time:   [6.5531 ms 6.7487 ms 7.0682 ms]
+Found 5 outliers among 25 measurements (20.00%)
+  2 (8.00%) high mild
+  3 (12.00%) high severe
+djba21-bn254/VERIFY 512 | 16
+                        time:   [84.636 ms 86.101 ms 88.571 ms]
+Found 5 outliers among 25 measurements (20.00%)
+  2 (8.00%) high mild
+  3 (12.00%) high severe
+djba21-bn254/COMMIT 512 | 32
+                        time:   [832.52 ms 840.68 ms 850.86 ms]
+Found 2 outliers among 25 measurements (8.00%)
+  1 (4.00%) high mild
+  1 (4.00%) high severe
+djba21-bn254/OPEN 512 | 32
+                        time:   [7.9787 ms 8.0053 ms 8.0286 ms]
+Found 2 outliers among 25 measurements (8.00%)
+  2 (8.00%) high mild
+djba21-bn254/VERIFY 512 | 32
+                        time:   [84.665 ms 84.769 ms 84.894 ms]
+Found 2 outliers among 25 measurements (8.00%)
+  1 (4.00%) high mild
+  1 (4.00%) high severe
+djba21-bn254/COMMIT 512 | 64
+                        time:   [1.6419 s 1.6538 s 1.6678 s]
+Found 4 outliers among 25 measurements (16.00%)
+  4 (16.00%) high mild
+djba21-bn254/OPEN 512 | 64
+                        time:   [10.692 ms 10.699 ms 10.706 ms]
+Found 1 outliers among 25 measurements (4.00%)
+  1 (4.00%) high mild
+djba21-bn254/VERIFY 512 | 64
+                        time:   [84.771 ms 84.788 ms 84.807 ms]
+djba21-bn254/COMMIT 512 | 128
+                        time:   [3.2424 s 3.2560 s 3.2706 s]
+djba21-bn254/OPEN 512 | 128
+                        time:   [16.250 ms 16.401 ms 16.557 ms]
+Found 4 outliers among 25 measurements (16.00%)
+  4 (16.00%) high severe
+djba21-bn254/VERIFY 512 | 128
+                        time:   [85.252 ms 85.317 ms 85.401 ms]
+Found 2 outliers among 25 measurements (8.00%)
+  1 (4.00%) high mild
+  1 (4.00%) high severe
+djba21-bn254/COMMIT 512 | 256
+                        time:   [6.4372 s 6.4524 s 6.4687 s]
+djba21-bn254/OPEN 512 | 256
+                        time:   [27.204 ms 27.248 ms 27.319 ms]
+Found 3 outliers among 25 measurements (12.00%)
+  3 (12.00%) high severe
+djba21-bn254/VERIFY 512 | 256
+                        time:   [86.446 ms 87.631 ms 89.319 ms]
+Found 3 outliers among 25 measurements (12.00%)
+  3 (12.00%) high severe
+
+djba21-bls12377/COMMIT 1 | 8
+                        time:   [738.14 µs 738.64 µs 739.29 µs]
+Found 9 outliers among 100 measurements (9.00%)
+  2 (2.00%) high mild
+  7 (7.00%) high severe
+djba21-bls12377/OPEN 1 | 8
+                        time:   [1.3149 ms 1.3483 ms 1.3928 ms]
+Found 16 outliers among 100 measurements (16.00%)
+  5 (5.00%) high mild
+  11 (11.00%) high severe
+djba21-bls12377/VERIFY 1 | 8
+                        time:   [2.3736 ms 2.4049 ms 2.4425 ms]
+Found 15 outliers among 100 measurements (15.00%)
+  10 (10.00%) high mild
+  5 (5.00%) high severe
+djba21-bls12377/COMMIT 1 | 16
+                        time:   [1.4042 ms 1.4103 ms 1.4177 ms]
+Found 20 outliers among 100 measurements (20.00%)
+  9 (9.00%) high mild
+  11 (11.00%) high severe
+djba21-bls12377/OPEN 1 | 16
+                        time:   [2.7043 ms 2.7545 ms 2.8183 ms]
+Found 12 outliers among 100 measurements (12.00%)
+  4 (4.00%) high mild
+  8 (8.00%) high severe
+djba21-bls12377/VERIFY 1 | 16
+                        time:   [2.3402 ms 2.3411 ms 2.3427 ms]
+Found 4 outliers among 100 measurements (4.00%)
+  3 (3.00%) high mild
+  1 (1.00%) high severe
+djba21-bls12377/COMMIT 1 | 32
+                        time:   [2.9131 ms 2.9140 ms 2.9151 ms]
+Found 11 outliers among 100 measurements (11.00%)
+  1 (1.00%) high mild
+  10 (10.00%) high severe
+djba21-bls12377/OPEN 1 | 32
+                        time:   [5.7375 ms 5.7595 ms 5.7841 ms]
+Found 6 outliers among 100 measurements (6.00%)
+  4 (4.00%) high mild
+  2 (2.00%) high severe
+djba21-bls12377/VERIFY 1 | 32
+                        time:   [2.3401 ms 2.3426 ms 2.3456 ms]
+Found 16 outliers among 100 measurements (16.00%)
+  2 (2.00%) high mild
+  14 (14.00%) high severe
+djba21-bls12377/COMMIT 1 | 64
+                        time:   [5.8137 ms 5.8375 ms 5.8676 ms]
+Found 10 outliers among 100 measurements (10.00%)
+  1 (1.00%) high mild
+  9 (9.00%) high severe
+djba21-bls12377/OPEN 1 | 64
+                        time:   [11.376 ms 11.391 ms 11.408 ms]
+Found 11 outliers among 100 measurements (11.00%)
+  2 (2.00%) high mild
+  9 (9.00%) high severe
+djba21-bls12377/VERIFY 1 | 64
+                        time:   [2.3523 ms 2.3825 ms 2.4195 ms]
+Found 9 outliers among 100 measurements (9.00%)
+  1 (1.00%) high mild
+  8 (8.00%) high severe
+djba21-bls12377/COMMIT 1 | 128
+                        time:   [11.512 ms 11.658 ms 11.848 ms]
+Found 8 outliers among 100 measurements (8.00%)
+  1 (1.00%) high mild
+  7 (7.00%) high severe
+djba21-bls12377/OPEN 1 | 128
+                        time:   [22.900 ms 22.936 ms 22.977 ms]
+Found 15 outliers among 100 measurements (15.00%)
+  5 (5.00%) high mild
+  10 (10.00%) high severe
+djba21-bls12377/VERIFY 1 | 128
+                        time:   [2.3690 ms 2.3810 ms 2.3950 ms]
+Found 8 outliers among 100 measurements (8.00%)
+  3 (3.00%) high mild
+  5 (5.00%) high severe
+djba21-bls12377/COMMIT 1 | 256
+                        time:   [23.317 ms 23.419 ms 23.531 ms]
+Found 8 outliers among 100 measurements (8.00%)
+  5 (5.00%) high mild
+  3 (3.00%) high severe
+djba21-bls12377/OPEN 1 | 256
+                        time:   [45.743 ms 45.805 ms 45.876 ms]
+Found 10 outliers among 100 measurements (10.00%)
+  6 (6.00%) high mild
+  4 (4.00%) high severe
+djba21-bls12377/VERIFY 1 | 256
+                        time:   [2.3451 ms 2.3480 ms 2.3513 ms]
+Found 17 outliers among 100 measurements (17.00%)
+  2 (2.00%) high mild
+  15 (15.00%) high severe
+djba21-bls12377/COMMIT 2 | 8
+                        time:   [1.4947 ms 1.5035 ms 1.5144 ms]
+Found 6 outliers among 100 measurements (6.00%)
+  5 (5.00%) high mild
+  1 (1.00%) high severe
+djba21-bls12377/OPEN 2 | 8
+                        time:   [1.2836 ms 1.2938 ms 1.3053 ms]
+Found 16 outliers among 100 measurements (16.00%)
+  3 (3.00%) high mild
+  13 (13.00%) high severe
+djba21-bls12377/VERIFY 2 | 8
+                        time:   [2.4416 ms 2.4436 ms 2.4457 ms]
+Found 2 outliers among 100 measurements (2.00%)
+  2 (2.00%) high mild
+djba21-bls12377/COMMIT 2 | 16
+                        time:   [3.0039 ms 3.0051 ms 3.0065 ms]
+Found 7 outliers among 100 measurements (7.00%)
+  4 (4.00%) high mild
+  3 (3.00%) high severe
+djba21-bls12377/OPEN 2 | 16
+                        time:   [2.7592 ms 2.7614 ms 2.7637 ms]
+Found 5 outliers among 100 measurements (5.00%)
+  4 (4.00%) high mild
+  1 (1.00%) high severe
+djba21-bls12377/VERIFY 2 | 16
+                        time:   [2.4615 ms 2.4694 ms 2.4782 ms]
+Found 13 outliers among 100 measurements (13.00%)
+  6 (6.00%) high mild
+  7 (7.00%) high severe
+djba21-bls12377/COMMIT 2 | 32
+                        time:   [5.9882 ms 6.0755 ms 6.1809 ms]
+Found 14 outliers among 100 measurements (14.00%)
+  3 (3.00%) high mild
+  11 (11.00%) high severe
+djba21-bls12377/OPEN 2 | 32
+                        time:   [5.6014 ms 5.6031 ms 5.6053 ms]
+Found 6 outliers among 100 measurements (6.00%)
+  4 (4.00%) high mild
+  2 (2.00%) high severe
+djba21-bls12377/VERIFY 2 | 32
+                        time:   [2.4307 ms 2.4335 ms 2.4369 ms]
+Found 9 outliers among 100 measurements (9.00%)
+  3 (3.00%) high mild
+  6 (6.00%) high severe
+djba21-bls12377/COMMIT 2 | 64
+                        time:   [11.608 ms 11.646 ms 11.691 ms]
+Found 17 outliers among 100 measurements (17.00%)
+  4 (4.00%) high mild
+  13 (13.00%) high severe
+djba21-bls12377/OPEN 2 | 64
+                        time:   [11.391 ms 11.419 ms 11.451 ms]
+Found 14 outliers among 100 measurements (14.00%)
+  6 (6.00%) high mild
+  8 (8.00%) high severe
+djba21-bls12377/VERIFY 2 | 64
+                        time:   [2.4844 ms 2.4994 ms 2.5159 ms]
+Found 6 outliers among 100 measurements (6.00%)
+  4 (4.00%) high mild
+  2 (2.00%) high severe
+djba21-bls12377/COMMIT 2 | 128
+                        time:   [23.079 ms 23.146 ms 23.224 ms]
+Found 11 outliers among 100 measurements (11.00%)
+  6 (6.00%) high mild
+  5 (5.00%) high severe
+djba21-bls12377/OPEN 2 | 128
+                        time:   [22.781 ms 23.004 ms 23.300 ms]
+Found 5 outliers among 100 measurements (5.00%)
+  5 (5.00%) high severe
+djba21-bls12377/VERIFY 2 | 128
+                        time:   [2.4489 ms 2.4562 ms 2.4644 ms]
+Found 10 outliers among 100 measurements (10.00%)
+  6 (6.00%) high mild
+  4 (4.00%) high severe
+djba21-bls12377/COMMIT 2 | 256
+                        time:   [46.013 ms 46.145 ms 46.291 ms]
+Found 6 outliers among 100 measurements (6.00%)
+  3 (3.00%) high mild
+  3 (3.00%) high severe
+djba21-bls12377/OPEN 2 | 256
+                        time:   [45.732 ms 45.804 ms 45.892 ms]
+Found 10 outliers among 100 measurements (10.00%)
+  1 (1.00%) high mild
+  9 (9.00%) high severe
+djba21-bls12377/VERIFY 2 | 256
+                        time:   [2.4785 ms 2.4922 ms 2.5075 ms]
+Found 4 outliers among 100 measurements (4.00%)
+  3 (3.00%) high mild
+  1 (1.00%) high severe
+djba21-bls12377/COMMIT 4 | 8
+                        time:   [3.1903 ms 3.2005 ms 3.2143 ms]
+Found 11 outliers among 100 measurements (11.00%)
+  3 (3.00%) high mild
+  8 (8.00%) high severe
+djba21-bls12377/OPEN 4 | 8
+                        time:   [1.0916 ms 1.1198 ms 1.1556 ms]
+Found 9 outliers among 100 measurements (9.00%)
+  4 (4.00%) high mild
+  5 (5.00%) high severe
+djba21-bls12377/VERIFY 4 | 8
+                        time:   [2.6412 ms 2.6473 ms 2.6552 ms]
+Found 8 outliers among 100 measurements (8.00%)
+  4 (4.00%) high mild
+  4 (4.00%) high severe
+djba21-bls12377/COMMIT 4 | 16
+                        time:   [6.0882 ms 6.1673 ms 6.2701 ms]
+Found 9 outliers among 100 measurements (9.00%)
+  3 (3.00%) high mild
+  6 (6.00%) high severe
+djba21-bls12377/OPEN 4 | 16
+                        time:   [2.5691 ms 2.5713 ms 2.5740 ms]
+Found 15 outliers among 100 measurements (15.00%)
+  3 (3.00%) high mild
+  12 (12.00%) high severe
+djba21-bls12377/VERIFY 4 | 16
+                        time:   [2.6412 ms 2.6453 ms 2.6499 ms]
+Found 8 outliers among 100 measurements (8.00%)
+  6 (6.00%) high mild
+  2 (2.00%) high severe
+djba21-bls12377/COMMIT 4 | 32
+                        time:   [11.836 ms 11.882 ms 11.936 ms]
+Found 13 outliers among 100 measurements (13.00%)
+  9 (9.00%) high mild
+  4 (4.00%) high severe
+djba21-bls12377/OPEN 4 | 32
+                        time:   [5.4585 ms 5.4689 ms 5.4805 ms]
+Found 17 outliers among 100 measurements (17.00%)
+  1 (1.00%) high mild
+  16 (16.00%) high severe
+djba21-bls12377/VERIFY 4 | 32
+                        time:   [2.6253 ms 2.6283 ms 2.6325 ms]
+Found 9 outliers among 100 measurements (9.00%)
+  9 (9.00%) high severe
+djba21-bls12377/COMMIT 4 | 64
+                        time:   [23.115 ms 23.145 ms 23.183 ms]
+Found 8 outliers among 100 measurements (8.00%)
+  3 (3.00%) high mild
+  5 (5.00%) high severe
+djba21-bls12377/OPEN 4 | 64
+                        time:   [11.122 ms 11.132 ms 11.144 ms]
+Found 9 outliers among 100 measurements (9.00%)
+  2 (2.00%) high mild
+  7 (7.00%) high severe
+djba21-bls12377/VERIFY 4 | 64
+                        time:   [2.6515 ms 2.6553 ms 2.6597 ms]
+Found 13 outliers among 100 measurements (13.00%)
+  7 (7.00%) high mild
+  6 (6.00%) high severe
+djba21-bls12377/COMMIT 4 | 128
+                        time:   [45.927 ms 45.984 ms 46.050 ms]
+Found 10 outliers among 100 measurements (10.00%)
+  3 (3.00%) high mild
+  7 (7.00%) high severe
+djba21-bls12377/OPEN 4 | 128
+                        time:   [22.806 ms 22.880 ms 22.961 ms]
+Found 9 outliers among 100 measurements (9.00%)
+  7 (7.00%) high mild
+  2 (2.00%) high severe
+djba21-bls12377/VERIFY 4 | 128
+                        time:   [2.6604 ms 2.6689 ms 2.6784 ms]
+Found 14 outliers among 100 measurements (14.00%)
+  8 (8.00%) high mild
+  6 (6.00%) high severe
+djba21-bls12377/COMMIT 4 | 256
+                        time:   [91.725 ms 91.888 ms 92.077 ms]
+Found 10 outliers among 100 measurements (10.00%)
+  4 (4.00%) high mild
+  6 (6.00%) high severe
+djba21-bls12377/OPEN 4 | 256
+                        time:   [45.550 ms 45.640 ms 45.745 ms]
+Found 12 outliers among 100 measurements (12.00%)
+  6 (6.00%) high mild
+  6 (6.00%) high severe
+djba21-bls12377/VERIFY 4 | 256
+                        time:   [2.6436 ms 2.6513 ms 2.6604 ms]
+Found 17 outliers among 100 measurements (17.00%)
+  2 (2.00%) high mild
+  15 (15.00%) high severe
+djba21-bls12377/COMMIT 8 | 8
+                        time:   [6.4123 ms 6.4273 ms 6.4447 ms]
+Found 15 outliers among 100 measurements (15.00%)
+  3 (3.00%) high mild
+  12 (12.00%) high severe
+djba21-bls12377/OPEN 8 | 8
+                        time:   [797.14 µs 800.24 µs 804.09 µs]
+Found 9 outliers among 100 measurements (9.00%)
+  6 (6.00%) high mild
+  3 (3.00%) high severe
+djba21-bls12377/VERIFY 8 | 8
+                        time:   [3.0406 ms 3.0480 ms 3.0563 ms]
+Found 12 outliers among 100 measurements (12.00%)
+  6 (6.00%) high mild
+  6 (6.00%) high severe
+djba21-bls12377/COMMIT 8 | 16
+                        time:   [12.154 ms 12.197 ms 12.250 ms]
+Found 10 outliers among 100 measurements (10.00%)
+  4 (4.00%) high mild
+  6 (6.00%) high severe
+djba21-bls12377/OPEN 8 | 16
+                        time:   [2.2754 ms 2.2821 ms 2.2895 ms]
+Found 10 outliers among 100 measurements (10.00%)
+  7 (7.00%) high mild
+  3 (3.00%) high severe
+djba21-bls12377/VERIFY 8 | 16
+                        time:   [3.0526 ms 3.0932 ms 3.1442 ms]
+Found 16 outliers among 100 measurements (16.00%)
+  6 (6.00%) high mild
+  10 (10.00%) high severe
+djba21-bls12377/COMMIT 8 | 32
+                        time:   [23.703 ms 24.002 ms 24.383 ms]
+Found 17 outliers among 100 measurements (17.00%)
+  4 (4.00%) high mild
+  13 (13.00%) high severe
+djba21-bls12377/OPEN 8 | 32
+                        time:   [5.1036 ms 5.1135 ms 5.1261 ms]
+Found 17 outliers among 100 measurements (17.00%)
+  4 (4.00%) high mild
+  13 (13.00%) high severe
+djba21-bls12377/VERIFY 8 | 32
+                        time:   [3.0446 ms 3.0540 ms 3.0645 ms]
+Found 15 outliers among 100 measurements (15.00%)
+  1 (1.00%) high mild
+  14 (14.00%) high severe
+djba21-bls12377/COMMIT 8 | 64
+                        time:   [46.575 ms 46.726 ms 46.893 ms]
+Found 8 outliers among 100 measurements (8.00%)
+  6 (6.00%) high mild
+  2 (2.00%) high severe
+djba21-bls12377/OPEN 8 | 64
+                        time:   [10.779 ms 10.781 ms 10.783 ms]
+Found 9 outliers among 100 measurements (9.00%)
+  2 (2.00%) high mild
+  7 (7.00%) high severe
+djba21-bls12377/VERIFY 8 | 64
+                        time:   [3.0085 ms 3.0093 ms 3.0104 ms]
+Found 11 outliers among 100 measurements (11.00%)
+  3 (3.00%) high mild
+  8 (8.00%) high severe
+djba21-bls12377/COMMIT 8 | 128
+                        time:   [91.675 ms 91.699 ms 91.735 ms]
+Found 7 outliers among 100 measurements (7.00%)
+  3 (3.00%) high mild
+  4 (4.00%) high severe
+djba21-bls12377/OPEN 8 | 128
+                        time:   [22.262 ms 22.281 ms 22.302 ms]
+Found 12 outliers among 100 measurements (12.00%)
+  5 (5.00%) high mild
+  7 (7.00%) high severe
+djba21-bls12377/VERIFY 8 | 128
+                        time:   [3.0490 ms 3.0585 ms 3.0692 ms]
+Found 12 outliers among 100 measurements (12.00%)
+  4 (4.00%) high mild
+  8 (8.00%) high severe
+djba21-bls12377/COMMIT 8 | 256
+                        time:   [183.31 ms 184.50 ms 186.06 ms]
+Found 6 outliers among 100 measurements (6.00%)
+  2 (2.00%) high mild
+  4 (4.00%) high severe
+djba21-bls12377/OPEN 8 | 256
+                        time:   [45.085 ms 45.172 ms 45.320 ms]
+Found 11 outliers among 100 measurements (11.00%)
+  2 (2.00%) high mild
+  9 (9.00%) high severe
+djba21-bls12377/VERIFY 8 | 256
+                        time:   [3.0180 ms 3.0208 ms 3.0247 ms]
+Found 7 outliers among 100 measurements (7.00%)
+  3 (3.00%) high mild
+  4 (4.00%) high severe
+djba21-bls12377/COMMIT 16 | 8
+                        time:   [12.852 ms 12.879 ms 12.910 ms]
+Found 13 outliers among 100 measurements (13.00%)
+  4 (4.00%) high mild
+  9 (9.00%) high severe
+djba21-bls12377/OPEN 16 | 8
+                        time:   [759.61 µs 762.01 µs 764.98 µs]
+Found 18 outliers among 100 measurements (18.00%)
+  7 (7.00%) high mild
+  11 (11.00%) high severe
+djba21-bls12377/VERIFY 16 | 8
+                        time:   [3.7272 ms 3.7289 ms 3.7310 ms]
+Found 15 outliers among 100 measurements (15.00%)
+  5 (5.00%) high mild
+  10 (10.00%) high severe
+djba21-bls12377/COMMIT 16 | 16
+                        time:   [24.213 ms 24.241 ms 24.274 ms]
+Found 5 outliers among 100 measurements (5.00%)
+  3 (3.00%) high mild
+  2 (2.00%) high severe
+djba21-bls12377/OPEN 16 | 16
+                        time:   [1.5085 ms 1.5144 ms 1.5209 ms]
+Found 12 outliers among 100 measurements (12.00%)
+  9 (9.00%) high mild
+  3 (3.00%) high severe
+djba21-bls12377/VERIFY 16 | 16
+                        time:   [3.8026 ms 3.8075 ms 3.8132 ms]
+Found 14 outliers among 100 measurements (14.00%)
+  4 (4.00%) high mild
+  10 (10.00%) high severe
+djba21-bls12377/COMMIT 16 | 32
+                        time:   [46.986 ms 47.028 ms 47.077 ms]
+Found 7 outliers among 100 measurements (7.00%)
+  4 (4.00%) high mild
+  3 (3.00%) high severe
+djba21-bls12377/OPEN 16 | 32
+                        time:   [4.5463 ms 4.5643 ms 4.5849 ms]
+Found 5 outliers among 100 measurements (5.00%)
+  2 (2.00%) high mild
+  3 (3.00%) high severe
+djba21-bls12377/VERIFY 16 | 32
+                        time:   [3.8124 ms 3.8137 ms 3.8154 ms]
+Found 9 outliers among 100 measurements (9.00%)
+  2 (2.00%) high mild
+  7 (7.00%) high severe
+djba21-bls12377/COMMIT 16 | 64
+                        time:   [92.737 ms 93.492 ms 94.541 ms]
+Found 9 outliers among 100 measurements (9.00%)
+  4 (4.00%) high mild
+  5 (5.00%) high severe
+djba21-bls12377/OPEN 16 | 64
+                        time:   [10.201 ms 10.204 ms 10.207 ms]
+Found 8 outliers among 100 measurements (8.00%)
+  5 (5.00%) high mild
+  3 (3.00%) high severe
+djba21-bls12377/VERIFY 16 | 64
+                        time:   [3.8099 ms 3.8104 ms 3.8112 ms]
+Found 5 outliers among 100 measurements (5.00%)
+  3 (3.00%) high mild
+  2 (2.00%) high severe
+djba21-bls12377/COMMIT 16 | 128
+                        time:   [184.05 ms 184.49 ms 184.99 ms]
+Found 11 outliers among 100 measurements (11.00%)
+  5 (5.00%) high mild
+  6 (6.00%) high severe
+djba21-bls12377/OPEN 16 | 128
+                        time:   [21.669 ms 21.698 ms 21.733 ms]
+Found 11 outliers among 100 measurements (11.00%)
+  3 (3.00%) high mild
+  8 (8.00%) high severe
+djba21-bls12377/VERIFY 16 | 128
+                        time:   [3.8407 ms 3.8517 ms 3.8640 ms]
+Found 7 outliers among 100 measurements (7.00%)
+  4 (4.00%) high mild
+  3 (3.00%) high severe
+djba21-bls12377/COMMIT 16 | 256
+                        time:   [365.71 ms 366.53 ms 367.72 ms]
+Found 6 outliers among 100 measurements (6.00%)
+  1 (1.00%) high mild
+  5 (5.00%) high severe
+djba21-bls12377/OPEN 16 | 256
+                        time:   [44.991 ms 45.159 ms 45.343 ms]
+Found 11 outliers among 100 measurements (11.00%)
+  6 (6.00%) high mild
+  5 (5.00%) high severe
+djba21-bls12377/VERIFY 16 | 256
+                        time:   [3.8174 ms 3.8191 ms 3.8208 ms]
+djba21-bls12377/COMMIT 32 | 8
+                        time:   [25.697 ms 25.772 ms 25.861 ms]
+Found 5 outliers among 50 measurements (10.00%)
+  5 (10.00%) high severe
+djba21-bls12377/OPEN 32 | 8
+                        time:   [888.96 µs 889.44 µs 890.11 µs]
+Found 3 outliers among 50 measurements (6.00%)
+  2 (4.00%) high mild
+  1 (2.00%) high severe
+djba21-bls12377/VERIFY 32 | 8
+                        time:   [5.3313 ms 5.3319 ms 5.3328 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  1 (2.00%) high mild
+  3 (6.00%) high severe
+djba21-bls12377/COMMIT 32 | 16
+                        time:   [48.264 ms 48.268 ms 48.273 ms]
+Found 2 outliers among 50 measurements (4.00%)
+  1 (2.00%) high mild
+  1 (2.00%) high severe
+djba21-bls12377/OPEN 32 | 16
+                        time:   [1.5552 ms 1.5570 ms 1.5594 ms]
+djba21-bls12377/VERIFY 32 | 16
+                        time:   [5.3373 ms 5.3393 ms 5.3429 ms]
+Found 5 outliers among 50 measurements (10.00%)
+  2 (4.00%) high mild
+  3 (6.00%) high severe
+djba21-bls12377/COMMIT 32 | 32
+                        time:   [93.829 ms 93.846 ms 93.870 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  1 (2.00%) low mild
+  1 (2.00%) high mild
+  2 (4.00%) high severe
+djba21-bls12377/OPEN 32 | 32
+                        time:   [3.2273 ms 3.2276 ms 3.2281 ms]
+djba21-bls12377/VERIFY 32 | 32
+                        time:   [5.4277 ms 5.4284 ms 5.4291 ms]
+Found 1 outliers among 50 measurements (2.00%)
+  1 (2.00%) high severe
+djba21-bls12377/COMMIT 32 | 64
+                        time:   [184.82 ms 184.84 ms 184.86 ms]
+djba21-bls12377/OPEN 32 | 64
+                        time:   [9.0183 ms 9.0188 ms 9.0194 ms]
+Found 1 outliers among 50 measurements (2.00%)
+  1 (2.00%) low mild
+djba21-bls12377/VERIFY 32 | 64
+                        time:   [5.4615 ms 5.4630 ms 5.4647 ms]
+Found 13 outliers among 50 measurements (26.00%)
+  2 (4.00%) low severe
+  6 (12.00%) low mild
+  3 (6.00%) high mild
+  2 (4.00%) high severe
+djba21-bls12377/COMMIT 32 | 128
+                        time:   [366.76 ms 366.79 ms 366.83 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  2 (4.00%) low severe
+  1 (2.00%) high mild
+  1 (2.00%) high severe
+djba21-bls12377/OPEN 32 | 128
+                        time:   [20.563 ms 20.571 ms 20.586 ms]
+Found 1 outliers among 50 measurements (2.00%)
+  1 (2.00%) high severe
+djba21-bls12377/VERIFY 32 | 128
+                        time:   [5.4191 ms 5.4194 ms 5.4196 ms]
+Found 1 outliers among 50 measurements (2.00%)
+  1 (2.00%) high mild
+djba21-bls12377/COMMIT 32 | 256
+                        time:   [730.87 ms 731.80 ms 733.07 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  2 (4.00%) high mild
+  2 (4.00%) high severe
+djba21-bls12377/OPEN 32 | 256
+                        time:   [43.667 ms 43.711 ms 43.760 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  4 (8.00%) high mild
+djba21-bls12377/VERIFY 32 | 256
+                        time:   [5.4401 ms 5.4436 ms 5.4476 ms]
+Found 3 outliers among 50 measurements (6.00%)
+  1 (2.00%) high mild
+  2 (4.00%) high severe
+djba21-bls12377/COMMIT 64 | 8
+                        time:   [51.186 ms 51.221 ms 51.260 ms]
+Found 1 outliers among 50 measurements (2.00%)
+  1 (2.00%) high mild
+djba21-bls12377/OPEN 64 | 8
+                        time:   [1.1359 ms 1.1548 ms 1.1899 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  2 (4.00%) high mild
+  2 (4.00%) high severe
+djba21-bls12377/VERIFY 64 | 8
+                        time:   [8.8105 ms 8.9345 ms 9.1151 ms]
+Found 3 outliers among 50 measurements (6.00%)
+  3 (6.00%) high severe
+djba21-bls12377/COMMIT 64 | 16
+                        time:   [96.852 ms 97.086 ms 97.357 ms]
+Found 11 outliers among 50 measurements (22.00%)
+  1 (2.00%) high mild
+  10 (20.00%) high severe
+djba21-bls12377/OPEN 64 | 16
+                        time:   [1.9339 ms 1.9351 ms 1.9365 ms]
+Found 5 outliers among 50 measurements (10.00%)
+  1 (2.00%) high mild
+  4 (8.00%) high severe
+djba21-bls12377/VERIFY 64 | 16
+                        time:   [8.8463 ms 8.8794 ms 8.9338 ms]
+Found 9 outliers among 50 measurements (18.00%)
+  1 (2.00%) high mild
+  8 (16.00%) high severe
+djba21-bls12377/COMMIT 64 | 32
+                        time:   [187.63 ms 187.87 ms 188.16 ms]
+Found 7 outliers among 50 measurements (14.00%)
+  1 (2.00%) high mild
+  6 (12.00%) high severe
+djba21-bls12377/OPEN 64 | 32
+                        time:   [3.4349 ms 3.4368 ms 3.4391 ms]
+Found 5 outliers among 50 measurements (10.00%)
+  1 (2.00%) high mild
+  4 (8.00%) high severe
+djba21-bls12377/VERIFY 64 | 32
+                        time:   [8.8986 ms 8.9046 ms 8.9121 ms]
+Found 1 outliers among 50 measurements (2.00%)
+  1 (2.00%) high severe
+djba21-bls12377/COMMIT 64 | 64
+                        time:   [369.69 ms 369.86 ms 370.08 ms]
+Found 8 outliers among 50 measurements (16.00%)
+  3 (6.00%) high mild
+  5 (10.00%) high severe
+djba21-bls12377/OPEN 64 | 64
+                        time:   [6.6362 ms 6.6394 ms 6.6430 ms]
+Found 4 outliers among 50 measurements (8.00%)
+  3 (6.00%) high mild
+  1 (2.00%) high severe
+djba21-bls12377/VERIFY 64 | 64
+                        time:   [9.0213 ms 9.0233 ms 9.0254 ms]
+djba21-bls12377/COMMIT 64 | 128
+                        time:   [733.89 ms 734.22 ms 734.58 ms]
+Found 1 outliers among 50 measurements (2.00%)
+  1 (2.00%) high mild
+djba21-bls12377/OPEN 64 | 128
+                        time:   [18.290 ms 18.302 ms 18.324 ms]
+Found 2 outliers among 50 measurements (4.00%)
+  1 (2.00%) high mild
+  1 (2.00%) high severe
+djba21-bls12377/VERIFY 64 | 128
+                        time:   [8.9890 ms 8.9999 ms 9.0142 ms]
+Found 8 outliers among 50 measurements (16.00%)
+  1 (2.00%) low mild
+  1 (2.00%) high mild
+  6 (12.00%) high severe
+djba21-bls12377/COMMIT 64 | 256
+                        time:   [1.4688 s 1.4724 s 1.4763 s]
+Found 5 outliers among 50 measurements (10.00%)
+  4 (8.00%) high mild
+  1 (2.00%) high severe
+djba21-bls12377/OPEN 64 | 256
+                        time:   [41.966 ms 42.141 ms 42.362 ms]
+Found 2 outliers among 50 measurements (4.00%)
+  2 (4.00%) high severe
+djba21-bls12377/VERIFY 64 | 256
+                        time:   [9.0352 ms 9.0387 ms 9.0427 ms]
+Found 2 outliers among 50 measurements (4.00%)
+  1 (2.00%) high mild
+  1 (2.00%) high severe
+djba21-bls12377/COMMIT 128 | 8
+                        time:   [102.53 ms 102.71 ms 102.95 ms]
+Found 5 outliers among 50 measurements (10.00%)
+  3 (6.00%) high mild
+  2 (4.00%) high severe
+djba21-bls12377/OPEN 128 | 8
+                        time:   [1.8206 ms 1.8264 ms 1.8333 ms]
+Found 5 outliers among 50 measurements (10.00%)
+  3 (6.00%) high mild
+  2 (4.00%) high severe
+djba21-bls12377/VERIFY 128 | 8
+                        time:   [17.154 ms 17.188 ms 17.229 ms]
+Found 5 outliers among 50 measurements (10.00%)
+  3 (6.00%) high mild
+  2 (4.00%) high severe
+djba21-bls12377/COMMIT 128 | 16
+                        time:   [193.56 ms 193.73 ms 193.94 ms]
+Found 9 outliers among 50 measurements (18.00%)
+  7 (14.00%) high mild
+  2 (4.00%) high severe
+djba21-bls12377/OPEN 128 | 16
+                        time:   [2.6537 ms 2.6756 ms 2.6974 ms]
+Found 7 outliers among 50 measurements (14.00%)
+  2 (4.00%) high mild
+  5 (10.00%) high severe
+djba21-bls12377/VERIFY 128 | 16
+                        time:   [17.253 ms 17.333 ms 17.419 ms]
+djba21-bls12377/COMMIT 128 | 32
+                        time:   [377.10 ms 379.36 ms 383.08 ms]
+Found 5 outliers among 50 measurements (10.00%)
+  2 (4.00%) high mild
+  3 (6.00%) high severe
+djba21-bls12377/OPEN 128 | 32
+                        time:   [4.1763 ms 4.1822 ms 4.1907 ms]
+Found 6 outliers among 50 measurements (12.00%)
+  2 (4.00%) high mild
+  4 (8.00%) high severe
+djba21-bls12377/VERIFY 128 | 32
+                        time:   [17.163 ms 17.207 ms 17.258 ms]
+Found 9 outliers among 50 measurements (18.00%)
+  6 (12.00%) high mild
+  3 (6.00%) high severe
+djba21-bls12377/COMMIT 128 | 64
+                        time:   [741.76 ms 743.81 ms 746.20 ms]
+Found 8 outliers among 50 measurements (16.00%)
+  4 (8.00%) high mild
+  4 (8.00%) high severe
+djba21-bls12377/OPEN 128 | 64
+                        time:   [7.3649 ms 7.3991 ms 7.4384 ms]
+Found 6 outliers among 50 measurements (12.00%)
+  2 (4.00%) high mild
+  4 (8.00%) high severe
+djba21-bls12377/VERIFY 128 | 64
+                        time:   [17.323 ms 17.371 ms 17.425 ms]
+Found 9 outliers among 50 measurements (18.00%)
+  3 (6.00%) high mild
+  6 (12.00%) high severe
+djba21-bls12377/COMMIT 128 | 128
+                        time:   [1.4701 s 1.4728 s 1.4765 s]
+Found 4 outliers among 50 measurements (8.00%)
+  2 (4.00%) high mild
+  2 (4.00%) high severe
+djba21-bls12377/OPEN 128 | 128
+                        time:   [13.871 ms 13.882 ms 13.895 ms]
+Found 6 outliers among 50 measurements (12.00%)
+  3 (6.00%) high mild
+  3 (6.00%) high severe
+djba21-bls12377/VERIFY 128 | 128
+                        time:   [17.454 ms 17.459 ms 17.463 ms]
+djba21-bls12377/COMMIT 128 | 256
+                        time:   [2.9281 s 2.9320 s 2.9366 s]
+Found 4 outliers among 50 measurements (8.00%)
+  4 (8.00%) high severe
+djba21-bls12377/OPEN 128 | 256
+                        time:   [37.690 ms 37.799 ms 37.969 ms]
+Found 5 outliers among 50 measurements (10.00%)
+  5 (10.00%) high severe
+djba21-bls12377/VERIFY 128 | 256
+                        time:   [17.482 ms 17.496 ms 17.511 ms]
+Found 1 outliers among 50 measurements (2.00%)
+  1 (2.00%) high mild
+djba21-bls12377/COMMIT 256 | 8
+                        time:   [205.80 ms 206.86 ms 208.11 ms]
+Found 3 outliers among 25 measurements (12.00%)
+  2 (8.00%) high mild
+  1 (4.00%) high severe
+djba21-bls12377/OPEN 256 | 8
+                        time:   [3.1695 ms 3.1739 ms 3.1798 ms]
+Found 4 outliers among 25 measurements (16.00%)
+  1 (4.00%) high mild
+  3 (12.00%) high severe
+djba21-bls12377/VERIFY 256 | 8
+                        time:   [39.126 ms 39.175 ms 39.227 ms]
+Found 1 outliers among 25 measurements (4.00%)
+  1 (4.00%) high mild
+djba21-bls12377/COMMIT 256 | 16
+                        time:   [388.02 ms 390.29 ms 393.27 ms]
+Found 5 outliers among 25 measurements (20.00%)
+  1 (4.00%) high mild
+  4 (16.00%) high severe
+djba21-bls12377/OPEN 256 | 16
+                        time:   [4.0218 ms 4.0251 ms 4.0287 ms]
+Found 3 outliers among 25 measurements (12.00%)
+  2 (8.00%) high mild
+  1 (4.00%) high severe
+djba21-bls12377/VERIFY 256 | 16
+                        time:   [39.380 ms 39.978 ms 40.933 ms]
+Found 3 outliers among 25 measurements (12.00%)
+  1 (4.00%) high mild
+  2 (8.00%) high severe
+djba21-bls12377/COMMIT 256 | 32
+                        time:   [752.39 ms 756.61 ms 763.45 ms]
+Found 2 outliers among 25 measurements (8.00%)
+  1 (4.00%) high mild
+  1 (4.00%) high severe
+djba21-bls12377/OPEN 256 | 32
+                        time:   [5.8278 ms 5.8694 ms 5.9193 ms]
+Found 1 outliers among 25 measurements (4.00%)
+  1 (4.00%) high mild
+djba21-bls12377/VERIFY 256 | 32
+                        time:   [39.161 ms 39.204 ms 39.255 ms]
+Found 1 outliers among 25 measurements (4.00%)
+  1 (4.00%) high mild
+djba21-bls12377/COMMIT 256 | 64
+                        time:   [1.4888 s 1.4924 s 1.4963 s]
+Found 1 outliers among 25 measurements (4.00%)
+  1 (4.00%) high mild
+djba21-bls12377/OPEN 256 | 64
+                        time:   [9.1999 ms 9.2115 ms 9.2281 ms]
+djba21-bls12377/VERIFY 256 | 64
+                        time:   [39.391 ms 39.544 ms 39.720 ms]
+Found 2 outliers among 25 measurements (8.00%)
+  2 (8.00%) high mild
+djba21-bls12377/COMMIT 256 | 128
+                        time:   [2.9409 s 2.9463 s 2.9529 s]
+Found 2 outliers among 25 measurements (8.00%)
+  1 (4.00%) high mild
+  1 (4.00%) high severe
+djba21-bls12377/OPEN 256 | 128
+                        time:   [16.112 ms 16.155 ms 16.226 ms]
+djba21-bls12377/VERIFY 256 | 128
+                        time:   [39.519 ms 39.553 ms 39.606 ms]
+Found 2 outliers among 25 measurements (8.00%)
+  1 (4.00%) high mild
+  1 (4.00%) high severe
+djba21-bls12377/COMMIT 256 | 256
+                        time:   [5.8512 s 5.8619 s 5.8750 s]
+Found 3 outliers among 25 measurements (12.00%)
+  2 (8.00%) high mild
+  1 (4.00%) high severe
+djba21-bls12377/OPEN 256 | 256
+                        time:   [30.687 ms 30.724 ms 30.767 ms]
+Found 3 outliers among 25 measurements (12.00%)
+  1 (4.00%) high mild
+  2 (8.00%) high severe
+djba21-bls12377/VERIFY 256 | 256
+                        time:   [40.193 ms 40.235 ms 40.288 ms]
+Found 6 outliers among 25 measurements (24.00%)
+  2 (8.00%) high mild
+  4 (16.00%) high severe
+djba21-bls12377/COMMIT 512 | 8
+                        time:   [409.00 ms 409.13 ms 409.26 ms]
+djba21-bls12377/OPEN 512 | 8
+                        time:   [6.1013 ms 6.1120 ms 6.1251 ms]
+Found 2 outliers among 25 measurements (8.00%)
+  1 (4.00%) high mild
+  1 (4.00%) high severe
+djba21-bls12377/VERIFY 512 | 8
+                        time:   [105.94 ms 105.97 ms 106.00 ms]
+djba21-bls12377/COMMIT 512 | 16
+                        time:   [772.75 ms 772.92 ms 773.10 ms]
+djba21-bls12377/OPEN 512 | 16
+                        time:   [7.1245 ms 7.1286 ms 7.1334 ms]
+djba21-bls12377/VERIFY 512 | 16
+                        time:   [106.14 ms 106.19 ms 106.28 ms]
+Found 1 outliers among 25 measurements (4.00%)
+  1 (4.00%) high severe
+djba21-bls12377/COMMIT 512 | 32
+                        time:   [1.5006 s 1.5010 s 1.5014 s]
+Found 1 outliers among 25 measurements (4.00%)
+  1 (4.00%) high mild
+djba21-bls12377/OPEN 512 | 32
+                        time:   [9.1634 ms 9.1679 ms 9.1750 ms]
+Found 3 outliers among 25 measurements (12.00%)
+  1 (4.00%) low mild
+  1 (4.00%) high mild
+  1 (4.00%) high severe
+djba21-bls12377/VERIFY 512 | 32
+                        time:   [106.23 ms 106.27 ms 106.33 ms]
+Found 4 outliers among 25 measurements (16.00%)
+  1 (4.00%) low severe
+  2 (8.00%) low mild
+  1 (4.00%) high severe
+djba21-bls12377/COMMIT 512 | 64
+                        time:   [2.9568 s 2.9574 s 2.9579 s]
+Found 1 outliers among 25 measurements (4.00%)
+  1 (4.00%) high mild
+djba21-bls12377/OPEN 512 | 64
+                        time:   [13.144 ms 13.147 ms 13.151 ms]
+djba21-bls12377/VERIFY 512 | 64
+                        time:   [106.46 ms 106.53 ms 106.61 ms]
+Found 3 outliers among 25 measurements (12.00%)
+  2 (8.00%) high mild
+  1 (4.00%) high severe
+djba21-bls12377/COMMIT 512 | 128
+                        time:   [5.8682 s 5.8694 s 5.8707 s]
+djba21-bls12377/OPEN 512 | 128
+                        time:   [21.214 ms 21.223 ms 21.229 ms]
+djba21-bls12377/VERIFY 512 | 128
+                        time:   [107.08 ms 107.15 ms 107.26 ms]
+Found 1 outliers among 25 measurements (4.00%)
+  1 (4.00%) high severe
+djba21-bls12377/COMMIT 512 | 256
+                        time:   [11.689 s 11.694 s 11.700 s]
+Found 1 outliers among 25 measurements (4.00%)
+  1 (4.00%) high severe
+djba21-bls12377/OPEN 512 | 256
+                        time:   [37.362 ms 37.376 ms 37.394 ms]
+Found 2 outliers among 25 measurements (8.00%)
+  1 (4.00%) high mild
+  1 (4.00%) high severe
+djba21-bls12377/VERIFY 512 | 256
+                        time:   [108.35 ms 108.38 ms 108.43 ms]
+Found 1 outliers among 25 measurements (4.00%)
+  1 (4.00%) high severe
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
