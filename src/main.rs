@@ -3,6 +3,8 @@ use ark_ff::UniformRand;
 use ark_poly::{univariate::DensePolynomial, DenseUVPolynomial};
 use ark_std::{rand::Rng, test_rng};
 use ark_bls12_381::{Bls12_381, Fr};
+use kzg_commitments::utils::poly::multipoint_eval;
+use ark_poly::Polynomial;
 
 use kzg_commitments::djba21::{DJBA21, DJBA21_PK};
 
@@ -10,6 +12,8 @@ fn main() {
     let mut rng = test_rng();
     rng.r#gen::<i32>();
 
+    // let t = 8;
+    // let d = 8;
     // let t = 128;
     // let d = 256;
     let t = 256;
@@ -17,6 +21,19 @@ fn main() {
     // let t = 1024;
     // let d = 2048;
     
+
+    // let poly = DensePolynomial::<Fr>::rand(d, &mut rng);
+
+    // let mut points = Vec::new();
+    // for i in 0..128 {
+    //     points.push(Fr::from(i));
+    // }
+
+    // let dog = multipoint_eval::<Bls12_381>(&poly, &points);
+    // for (x, y) in dog {
+    //     println!("{}: {}", x, y);
+    //     assert!(poly.evaluate(&x) == y);
+    // }
 
     let mut poly: Vec<DensePolynomial<Fr>> = vec![];
     for _ in 0..t {

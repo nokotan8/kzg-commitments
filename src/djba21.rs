@@ -7,7 +7,7 @@ use ark_ec::AdditiveGroup;
 use std::ops::Mul;
 use std::ops::Neg;
 
-use crate::utils::poly::{eval_poly_over_g1, lagrange_interpolate};
+use crate::utils::poly::{eval_poly_over_g1, lagrange_interpolate, multipoint_eval, multipoint_eval_preproc};
 
 #[derive(Debug)]
 pub struct DJBA21<E: Pairing> {
@@ -80,15 +80,22 @@ impl<E: Pairing> PolyCommit<E> for DJBA21<E> {
 
     fn evaluate(&self, poly: &[DensePolynomial<E::ScalarField>], z: &[E::ScalarField]) -> Vec<Self::Evaluation> {
         let mut ret = Vec::new();
-        let mut points = Vec::new();
-        for p in poly {
-            for x in z {
-                points.push((*x, p.evaluate(x)));
-            }
+        // let mut points = Vec::new();
 
-            ret.push(lagrange_interpolate::<E>(points.as_slice()));
-            points.clear();
+        use std::time::Instant;
+        let ztVec = multipoint_eval_preproc::<E>(z);
+        let now = Instant::now();
+        for p in poly {
+            let points = multipoint_eval::<E>(p, z, &ztVec);
+
+            // for point in z {
+            //     points.push((*point, p.evaluate(point)));
+            // }
+
+            // ret.push(lagrange_interpolate::<E>(points.as_slice()));
+            // points.clear();
         }
+        println!("THIS TAKES: {:?}", now.elapsed());
         ret
     }
 
