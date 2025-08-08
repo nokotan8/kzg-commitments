@@ -7,7 +7,7 @@ use ark_poly::{DenseUVPolynomial, univariate::DensePolynomial};
 use ark_std::rand::Rng;
 use ark_std::test_rng;
 use criterion::{Criterion, criterion_group, criterion_main};
-use kzg_commitments::djba21::DJBA21;
+use kzg_commitments::djba21::{DJBA21, DJBA21_PK};
 use kzg_commitments::poly_commit::PolyCommit;
 
 fn poly_generator<Curve: Pairing>(
@@ -33,7 +33,19 @@ fn point_generator<Curve: Pairing>(
     z
 }
 
-fn djba21_helper<Curve: Pairing>(poly_count: usize, poly_deg: usize) -> bool {
+fn djba21_helper<Curve: Pairing>(
+    poly_count: usize,
+    poly_deg: usize,
+) -> (
+    DJBA21<Curve>,
+    Vec<DensePolynomial<<Curve>::ScalarField>>,
+    Vec<<Curve>::ScalarField>,
+    (<Curve>::ScalarField, <Curve>::ScalarField),
+    DJBA21_PK<Curve>,
+    Vec<<Curve>::G1>,
+    Vec<DensePolynomial<<Curve>::ScalarField>>,
+    (<Curve>::G1, <Curve>::G1),
+) {
     let mut rng = test_rng();
 
     let poly = poly_generator::<Curve>(poly_count, poly_deg, &mut rng);
@@ -55,7 +67,9 @@ fn djba21_helper<Curve: Pairing>(poly_count: usize, poly_deg: usize) -> bool {
 
     let p = djb.open(&pk, &poly, &z, &v, ver_param);
 
-    return DJBA21::verify(&c, &pk, &p, &z, &v, ver_param);
+    // let res = DJBA21::verify(&c, &pk, &p, &z, &v, ver_param);
+
+    return (djb, poly, z, ver_param, pk, c, v, p);
 }
 
 fn djba21_benchmark_curve<Curve: Pairing>(c: &mut Criterion, id: String) {
@@ -69,14 +83,32 @@ fn djba21_benchmark_curve<Curve: Pairing>(c: &mut Criterion, id: String) {
     group.sample_size(100);
     for &poly_count in &poly_count_vals[0..5] {
         for &poly_deg in &poly_deg_vals {
+            let (djb, poly, z, ver_param, pk, c, v, p) =
+                djba21_helper::<Curve>(poly_count, poly_deg);
+
+            let ref_tuple = &(djb, poly, z, ver_param, pk, c, v, p);
+
             group.bench_with_input(
-                format!(
-                    "poly count: {} | poly deg: {} | point count: {}",
-                    poly_count, poly_deg, poly_count
-                ),
-                &(poly_count, poly_deg),
-                |b, &(poly_count, poly_deg)| {
-                    b.iter(|| djba21_helper::<Bls12_381>(poly_count, poly_deg));
+                format!("COMMIT {} | {}", poly_count, poly_deg),
+                ref_tuple,
+                |b, &(ref djb, ref poly, ref _z, ref _ver_param, ref pk, ref _c, ref _v, ref _p)| {
+                    b.iter(|| djb.commit(&pk, &poly));
+                },
+            );
+
+            group.bench_with_input(
+                format!("OPEN {} | {}", poly_count, poly_deg),
+                ref_tuple,
+                |b, &(ref djb, ref poly, ref z, ref ver_param, ref pk, ref _c, ref v, ref _p)| {
+                    b.iter(|| djb.open(&pk, &poly, &z, &v, *ver_param));
+                },
+            );
+
+            group.bench_with_input(
+                format!("VERIFY {} | {}", poly_count, poly_deg),
+                ref_tuple,
+                |b, &(ref _djb, ref _poly, ref z, ref ver_param, ref pk, ref c, ref v, ref p)| {
+                    b.iter(|| DJBA21::verify(&c, &pk, &p, &z, &v, *ver_param));
                 },
             );
         }
@@ -86,31 +118,67 @@ fn djba21_benchmark_curve<Curve: Pairing>(c: &mut Criterion, id: String) {
     group.sample_size(50);
     for &poly_count in &poly_count_vals[5..8] {
         for &poly_deg in &poly_deg_vals {
+            let (djb, poly, z, ver_param, pk, c, v, p) =
+                djba21_helper::<Curve>(poly_count, poly_deg);
+
+            let ref_tuple = &(djb, poly, z, ver_param, pk, c, v, p);
+
             group.bench_with_input(
-                format!(
-                    "poly count: {} | poly deg: {} | point count: {}",
-                    poly_count, poly_deg, poly_count
-                ),
-                &(poly_count, poly_deg),
-                |b, &(poly_count, poly_deg)| {
-                    b.iter(|| djba21_helper::<Bls12_381>(poly_count, poly_deg));
+                format!("COMMIT {} | {}", poly_count, poly_deg),
+                ref_tuple,
+                |b, &(ref djb, ref poly, ref _z, ref _ver_param, ref pk, ref _c, ref _v, ref _p)| {
+                    b.iter(|| djb.commit(&pk, &poly));
+                },
+            );
+
+            group.bench_with_input(
+                format!("OPEN {} | {}", poly_count, poly_deg),
+                ref_tuple,
+                |b, &(ref djb, ref poly, ref z, ref ver_param, ref pk, ref _c, ref v, ref _p)| {
+                    b.iter(|| djb.open(&pk, &poly, &z, &v, *ver_param));
+                },
+            );
+
+            group.bench_with_input(
+                format!("VERIFY {} | {}", poly_count, poly_deg),
+                ref_tuple,
+                |b, &(ref _djb, ref _poly, ref z, ref ver_param, ref pk, ref c, ref v, ref p)| {
+                    b.iter(|| DJBA21::verify(&c, &pk, &p, &z, &v, *ver_param));
                 },
             );
         }
     }
 
-    // 256 - 1028
+    // // 256 - 1028
     group.sample_size(25);
     for &poly_count in &poly_count_vals[8..] {
         for &poly_deg in &poly_deg_vals {
+            let (djb, poly, z, ver_param, pk, c, v, p) =
+                djba21_helper::<Curve>(poly_count, poly_deg);
+
+            let ref_tuple = &(djb, poly, z, ver_param, pk, c, v, p);
+
             group.bench_with_input(
-                format!(
-                    "poly count: {} | poly deg: {} | point count: {}",
-                    poly_count, poly_deg, poly_count
-                ),
-                &(poly_count, poly_deg),
-                |b, &(poly_count, poly_deg)| {
-                    b.iter(|| djba21_helper::<Bls12_381>(poly_count, poly_deg));
+                format!("COMMIT {} | {}", poly_count, poly_deg),
+                ref_tuple,
+                |b, &(ref djb, ref poly, ref _z, ref _ver_param, ref pk, ref _c, ref _v, ref _p)| {
+                    b.iter(|| djb.commit(&pk, &poly));
+                },
+            );
+
+            group.bench_with_input(
+                format!("OPEN {} | {}", poly_count, poly_deg),
+                ref_tuple,
+                |b, &(ref djb, ref poly, ref z, ref ver_param, ref pk, ref _c, ref v, ref _p)| {
+                    b.iter(|| djb.open(&pk, &poly, &z, &v, *ver_param));
+                },
+            );
+
+            group.bench_with_input(
+                format!("VERIFY {} | {}", poly_count, poly_deg),
+                ref_tuple,
+                |b, &(ref _djb, ref _poly, ref z, ref ver_param, ref pk, ref c, ref v, ref p)| {
+                    b.iter(|| DJBA21::verify(&c, &pk, &p, &z, &v, *ver_param));
                 },
             );
         }
