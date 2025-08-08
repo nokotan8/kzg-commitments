@@ -189,7 +189,7 @@ fn djba21_benchmark_curve<Curve: Pairing>(c: &mut Criterion, id: String) {
 }
 
 fn djba21_benchmark_all(c: &mut Criterion) {
-    // djba21_benchmark_curve::<Bls12_381>(c, "djba21-bls12381".to_string());
+    djba21_benchmark_curve::<Bls12_381>(c, "djba21-bls12381".to_string());
     djba21_benchmark_curve::<Bn254>(c, "djba21-bn254".to_string());
     djba21_benchmark_curve::<Bls12_377>(c, "djba21-bls12377".to_string());
 }
