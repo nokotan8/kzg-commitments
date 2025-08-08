@@ -65,7 +65,7 @@ fn djba21_helper<Curve: Pairing>(
 
     let v = djb.evaluate(&poly, &z);
 
-    let p = djb.open(&pk, &poly, &z, &v, ver_param);
+    let p = djb.open(&pk, &poly, &z, &v, &ver_param);
 
     // let res = DJBA21::verify(&c, &pk, &p, &z, &v, ver_param);
 
@@ -100,7 +100,7 @@ fn djba21_benchmark_curve<Curve: Pairing>(c: &mut Criterion, id: String) {
                 format!("OPEN {} | {}", poly_count, poly_deg),
                 ref_tuple,
                 |b, &(ref djb, ref poly, ref z, ref ver_param, ref pk, ref _c, ref v, ref _p)| {
-                    b.iter(|| djb.open(&pk, &poly, &z, &v, *ver_param));
+                    b.iter(|| djb.open(&pk, &poly, &z, &v, &ver_param));
                 },
             );
 
@@ -108,7 +108,7 @@ fn djba21_benchmark_curve<Curve: Pairing>(c: &mut Criterion, id: String) {
                 format!("VERIFY {} | {}", poly_count, poly_deg),
                 ref_tuple,
                 |b, &(ref _djb, ref _poly, ref z, ref ver_param, ref pk, ref c, ref v, ref p)| {
-                    b.iter(|| DJBA21::verify(&c, &pk, &p, &z, &v, *ver_param));
+                    b.iter(|| DJBA21::verify(&c, &pk, &p, &z, &v, &ver_param));
                 },
             );
         }
@@ -135,7 +135,7 @@ fn djba21_benchmark_curve<Curve: Pairing>(c: &mut Criterion, id: String) {
                 format!("OPEN {} | {}", poly_count, poly_deg),
                 ref_tuple,
                 |b, &(ref djb, ref poly, ref z, ref ver_param, ref pk, ref _c, ref v, ref _p)| {
-                    b.iter(|| djb.open(&pk, &poly, &z, &v, *ver_param));
+                    b.iter(|| djb.open(&pk, &poly, &z, &v, &ver_param));
                 },
             );
 
@@ -143,14 +143,14 @@ fn djba21_benchmark_curve<Curve: Pairing>(c: &mut Criterion, id: String) {
                 format!("VERIFY {} | {}", poly_count, poly_deg),
                 ref_tuple,
                 |b, &(ref _djb, ref _poly, ref z, ref ver_param, ref pk, ref c, ref v, ref p)| {
-                    b.iter(|| DJBA21::verify(&c, &pk, &p, &z, &v, *ver_param));
+                    b.iter(|| DJBA21::verify(&c, &pk, &p, &z, &v, &ver_param));
                 },
             );
         }
     }
 
     // // 256 - 1028
-    group.sample_size(25);
+    group.sample_size(100);
     for &poly_count in &poly_count_vals[8..] {
         for &poly_deg in &poly_deg_vals {
             let (djb, poly, z, ver_param, pk, c, v, p) =
@@ -170,7 +170,7 @@ fn djba21_benchmark_curve<Curve: Pairing>(c: &mut Criterion, id: String) {
                 format!("OPEN {} | {}", poly_count, poly_deg),
                 ref_tuple,
                 |b, &(ref djb, ref poly, ref z, ref ver_param, ref pk, ref _c, ref v, ref _p)| {
-                    b.iter(|| djb.open(&pk, &poly, &z, &v, *ver_param));
+                    b.iter(|| djb.open(&pk, &poly, &z, &v, &ver_param));
                 },
             );
 
@@ -178,7 +178,7 @@ fn djba21_benchmark_curve<Curve: Pairing>(c: &mut Criterion, id: String) {
                 format!("VERIFY {} | {}", poly_count, poly_deg),
                 ref_tuple,
                 |b, &(ref _djb, ref _poly, ref z, ref ver_param, ref pk, ref c, ref v, ref p)| {
-                    b.iter(|| DJBA21::verify(&c, &pk, &p, &z, &v, *ver_param));
+                    b.iter(|| DJBA21::verify(&c, &pk, &p, &z, &v, &ver_param));
                 },
             );
         }
