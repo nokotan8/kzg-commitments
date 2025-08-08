@@ -136,7 +136,10 @@ impl<E: Pairing> PolyCommit<E> for DJBA21<E> {
 
         // println!("ZT EVALUATION: {:?}", now.elapsed());
 
+
+        // let now = Instant::now();
         let mut w_partial = DensePolynomial::from_coefficients_vec(f) / zt.clone();
+        // println!("DIVISION: {:?}", now.elapsed());
 
         // let now = Instant::now();
         let W = eval_poly_over_g1::<E>(&w_partial, &pk.g1);
