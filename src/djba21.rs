@@ -123,10 +123,17 @@ impl<E: Pairing> PolyCommit<E> for DJBA21<E> {
         }
 
         // let now = Instant::now();
-        let mut zt = DensePolynomial::from_coefficients_slice(&[E::ScalarField::ONE]);
-        for val in z {
-            zt = zt * DensePolynomial::from_coefficients_slice(&[val.neg(), E::ScalarField::ONE]);
+        let mut ztVec: Vec<DensePolynomial<E::ScalarField>> = z.iter().map(|v| DensePolynomial::from_coefficients_slice(&[v.neg(), E::ScalarField::ONE])).collect();
+        let mut accum = 2;
+        for i in 0..z.len().ilog2() {
+            for j in 0..(z.len()/accum) {
+                ztVec[j] = ztVec[2*j].clone() * ztVec[2*j+1].clone();
+            }
+            accum *= 2;
         }
+
+        let zt = ztVec[0].clone();
+
         // println!("ZT EVALUATION: {:?}", now.elapsed());
 
         let mut w_partial = DensePolynomial::from_coefficients_vec(f) / zt.clone();

@@ -10,10 +10,10 @@ fn main() {
     let mut rng = test_rng();
     rng.r#gen::<i32>();
 
-    let t = 128;
-    let d = 256;
-    // let t = 256;
-    // let d = 512;
+    // let t = 128;
+    // let d = 256;
+    let t = 256;
+    let d = 512;
     // let t = 1024;
     // let d = 2048;
     
