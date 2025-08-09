@@ -67,10 +67,9 @@ impl <E: Pairing> PolyCommit<E> for GWC19<E> {
         for i in 0..z.len() {
             let mut h = DensePolynomial { coeffs: vec![E::ScalarField::zero()] };
             for j in 0..poly.len() {
-                let f_x = &poly[i];
-                let f_z = DensePolynomial::from_coefficients_slice(&[v[j][i]]);
-                let x_minus_z = DensePolynomial::from_coefficients_slice(&[-z[i], E::ScalarField::ONE]);
-                let (quot, _rem) = DenseOrSparsePolynomial::from(f_x - f_z).divide_with_q_and_r(&DenseOrSparsePolynomial::from(x_minus_z)).unwrap();
+                let f_x = &poly[j];
+                let f_z = v[j][i];
+                let (quot, _rem) = DenseOrSparsePolynomial::from(f_x - DensePolynomial::from_coefficients_slice(&[f_z])).divide_with_q_and_r(&DenseOrSparsePolynomial::from(DensePolynomial::from_coefficients_slice(&[-z[i], E::ScalarField::ONE]))).unwrap();
                 h = h + quot * ver_params[i].pow(&[j as u64]);
             }
         
@@ -78,7 +77,7 @@ impl <E: Pairing> PolyCommit<E> for GWC19<E> {
             for i in 0..h.degree() {
                 c += pk.g1_vec[i].mul(h.coeffs[i]);
             }
-            
+
             proofs.push(c);
         }
 

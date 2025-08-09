@@ -88,7 +88,7 @@ impl <E: Pairing> PolyCommit<E> for KZG10<E> {
                 let x_minus_y = DensePolynomial::from_coefficients_slice(&[-y, E::ScalarField::ONE]);
 
                 let (quot, _rem) = DenseOrSparsePolynomial::from(phi_x_minus_phi_y).divide_with_q_and_r(&DenseOrSparsePolynomial::from(x_minus_y)).unwrap();
-
+                println!("{:?}", _rem);
                 let mut c = E::G1::zero();
                 for i in 0..quot.coeffs.len() {
                     c += pk.g1_vec[i].mul(quot.coeffs[i]);

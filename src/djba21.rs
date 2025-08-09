@@ -18,9 +18,9 @@ pub struct DJBA21<E: Pairing> {
 
 #[derive(Debug,Clone)]
 pub struct DJBA21_PK<E: Pairing> {
-    g1: Vec<E::G1>,
-    g2_one: E::G2,
-    g2_x: E::G2,
+    pub g1: Vec<E::G1>,
+    pub g2_one: E::G2,
+    pub g2_x: E::G2,
 }
 
 
@@ -58,6 +58,7 @@ impl<E: Pairing> PolyCommit<E> for DJBA21<E> {
         let g = E::G1::rand(&mut test_rng());
 
         for i in 0..(max_deg + 1) {
+            //g_1^{sk^i}
             self.pk.g1.push(g.mul(self.sk.pow(&[i as u64])));
         }
 
@@ -81,9 +82,10 @@ impl<E: Pairing> PolyCommit<E> for DJBA21<E> {
     fn evaluate(&self, poly: &[DensePolynomial<E::ScalarField>], z: &[E::ScalarField]) -> Vec<Self::Evaluation> {
         let mut ret = Vec::new();
         let mut points = Vec::new();
+
         for p in poly {
-            for x in z {
-                points.push((*x, p.evaluate(x)));
+            for point in z {
+                points.push((*point, p.evaluate(point)));
             }
 
             ret.push(lagrange_interpolate::<E>(points.as_slice()));
@@ -94,13 +96,9 @@ impl<E: Pairing> PolyCommit<E> for DJBA21<E> {
 
 
     fn open(&self, pk: &Self::PK, poly: &[DensePolynomial<E::ScalarField>], z: &[E::ScalarField], v: &[Self::Evaluation], ver_params: &Self::VerifierParams) -> Self::Proof {
-        // let mut f = DensePolynomial::from_coefficients_vec(vec![E::ScalarField::ZERO; poly[0].degree()+1]);
-        // let mut L = DensePolynomial::from_coefficients_vec(vec![E::ScalarField::ZERO; poly[0].degree()+1]);
-
         let mut f = vec![E::ScalarField::ZERO; poly[0].degree()+1];
         let mut L = vec![E::ScalarField::ZERO; poly[0].degree()+1];
 
-        // use std::time::Instant;
         let mut accum = E::ScalarField::ONE;
         for i in 0..z.len() {
             // f = f + poly[i].clone() * accum;
@@ -122,7 +120,6 @@ impl<E: Pairing> PolyCommit<E> for DJBA21<E> {
             accum *= ver_params.0;
         }
 
-        // let now = Instant::now();
         let mut ztVec: Vec<DensePolynomial<E::ScalarField>> = z.iter().map(|v| DensePolynomial::from_coefficients_slice(&[v.neg(), E::ScalarField::ONE])).collect();
         let mut accum = 2;
         for i in 0..z.len().ilog2() {
@@ -134,29 +131,20 @@ impl<E: Pairing> PolyCommit<E> for DJBA21<E> {
 
         let zt = ztVec[0].clone();
 
-        // println!("ZT EVALUATION: {:?}", now.elapsed());
 
-
-        // let now = Instant::now();
         let mut w_partial = DensePolynomial::from_coefficients_vec(f) / zt.clone();
-        // println!("DIVISION: {:?}", now.elapsed());
 
-        // let now = Instant::now();
         let W = eval_poly_over_g1::<E>(&w_partial, &pk.g1);
-        // println!("SECTION 1: {:?}", now.elapsed());
 
         w_partial = w_partial * zt.evaluate(&ver_params.1);
 
-        // L = L - w_partial;
         for (j, c) in w_partial.coeffs().iter().enumerate() {
             L[j] -= c;
         }
 
         let mut L = DensePolynomial::from_coefficients_vec(L);
 
-        // let now = Instant::now();
         L = L / DensePolynomial::from_coefficients_slice(&[ver_params.1.neg(), E::ScalarField::ONE]);
-        // println!("DIVISION: {:?}", now.elapsed());
 
         let Wp = eval_poly_over_g1::<E>(&L, &pk.g1);
         

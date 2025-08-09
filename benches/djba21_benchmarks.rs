@@ -79,13 +79,13 @@ fn djba21_benchmark_curve<Curve: Pairing>(c: &mut Criterion, id: String) {
 
     let mut group = c.benchmark_group(id);
 
+    let (djb, poly, z, ver_param, pk, c, v, p) =
+        djba21_helper::<Curve>(poly_count_vals.last(), poly_deg.last());
+
     // 1 - 16
     group.sample_size(100);
     for &poly_count in &poly_count_vals[0..5] {
         for &poly_deg in &poly_deg_vals {
-            let (djb, poly, z, ver_param, pk, c, v, p) =
-                djba21_helper::<Curve>(poly_count, poly_deg);
-
             let ref_tuple = &(djb, poly, z, ver_param, pk, c, v, p);
 
             group.bench_with_input(
@@ -119,7 +119,6 @@ fn djba21_benchmark_curve<Curve: Pairing>(c: &mut Criterion, id: String) {
     for &poly_count in &poly_count_vals[5..8] {
         for &poly_deg in &poly_deg_vals {
             let (djb, poly, z, ver_param, pk, c, v, p) =
-                djba21_helper::<Curve>(poly_count, poly_deg);
 
             let ref_tuple = &(djb, poly, z, ver_param, pk, c, v, p);
 
@@ -153,8 +152,6 @@ fn djba21_benchmark_curve<Curve: Pairing>(c: &mut Criterion, id: String) {
     group.sample_size(100);
     for &poly_count in &poly_count_vals[8..] {
         for &poly_deg in &poly_deg_vals {
-            let (djb, poly, z, ver_param, pk, c, v, p) =
-                djba21_helper::<Curve>(poly_count, poly_deg);
 
             let ref_tuple = &(djb, poly, z, ver_param, pk, c, v, p);
 

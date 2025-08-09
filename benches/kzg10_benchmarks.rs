@@ -61,11 +61,7 @@ fn kzg10_helper<Curve: Pairing>(
 
     let p = kzg.open(&pk, &poly, &z, &v, &());
 
-<<<<<<< HEAD
-    KZG10::verify(&c, &pk, &p, &z, &v, &())
-=======
     return (kzg, poly, z, pk, c, v, p);
->>>>>>> ffff88b4d3f9ff237767da5e9f08e1e6ae0de55a
 }
 
 fn kzg10_benchmark_curve<Curve: Pairing>(cr: &mut Criterion, id: String) {
