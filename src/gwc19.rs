@@ -37,7 +37,7 @@ impl <E: Pairing> PolyCommit<E> for GWC19<E> {
         let g2 = E::G2::rand(&mut test_rng());
         let mut g1_vec = vec![];
         self.max_deg = max_deg;
-        for i in 0..(max_deg + 1) {
+        for i in 0..=max_deg {
             g1_vec.push(g1.mul(sk.pow(&[i as u64])));
         };
         (Self::PK {g1_vec: g1_vec, g2_1: g2, g2_x: g2.mul(sk)}, sk)
