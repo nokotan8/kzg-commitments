@@ -67,7 +67,7 @@ pub fn benchmark_poly_commit_with_curve<E: Pairing, PC: PolyCommit<E>> (
 
     let points = point_generator::<E>(max_point_count, &mut rng);
 
-    let mut group = c.benchmark_group(String::new() + pairing_name + " " + curve_name);
+    let mut group = c.benchmark_group(String::new() + pairing_name + "-" + curve_name);
 
     let pairs = (0..poly_deg.len()).flat_map(|y| (0..poly_count.len()).map(move |x| (x, y)));
     
@@ -85,15 +85,30 @@ pub fn benchmark_poly_commit_with_curve<E: Pairing, PC: PolyCommit<E>> (
         let v = pc.evaluate(poly, z);
         let p = pc.open(&pk, poly, z, &v, &ver_params);
 
-        let ref_tuple = (pc, poly, z, ver_params, pk, c, v, p);
+        let ref_tuple = (&pc, &poly, &z, &ver_params, &pk, &c, &v, &p);
 
         group.bench_with_input(
             format!("COMMIT {} | {}", count, deg),
             &ref_tuple,
-            |b, &(ref djb, ref poly, ref _z, ref _ver_param, ref pk, ref _c, ref _v, ref _p)| {
+            |b, (djb,  poly,  _z, _ver_param, pk, _c, _v, _p)| {
                 b.iter(|| djb.commit(&pk, &poly));
             },
         );
-        
+
+        group.bench_with_input(
+            format!("OPEN {} | {}", count, deg),
+            &ref_tuple,
+            |b, (djb,  poly,  z, ver_params, pk, _c, v, _p)| {
+                b.iter(|| djb.open(&pk, &poly, &z, &v, &ver_params));
+            },
+        );
+
+        group.bench_with_input(
+            format!("VERIFY {} | {}", count, deg),
+            &ref_tuple,
+            |b, (_djb, _poly, z, ver_params, pk, _c, v, p)| {
+                b.iter(|| PC::verify(&c, &pk, &p, &z, &v, &ver_params));
+            },
+        );
     }
 }
