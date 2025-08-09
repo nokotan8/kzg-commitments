@@ -123,7 +123,7 @@ pub fn benchmark_poly_commit_with_curve<E: Pairing, P: PolyCommit<E>> (
         group.bench_with_input(
             format!("VERIFY {} | {}", count, deg),
             &ref_tuple,
-            |b, (_djb, _poly, z, ver_params, pk, _c, v, p)| {
+            |b, (_djb, _poly, z, ver_params, pk, c, v, p)| {
                 b.iter(|| P::verify(&c, &pk, &p, &z, &v, &ver_params));
             },
         );
