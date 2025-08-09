@@ -17,7 +17,9 @@ fn b_kzg10_bls12381(c: &mut Criterion) {
         "bls12381", 
         &KZG10::<Bls12_381>::new, 
         &|_|(),
-        &mut test_rng()
+        &mut test_rng(),
+        64,
+        64
     );
 }
 
@@ -28,7 +30,9 @@ fn b_kzg10_bls12377(c: &mut Criterion) {
         "bls12377", 
         &KZG10::<Bls12_377>::new, 
         &|_|(),
-        &mut test_rng()
+        &mut test_rng(),
+        64,
+        64
     );
 }
 
@@ -39,7 +43,9 @@ fn b_kzg10_bn254(c: &mut Criterion) {
         "bn254", 
         &KZG10::<Bn254>::new, 
         &|_|(),
-        &mut test_rng()
+        &mut test_rng(),
+        64,
+        64
     );
 }
 

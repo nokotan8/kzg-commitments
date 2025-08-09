@@ -47,7 +47,9 @@ pub fn benchmark_poly_commit_with_curve<E: Pairing, PC: PolyCommit<E>> (
     curve_name: &str,
     pc_new: &dyn Fn() -> PC, 
     verifier_init: &dyn Fn(usize) -> PC::VerifierParams,
-    mut rng: impl Rng
+    mut rng: impl Rng,
+    max_deg: usize,
+    max_count: usize,
 ) {
     let poly_deg = [8, 16, 32, 64, 128, 256];
     let poly_count = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024];
@@ -77,6 +79,9 @@ pub fn benchmark_poly_commit_with_curve<E: Pairing, PC: PolyCommit<E>> (
         group.sample_size(poly_count_grp_size[count_index]);
         let deg = poly_deg[degree_index];
         let count = poly_count[count_index];
+        if deg > max_deg || count > max_count {
+            continue;
+        }
         let poly_of_deg = &poly_by_deg[degree_index];
         let poly = &poly_of_deg[0..count];
         let z = &points[0..count];

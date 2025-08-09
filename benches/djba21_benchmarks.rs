@@ -23,7 +23,9 @@ fn b_djba21_bls12381(c: &mut Criterion) {
         "bls12381", 
         &DJBA21::<Bls12_381>::new, 
         &verifier_init,
-        &mut test_rng()
+        &mut test_rng(),
+        256,
+        1024
     );
 }
 
@@ -39,7 +41,9 @@ fn b_djba21_bls12377(c: &mut Criterion) {
         "bls12377", 
         &DJBA21::<Bls12_377>::new, 
         &verifier_init,
-        &mut test_rng()
+        &mut test_rng(),
+        256,
+        1024
     );
 }
 
@@ -55,7 +59,9 @@ fn b_djba21_bn254(c: &mut Criterion) {
         "bn254", 
         &DJBA21::<Bn254>::new, 
         &verifier_init,
-        &mut test_rng()
+        &mut test_rng(),
+        256,
+        1024
     );
 }
 

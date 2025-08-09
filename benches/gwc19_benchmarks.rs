@@ -22,7 +22,9 @@ fn b_gwc19_bls12381(c: &mut Criterion) {
         "bls12381", 
         &GWC19::<Bls12_381>::new, 
         &verifier_init,
-        &mut test_rng()
+        &mut test_rng(),
+        256,
+        512
     );
 }
 
@@ -37,7 +39,9 @@ fn b_gwc19_bls12377(c: &mut Criterion) {
         "bls12377", 
         &GWC19::<Bls12_377>::new, 
         &verifier_init,
-        &mut test_rng()
+        &mut test_rng(),
+        256,
+        512
     );
 }
 
@@ -52,7 +56,9 @@ fn b_gwc19_bn254(c: &mut Criterion) {
         "bn254", 
         &GWC19::<Bn254>::new, 
         &verifier_init,
-        &mut test_rng()
+        &mut test_rng(),
+        256,
+        512
     );
 }
 
