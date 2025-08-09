@@ -1,13 +1,15 @@
 use ark_ec::pairing::Pairing;
 use ark_poly::univariate::DensePolynomial;
 
-/// Generic trait which implements the interface for a batched polynomial commitment. Instances of
-/// the class should be instantiated by the prover, and the verifier only needs to use the `verify`
-/// function.
+/// Generic trait which implements the interface for a batched polynomial commitment.
+/// Instances of the class should be instantiated by the prover, and the verifier only
+/// needs to use the `verify` function.
 ///
 /// Importantly for our applications, the number of polynomials committed to and the number
 /// of points must be the same. Providing a differing number of polynomials and points is
-/// considered a logic error.
+/// considered a logic error. Additionally, the degrees of the polynomials, as well
+/// as the number of points and polynomials committed to, must be powers of 2. It is
+/// a logic error for this to not be the case.
 ///
 pub trait PolyCommit<E: Pairing> {
     /// Public key
