@@ -7,7 +7,7 @@ use ark_ec::AdditiveGroup;
 use std::ops::Mul;
 use std::ops::Neg;
 
-use crate::utils::poly::{eval_poly_over_g1, lagrange_interpolate, multipoint_eval, multipoint_eval_preproc};
+use crate::utils::poly::{eval_poly_over_g1, lagrange_interpolate};
 
 #[derive(Debug)]
 pub struct DJBA21<E: Pairing> {
