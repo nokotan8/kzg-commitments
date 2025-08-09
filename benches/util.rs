@@ -40,31 +40,24 @@ pub fn point_generator<E: Pairing>(
     z
 }
 
-
-pub fn benchmark_poly_commit_with_curve<E: Pairing, PC: PolyCommit<E>> (
+pub fn benchmark_poly_commit_with_curve<E: Pairing, P: PolyCommit<E>> (
     c: &mut Criterion,
     pairing_name: &str,
     curve_name: &str,
-    pc_new: &dyn Fn() -> PC, 
-    verifier_init: &dyn Fn(usize) -> PC::VerifierParams,
+    verifier_init: &dyn Fn(usize) -> P::VerifierParams,
     mut rng: impl Rng,
-    max_deg: usize,
-    max_count: usize,
-) {
-    let poly_deg = [8, 16, 32, 64, 128, 256];
-    let poly_count = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024];
-    let poly_count_grp_size = [100, 100, 100, 100, 100, 50, 50, 50, 25, 25, 25];
-    
-    let mut max_poly_count = 0;
-    for v in poly_deg {
-        max_poly_count = max(max_poly_count, v);
+    poly_deg: &[usize],
+    poly_count: &[(usize, usize)],
+) {    
+    let mut max_poly_deg = 0;
+    for &v in poly_deg {
+        max_poly_deg = max(max_poly_deg, v);
     }
-    let max_poly_deg = max_poly_count;
     let mut max_point_count = 0;
-    for v in poly_count {
+    for &(v, _) in poly_count {
         max_point_count = max(max_point_count, v);
     }
-
+    let max_poly_count = max_point_count;
     let poly_by_deg = poly_generator_by_degree::<E>(max_poly_count, &poly_deg, &mut rng);
 
     let points = point_generator::<E>(max_point_count, &mut rng);
@@ -74,12 +67,12 @@ pub fn benchmark_poly_commit_with_curve<E: Pairing, PC: PolyCommit<E>> (
     let pairs = (0..poly_deg.len()).flat_map(|y| (0..poly_count.len()).map(move |x| (x, y)));
     
     for (count_index, degree_index) in pairs {
-        let mut pc = pc_new();
+        let mut pc = P::new();
         let (pk, _sk) = pc.setup(max_poly_deg);
-        group.sample_size(poly_count_grp_size[count_index]);
+        group.sample_size(poly_count[count_index].1);
         let deg = poly_deg[degree_index];
-        let count = poly_count[count_index];
-        if deg > max_deg || count > max_count {
+        let count = poly_count[count_index].0;
+        if deg > max_poly_deg || count > max_poly_count {
             continue;
         }
         let poly_of_deg = &poly_by_deg[degree_index];
@@ -112,7 +105,7 @@ pub fn benchmark_poly_commit_with_curve<E: Pairing, PC: PolyCommit<E>> (
             format!("VERIFY {} | {}", count, deg),
             &ref_tuple,
             |b, (_djb, _poly, z, ver_params, pk, _c, v, p)| {
-                b.iter(|| PC::verify(&c, &pk, &p, &z, &v, &ver_params));
+                b.iter(|| P::verify(&c, &pk, &p, &z, &v, &ver_params));
             },
         );
     }
