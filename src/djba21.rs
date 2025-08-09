@@ -13,7 +13,6 @@ use crate::utils::poly::{eval_poly_over_g1, lagrange_interpolate};
 /// described in [this paper](https://eprint.iacr.org/2020/081.pdf).
 #[derive(Debug)]
 pub struct DJBA21<E: Pairing> {
-    sk: E::ScalarField,
     max_deg: usize,
     pk: DJBA21_PK<E>,
 }
@@ -50,7 +49,6 @@ impl<E: Pairing> PolyCommit<E> for DJBA21<E> {
 
     fn new() -> Self {
         Self {
-            sk: E::ScalarField::ZERO,
             max_deg: 0,
             pk: Self::PK {
                 g1: Vec::new(),
@@ -63,20 +61,20 @@ impl<E: Pairing> PolyCommit<E> for DJBA21<E> {
     /// Initialises the public key parameters by as described in the paper,
     /// for polynomials of degree up to `max_deg`.
     fn setup(&mut self, max_deg: usize) -> (Self::PK, Self::SK) {
-        self.sk = E::ScalarField::rand(&mut test_rng());
+        let sk = E::ScalarField::rand(&mut test_rng());
         self.max_deg = max_deg;
         
         let g = E::G1::rand(&mut test_rng());
 
         for i in 0..(max_deg + 1) {
             //g_1^{sk^i}
-            self.pk.g1.push(g.mul(self.sk.pow(&[i as u64])));
+            self.pk.g1.push(g.mul(sk.pow(&[i as u64])));
         }
 
         self.pk.g2_one = E::G2::rand(&mut test_rng());
-        self.pk.g2_x = self.pk.g2_one.mul(self.sk);
+        self.pk.g2_x = self.pk.g2_one.mul(sk);
 
-        (self.pk.clone(), self.sk)
+        (self.pk.clone(), sk)
     }
 
     /// Commits to the polynomials in `poly`, yields one element of G_1 per
