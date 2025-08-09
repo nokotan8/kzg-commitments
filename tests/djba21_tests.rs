@@ -1,26 +1,11 @@
+mod util;
+
 use ark_bls12_381::{Bls12_381, Fr};
 use ark_ff::UniformRand;
-use ark_poly::{DenseUVPolynomial, univariate::DensePolynomial};
 use ark_std::test_rng;
 use kzg_commitments::djba21::{DJBA21, DJBA21_PK};
 use kzg_commitments::poly_commit::PolyCommit;
-use ark_std::rand::Rng;
-
-fn poly_generator(poly_count: usize, poly_deg: usize, rng: &mut impl Rng) -> Vec<DensePolynomial<Fr>> {
-    let mut poly = vec![];
-    for _ in 0..poly_count {
-        poly.push(DensePolynomial::<Fr>::rand(poly_deg, rng));
-    }
-    poly
-}
-
-fn point_generator(point_count: usize, rng: &mut impl Rng) -> Vec<Fr> {
-    let mut z: Vec<Fr> = vec![];
-    for _ in 0..point_count {
-        z.push(Fr::rand(rng));
-    }
-    z
-}
+use util::{point_generator, poly_generator};
 
 fn djba21_helper(poly_count: usize, poly_deg: usize, point_count: usize) -> bool {
     let mut rng = test_rng();
@@ -29,7 +14,7 @@ fn djba21_helper(poly_count: usize, poly_deg: usize, point_count: usize) -> bool
 
     let z = point_generator(point_count, &mut rng);
 
-    let ver_param = (Fr::rand(&mut rng), Fr::rand(&mut rng));
+    let ver_params = (Fr::rand(&mut rng), Fr::rand(&mut rng));
 
     let mut djba = DJBA21::<Bls12_381>::new();
 
@@ -39,9 +24,9 @@ fn djba21_helper(poly_count: usize, poly_deg: usize, point_count: usize) -> bool
 
     let v = djba.evaluate(&poly, &z);
 
-    let p = djba.open(&pk, &poly, &z, &v, &ver_param);
+    let p = djba.open(&pk, &poly, &z, &v, &ver_params);
 
-    DJBA21::verify(&c, &pk, &p, &z, &v, &ver_param)
+    DJBA21::verify(&c, &pk, &p, &z, &v, &ver_params)
 }
 
 #[test]
@@ -96,30 +81,30 @@ pub fn test() {
     let v = djba.evaluate(&poly, &z);
     let v_ = djba.evaluate(&poly_, &z);
 
-    let ver_param = (Fr::rand(&mut rng), Fr::rand(&mut rng));
-    let ver_param_ = (Fr::rand(&mut rng), Fr::rand(&mut rng));
+    let ver_params = (Fr::rand(&mut rng), Fr::rand(&mut rng));
+    let ver_params_ = (Fr::rand(&mut rng), Fr::rand(&mut rng));
 
-    let p = djba.open(&pk, &poly, &z, &v, &ver_param);
-    let p_ = djba.open(&pk, &poly, &z_, &v, &ver_param);
+    let p = djba.open(&pk, &poly, &z, &v, &ver_params);
+    let p_ = djba.open(&pk, &poly, &z_, &v, &ver_params);
 
-    let b = DJBA21::verify(&c, &pk, &p, &z, &v, &ver_param);
+    let b = DJBA21::verify(&c, &pk, &p, &z, &v, &ver_params);
     assert_eq!(b, true);
     
-    let b_ = DJBA21::verify(&c_, &pk, &p, &z, &v, &ver_param);
+    let b_ = DJBA21::verify(&c_, &pk, &p, &z, &v, &ver_params);
     assert_eq!(b_, false);
     
-    let b_ = DJBA21::verify(&c, &pk_, &p, &z, &v, &ver_param);
+    let b_ = DJBA21::verify(&c, &pk_, &p, &z, &v, &ver_params);
     assert_eq!(b_, false);
 
-    let b_ = DJBA21::verify(&c, &pk, &p_, &z, &v, &ver_param);
+    let b_ = DJBA21::verify(&c, &pk, &p_, &z, &v, &ver_params);
     assert_eq!(b_, false);
 
-    let b_ = DJBA21::verify(&c, &pk, &p, &z_, &v, &ver_param);
+    let b_ = DJBA21::verify(&c, &pk, &p, &z_, &v, &ver_params);
     assert_eq!(b_, false);
 
-    let b_ = DJBA21::verify(&c, &pk, &p, &z, &v_, &ver_param);
+    let b_ = DJBA21::verify(&c, &pk, &p, &z, &v_, &ver_params);
     assert_eq!(b_, false);
 
-    let b_ = DJBA21::verify(&c, &pk, &p, &z, &v, &ver_param_);
+    let b_ = DJBA21::verify(&c, &pk, &p, &z, &v, &ver_params_);
     assert_eq!(b_, false);
 }
