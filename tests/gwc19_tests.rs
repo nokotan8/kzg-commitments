@@ -48,22 +48,22 @@ pub fn basic_gwc19_test() {
     let mut b;
     
     b = GWC19::verify(&c, &pk, &p, &z, &v, &ver_params);
-    // assert_eq!(b, true);
+    assert_eq!(b, true);
     
     b = GWC19::verify(&c_, &pk, &p, &z, &v, &ver_params);
-    // assert_eq!(b, false);
+    assert_eq!(b, false);
     
     b = GWC19::verify(&c, &pk_, &p, &z, &v, &ver_params);
-    // assert_eq!(b, false);
+    assert_eq!(b, false);
     
     b = GWC19::verify(&c, &pk, &p_, &z, &v, &ver_params);
-    // assert_eq!(b, false);
+    assert_eq!(b, false);
     
     b = GWC19::verify(&c, &pk, &p, &z_, &v, &ver_params);
-    // assert_eq!(b, false);
+    assert_eq!(b, false);
     
     b = GWC19::verify(&c, &pk, &p, &z, &v_, &ver_params);
-    // assert_eq!(b, false);
+    assert_eq!(b, false);
     
     b = GWC19::verify(&c, &pk, &p, &z, &v, &ver_params_);
     assert_eq!(b, false);

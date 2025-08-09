@@ -42,6 +42,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "862ed96ca487e809f1c8e5a8447f6ee2cf102f846893800b20cebdf541fc6bbd"
 
 [[package]]
+name = "ark-bls12-377"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bfedac3173d12820a5e0d6cd4de31b49719a74f4a41dc09b6652d0276a3b2cd4"
+dependencies = [
+ "ark-ec",
+ "ark-ff",
+ "ark-std",
+]
+
+[[package]]
 name = "ark-bls12-381"
 version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -50,6 +61,17 @@ dependencies = [
  "ark-ec",
  "ark-ff",
  "ark-serialize",
+ "ark-std",
+]
+
+[[package]]
+name = "ark-bn254"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d69eab57e8d2663efa5c63135b2af4f396d66424f88954c21104125ab6b3e6bc"
+dependencies = [
+ "ark-ec",
+ "ark-ff",
  "ark-std",
 ]
 
@@ -433,7 +455,9 @@ dependencies = [
 name = "kzg-commitments"
 version = "0.1.0"
 dependencies = [
+ "ark-bls12-377",
  "ark-bls12-381",
+ "ark-bn254",
  "ark-ec",
  "ark-ff",
  "ark-poly",
