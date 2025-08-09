@@ -10,14 +10,14 @@ pub struct GWC19<E: Pairing> {
     _phantom: PhantomData<E>
 }
 
-pub struct GwcPK<E: Pairing> {
+pub struct GWC_PK<E: Pairing> {
     pub g1_vec: Vec<E::G1>,
     pub g2_1: E::G2,
     pub g2_x: E::G2
 }
 
 impl <E: Pairing> PolyCommit<E> for GWC19<E> {
-    type PK = GwcPK<E>;
+    type PK = GWC_PK<E>;
     type SK = E::ScalarField;
     type Commitment = Vec<E::G1>;
     type Evaluation = Vec<E::ScalarField>;

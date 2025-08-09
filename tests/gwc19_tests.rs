@@ -3,7 +3,7 @@ mod util;
 use ark_bls12_381::Bls12_381;
 use ark_ff::UniformRand;
 use ark_std::test_rng;
-use kzg_commitments::gwc19::{GWC19, GwcPK};
+use kzg_commitments::gwc19::{GWC19, GWC_PK};
 use kzg_commitments::poly_commit::PolyCommit;
 use util::{point_generator, poly_generator};
 
@@ -11,7 +11,7 @@ use util::{point_generator, poly_generator};
 pub fn basic_gwc19_test() {
     let mut rng = test_rng();
 
-    let t = 2;
+    let t = 8;
     let d = t;
     let max_deg = 128;
 
@@ -30,7 +30,7 @@ pub fn basic_gwc19_test() {
     type G2 = <ark_ec::models::bls12::Bls12<ark_bls12_381::Config> as ark_ec::pairing::Pairing>::G2;
 
     let (pk, _) = kzg.setup(max_deg);
-    let pk_ = GwcPK::<Bls12_381> {
+    let pk_ = GWC_PK::<Bls12_381> {
         g1_vec: vec![G1::rand(&mut rng); t],
         g2_1: G2::rand(&mut rng),
         g2_x: G2::rand(&mut rng),
@@ -48,22 +48,22 @@ pub fn basic_gwc19_test() {
     let mut b;
     
     b = GWC19::verify(&c, &pk, &p, &z, &v, &ver_params);
-    // assert_eq!(b, true);
+    assert_eq!(b, true);
     
     b = GWC19::verify(&c_, &pk, &p, &z, &v, &ver_params);
-    // assert_eq!(b, false);
+    assert_eq!(b, false);
     
     b = GWC19::verify(&c, &pk_, &p, &z, &v, &ver_params);
-    // assert_eq!(b, false);
+    assert_eq!(b, false);
     
     b = GWC19::verify(&c, &pk, &p_, &z, &v, &ver_params);
-    // assert_eq!(b, false);
+    assert_eq!(b, false);
     
     b = GWC19::verify(&c, &pk, &p, &z_, &v, &ver_params);
-    // assert_eq!(b, false);
+    assert_eq!(b, false);
     
     b = GWC19::verify(&c, &pk, &p, &z, &v_, &ver_params);
-    // assert_eq!(b, false);
+    assert_eq!(b, false);
     
     b = GWC19::verify(&c, &pk, &p, &z, &v, &ver_params_);
     assert_eq!(b, false);

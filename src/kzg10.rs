@@ -10,22 +10,14 @@ pub struct KZG10<E: Pairing> {
     _phantom: PhantomData<E>
 }
 
-<<<<<<< HEAD
-pub struct KzgPK<E: Pairing> {
-=======
 pub struct KZG_PK<E: Pairing> {
->>>>>>> main
     pub g1_vec: Vec<E::G1>,
     pub g2_1: E::G2,
     pub g2_x: E::G2
 }
 
 impl <E: Pairing> PolyCommit<E> for KZG10<E> {
-<<<<<<< HEAD
-    type PK = KzgPK<E>;
-=======
     type PK = KZG_PK<E>;
->>>>>>> main
     type SK = E::ScalarField;
     type Commitment = Vec<E::G1>;
     type Evaluation = Vec<E::ScalarField>;
@@ -113,11 +105,7 @@ impl <E: Pairing> PolyCommit<E> for KZG10<E> {
         proofs
     }
 
-<<<<<<< HEAD
-    fn verify(c: &Self::Commitment, pk: &Self::PK, p: &Self::Proof, z: &[E::ScalarField], v: &[Self::Evaluation], _: &()) -> bool {
-=======
     fn verify(c: &Self::Commitment, pk: &Self::PK, p: &Self::Proof, z: &[E::ScalarField], v: &[Self::Evaluation], _ver_params: &()) -> bool {
->>>>>>> main
         for i in 0..c.len() {
             for j in 0..z.len() {
                 let lhs = E::pairing(c[i] - pk.g1_vec[0].mul(&v[i][j]), pk.g2_1);

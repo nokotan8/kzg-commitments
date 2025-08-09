@@ -3,7 +3,6 @@ use ark_ff::UniformRand;
 use ark_poly::{univariate::DensePolynomial, DenseUVPolynomial};
 use ark_std::{rand::Rng, test_rng};
 use ark_bls12_381::{Bls12_381, Fr};
-use kzg_commitments::utils::poly::{multipoint_eval, multipoint_eval_preproc};
 use ark_poly::Polynomial;
 
 use kzg_commitments::djba21::{DJBA21, DJBA21_PK};
