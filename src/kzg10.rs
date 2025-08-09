@@ -5,6 +5,8 @@ use ark_std::{test_rng, Zero};
 use ark_ec::pairing::{Pairing};
 use std::{marker::PhantomData, ops::Mul};
 
+use crate::utils::poly::eval_poly_over_g1;
+
 /// Struct for implementing the polynomial commitment scheme described in
 /// [this paper](https://iacr.org/archive/asiacrypt2010/6477178/6477178.pdf),
 /// with modifications made as per our report.
@@ -112,11 +114,7 @@ impl <E: Pairing> PolyCommit<E> for KZG10<E> {
 
                 let (quot, _rem) = DenseOrSparsePolynomial::from(phi_x_minus_phi_y).divide_with_q_and_r(&DenseOrSparsePolynomial::from(x_minus_y)).unwrap();
 
-                let mut c = E::G1::zero();
-                for i in 0..quot.coeffs.len() {
-                    c += pk.g1_vec[i].mul(quot.coeffs[i]);
-                }
-                poly_proofs.push(c);
+                poly_proofs.push(eval_poly_over_g1::<E>(&quot, &pk.g1_vec));
             }
             proofs.push(poly_proofs);
         }
