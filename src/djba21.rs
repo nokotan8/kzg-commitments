@@ -1,7 +1,7 @@
 use crate::poly_commit::{PolyCommit};
 use ark_ff::{UniformRand, Field};
-use ark_poly::{univariate::{DenseOrSparsePolynomial, DensePolynomial}, DenseUVPolynomial, Polynomial};
-use ark_std::{test_rng, Zero};
+use ark_poly::{univariate::DensePolynomial, DenseUVPolynomial, Polynomial};
+use ark_std::test_rng;
 use ark_ec::pairing::{Pairing};
 use ark_ec::AdditiveGroup;
 use std::ops::Mul;
