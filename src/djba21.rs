@@ -6,6 +6,7 @@ use ark_ec::pairing::{Pairing};
 use ark_ec::AdditiveGroup;
 use std::ops::Mul;
 use std::ops::Neg;
+use std::marker::PhantomData;
 
 use crate::utils::poly::{eval_poly_over_g1, lagrange_interpolate};
 
@@ -14,7 +15,7 @@ use crate::utils::poly::{eval_poly_over_g1, lagrange_interpolate};
 #[derive(Debug)]
 pub struct DJBA21<E: Pairing> {
     max_deg: usize,
-    pk: DJBA21_PK<E>,
+    _phantom: PhantomData<E>,
 }
 
 /// Struct which holds the PK information for DJBA21.
@@ -50,11 +51,7 @@ impl<E: Pairing> PolyCommit<E> for DJBA21<E> {
     fn new() -> Self {
         Self {
             max_deg: 0,
-            pk: Self::PK {
-                g1: Vec::new(),
-                g2_one: E::G2::ZERO,
-                g2_x: E::G2::ZERO,
-            }
+            _phantom: PhantomData,
         }
     }
 
@@ -66,15 +63,20 @@ impl<E: Pairing> PolyCommit<E> for DJBA21<E> {
         
         let g = E::G1::rand(&mut test_rng());
 
+        let mut pk = Self::PK {
+            g1: Vec::new(),
+            g2_one: E::G2::ZERO,
+            g2_x: E::G2::ZERO,
+        };
         for i in 0..(max_deg + 1) {
             //g_1^{sk^i}
-            self.pk.g1.push(g.mul(sk.pow(&[i as u64])));
+            pk.g1.push(g.mul(sk.pow(&[i as u64])));
         }
 
-        self.pk.g2_one = E::G2::rand(&mut test_rng());
-        self.pk.g2_x = self.pk.g2_one.mul(sk);
+        pk.g2_one = E::G2::rand(&mut test_rng());
+        pk.g2_x = pk.g2_one.mul(sk);
 
-        (self.pk.clone(), sk)
+        (pk, sk)
     }
 
     /// Commits to the polynomials in `poly`, yields one element of G_1 per
@@ -194,8 +196,8 @@ impl<E: Pairing> PolyCommit<E> for DJBA21<E> {
         (W, Wp)
     }
 
-    /// Verifies that the proof `p` is valid for the given parameters, and returns true if it is,
-    /// and false if it is not.
+    /// Verifies that the proof `p` is valid for the given parameters, and returns true
+    /// if it is, and false if it is not.
     ///
     /// The calculations carried out below are faithful to the equations
     /// presented in section 4.1 of the paper, and it is recommended this
