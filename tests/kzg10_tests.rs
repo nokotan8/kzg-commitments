@@ -14,6 +14,8 @@ fn kzg10_helper(poly_count: usize, poly_deg: usize, point_count: usize) -> bool 
 
     let z = point_generator(point_count, &mut rng);
 
+    let ver_params = ();
+
     let mut kzg = KZG10::<Bls12_381>::new();
 
     let (pk, _) = kzg.setup(poly_deg);
@@ -22,27 +24,24 @@ fn kzg10_helper(poly_count: usize, poly_deg: usize, point_count: usize) -> bool 
 
     let v = kzg.evaluate(&poly, &z);
 
-    let p = kzg.open(&pk, &poly, &z, &v, &());
+    let p = kzg.open(&pk, &poly, &z, &v, &ver_params);
 
-    KZG10::verify(&c, &pk, &p, &z, &v, &())
+    KZG10::verify(&c, &pk, &p, &z, &v, &ver_params)
 }
 
 #[test]
 fn kzg10_test() -> Result<(), ()> {
     let poly_deg_vals = [8, 16];
-    let poly_count_vals = [1, 2, 4, 8];
-    let point_count_vals = [1, 2, 4, 8];
+    let poly_count_vals = [1, 2, 4, 8, 16, 32];
 
     for &poly_count in &poly_count_vals {
         for &poly_deg in &poly_deg_vals {
-            for &point_count in &point_count_vals {
-                if !kzg10_helper(poly_count, poly_deg, point_count) {
-                    println!(
-                        "params: polys: {}, deg: {}, points: {}",
-                        poly_count, poly_deg, point_count
-                    );
-                    return Err(());
-                }
+            if !kzg10_helper(poly_count, poly_deg, poly_count) {
+                println!(
+                    "params: polys: {}, deg: {}, points: {}",
+                    poly_count, poly_deg, poly_count
+                );
+                return Err(());
             }
         }
     }

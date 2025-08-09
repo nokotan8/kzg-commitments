@@ -7,6 +7,48 @@ use kzg_commitments::gwc19::{GWC19, GWC_PK};
 use kzg_commitments::poly_commit::PolyCommit;
 use util::{point_generator, poly_generator};
 
+fn gwc19_helper(poly_count: usize, poly_deg: usize, point_count: usize) -> bool {
+    let mut rng = test_rng();
+    
+    let poly = poly_generator(poly_count, poly_deg, &mut rng);
+
+    let z = point_generator(point_count, &mut rng);
+    
+    let ver_params = point_generator(poly_count, &mut rng);
+
+    let mut kzg = GWC19::<Bls12_381>::new();
+
+    let (pk, _) = kzg.setup(poly_deg);
+
+    let c = kzg.commit(&pk, &poly);
+
+    let v = kzg.evaluate(&poly, &z);
+
+    let p = kzg.open(&pk, &poly, &z, &v, &ver_params);
+
+    GWC19::verify(&c, &pk, &p, &z, &v, &ver_params)
+}
+
+#[test]
+fn gwc19_test() -> Result<(), ()> {
+    let poly_deg_vals = [8, 16];
+    let poly_count_vals = [1, 2, 4, 8, 16, 32];
+
+    for &poly_count in &poly_count_vals {
+        for &poly_deg in &poly_deg_vals {
+            if !gwc19_helper(poly_count, poly_deg, poly_count) {
+                println!(
+                    "params: polys: {}, deg: {}, points: {}",
+                    poly_count, poly_deg, poly_count
+                );
+                return Err(());
+            }
+        }
+    }
+
+    return Ok(());
+}
+
 #[test]
 pub fn basic_gwc19_test() {
     let mut rng = test_rng();
