@@ -8,11 +8,15 @@ use std::ops::Mul;
 use std::ops::Neg;
 use std::collections::VecDeque;
 
+/// Utility function for evaluating a polynomial over G_1, in the sense of
+/// g^{p_0 + p_1 a + p_2 a^2 + ... p_t a^t}.
 #[inline(always)]
 pub fn eval_poly_over_g1<E: Pairing>(poly: &DensePolynomial<E::ScalarField>, srs: &Vec<E::G1>) -> E::G1 {
     poly.coeffs().iter().zip(srs.iter()).fold(E::G1::ZERO, |acc, (c, g)| acc + g.mul(c))
 }
 
+/// Performs lagrange interpolation for the points given in `points` over 
+/// `E::ScalarField`, and returns the polynomial.
 pub fn lagrange_interpolate<E: Pairing>(points: &[(E::ScalarField, E::ScalarField)]) ->DensePolynomial<E::ScalarField> {
 
     let mut ret = DensePolynomial::from_coefficients_slice(&[E::ScalarField::ZERO]);
