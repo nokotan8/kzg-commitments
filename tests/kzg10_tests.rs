@@ -1,28 +1,11 @@
-// use kzg_commitments::kzg_helpers::kzg10;
+mod util;
 
-use ark_bls12_381::{Bls12_381, Fr};
+use util::{poly_generator, point_generator};
+use ark_bls12_381::Bls12_381;
 use ark_ff::UniformRand;
-use ark_poly::{DenseUVPolynomial, univariate::DensePolynomial};
 use ark_std::test_rng;
 use kzg_commitments::kzg10::{KZG10, KZG_PK};
 use kzg_commitments::poly_commit::PolyCommit;
-use ark_std::rand::Rng;
-
-fn poly_generator(poly_count: usize, poly_deg: usize, rng: &mut impl Rng) -> Vec<DensePolynomial<Fr>> {
-    let mut poly = vec![];
-    for _ in 0..poly_count {
-        poly.push(DensePolynomial::<Fr>::rand(poly_deg, rng));
-    }
-    poly
-}
-
-fn point_generator(point_count: usize, rng: &mut impl Rng) -> Vec<Fr> {
-    let mut z: Vec<Fr> = vec![];
-    for _ in 0..point_count {
-        z.push(Fr::rand(rng));
-    }
-    z
-}
 
 fn kzg10_helper(poly_count: usize, poly_deg: usize, point_count: usize) -> bool {
     let mut rng = test_rng();
@@ -68,7 +51,7 @@ fn kzg10_test() -> Result<(), ()> {
 }
 
 #[test]
-pub fn test() {
+pub fn basic_kzg10_test() {
     let mut rng = test_rng();
 
     let t = 10;
