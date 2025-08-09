@@ -1,11 +1,30 @@
-use criterion::Criterion;
-use kzg_commitments::poly_commit::PolyCommit;
-use ark_ec::pairing::Pairing;
-use ark_std::rand::Rng;
-use ark_std::cmp::max;
+use kzg_commitments::{poly_commit::PolyCommit, kzg10::KZG10, gwc19::GWC19, djba21::DJBA21};
 
-use ark_ff::UniformRand;
 use ark_poly::{DenseUVPolynomial, univariate::DensePolynomial};
+use ark_ec::pairing::Pairing;
+use ark_std::{rand::Rng, test_rng, cmp::max};
+use ark_ff::UniformRand;
+
+use criterion::Criterion;
+
+pub fn benchmark_kzg10<E: Pairing>(c: &mut Criterion, curve_name: &str, poly_deg: &[usize], poly_count: &[(usize, usize)]) {
+    benchmark_poly_commit_with_curve::<E, KZG10<E>>(c, "kzg10", curve_name, &|_|(), &mut test_rng(), poly_deg, poly_count);
+}
+
+pub fn benchmark_gwc19<E: Pairing>(c: &mut Criterion, curve_name: &str, poly_deg: &[usize], poly_count: &[(usize, usize)]) {
+    fn verifier_init<E: Pairing>(t: usize) -> <GWC19<E> as PolyCommit<E>>::VerifierParams {
+        point_generator::<E>(t, &mut test_rng())
+    }
+    benchmark_poly_commit_with_curve::<E, GWC19<E>>(c, "gwc19", curve_name, &verifier_init::<E>, &mut test_rng(), poly_deg, poly_count);
+}
+
+pub fn benchmark_djba21<E: Pairing>(c: &mut Criterion, curve_name: &str, poly_deg: &[usize], poly_count: &[(usize, usize)]) {
+    fn verifier_init<E: Pairing>(_t: usize) -> <DJBA21<E> as PolyCommit<E>>::VerifierParams {
+        let v = point_generator::<E>(2, &mut test_rng());
+        (v[0], v[1])
+    }
+    benchmark_poly_commit_with_curve::<E, DJBA21<E>>(c, "djba21", curve_name, &verifier_init::<E>, &mut test_rng(), poly_deg, poly_count);
+}
 
 pub fn poly_generator_by_degree<E: Pairing>(
     max_poly_count: usize, 
