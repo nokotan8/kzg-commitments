@@ -27,8 +27,8 @@ pub fn point_generator(point_count: usize, rng: &mut impl Rng) -> Vec<Fr> {
 fn basic_gwc19_test() {
     let mut rng = test_rng();
 
-    let t = 2;
-    let d = t;
+    let t = 4;
+    let d = 16;
     let max_deg = 128;
 
     let poly = poly_generator(t, d, &mut rng);
