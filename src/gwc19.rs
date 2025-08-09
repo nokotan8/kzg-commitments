@@ -4,24 +4,36 @@ use ark_poly::{univariate::{DenseOrSparsePolynomial, DensePolynomial}, DenseUVPo
 use ark_std::{test_rng, Zero};
 use ark_ec::pairing::{Pairing};
 use std::{marker::PhantomData, ops::Mul};
+use crate::utils::poly::eval_poly_over_g1;
 
+/// Struct for implementing the polynomial commitment scheme described in
+/// [this paper](https://eprint.iacr.org/2019/953.pdf).
 pub struct GWC19<E: Pairing> {
     max_deg: usize,
     _phantom: PhantomData<E>
 }
 
 pub struct GWC_PK<E: Pairing> {
+    /// Corresponds to <g_1, g_1^a, g_1^{a^2}, .... , g_1^{a^t}>
     pub g1_vec: Vec<E::G1>,
+    /// Corresponds to g_2
     pub g2_1: E::G2,
+    /// Corresponds to g_2^a
     pub g2_x: E::G2
 }
 
+/// Implementation of batched polynomial commitments for GWC19
 impl <E: Pairing> PolyCommit<E> for GWC19<E> {
     type PK = GWC_PK<E>;
     type SK = E::ScalarField;
+    /// The commitment consists of 1 element of G_1 for each polynomial
+    /// committed to.
     type Commitment = Vec<E::G1>;
+    /// List of the values of a polynomial at each input point.
     type Evaluation = Vec<E::ScalarField>;
+    /// We provide a proof element in G_1 for each point.
     type Proof = Vec<E::G1>;
+    /// The verifier must send one element of Z_p per point.
     type VerifierParams = Vec<E::ScalarField>;
 
     fn new() -> Self {
@@ -31,6 +43,8 @@ impl <E: Pairing> PolyCommit<E> for GWC19<E> {
         }
     }
 
+    /// Initialises the public key parameters by as described in the paper,
+    /// for polynomials of degree up to `max_deg`.
     fn setup(&mut self, max_deg: usize) -> (Self::PK, Self::SK) {
         let sk =  E::ScalarField::rand(&mut test_rng());
         let g1 = E::G1::rand(&mut test_rng());
@@ -43,6 +57,8 @@ impl <E: Pairing> PolyCommit<E> for GWC19<E> {
         (Self::PK {g1_vec: g1_vec, g2_1: g2, g2_x: g2.mul(sk)}, sk)
     }
 
+    /// Commits to the polynomials in `poly`, yields one element of G_1 per
+    /// polynomial.
     fn commit(&self, pk: &Self::PK, polynomials: &[DensePolynomial<E::ScalarField>]) -> Self::Commitment {
         let mut commitments = vec![];
         for polynomial in polynomials {
@@ -63,6 +79,8 @@ impl <E: Pairing> PolyCommit<E> for GWC19<E> {
         commitments
     }
 
+    /// Evaluates the polynomials in `poly` at each of the points in `z`, and returns
+    /// those values in a vector.
     fn evaluate(&self, poly: &[DensePolynomial<E::ScalarField>], z: &[E::ScalarField]) -> Vec<Self::Evaluation> {
         let v = poly.iter().map(|p| z.iter().map(|z| p.evaluate(z)).collect()).collect::<Vec<Vec<E::ScalarField>>>();
 
@@ -73,7 +91,12 @@ impl <E: Pairing> PolyCommit<E> for GWC19<E> {
         v
     }
 
-    // it is assumed that poly(z) = v
+    /// Creates witnesses to the values of the polynomials in `poly` at all
+    /// the points in `z`.
+    ///
+    /// It is a logic error for:
+    ///  - `poly.len() != z.len()`
+    ///  - the values in `v` to be incorrect.
     fn open(&self, pk: &Self::PK, poly: &[DensePolynomial<<E as Pairing>::ScalarField>], z: &[<E as Pairing>::ScalarField], v: &[Self::Evaluation], ver_params: &Self::VerifierParams) -> Self::Proof {
         let mut proofs = vec![];
         for i in 0..z.len() {
@@ -85,11 +108,7 @@ impl <E: Pairing> PolyCommit<E> for GWC19<E> {
                 h = h + quot * ver_params[i].pow(&[j as u64]);
             }
 
-            let mut c = E::G1::zero();
-            for i in 0..h.coeffs.len() {
-                c += pk.g1_vec[i].mul(h.coeffs[i]);
-            }
-            proofs.push(c);
+            proofs.push(eval_poly_over_g1::<E>(&h, &pk.g1_vec));
         }
 
         if proofs.len() != z.len() {
@@ -99,6 +118,8 @@ impl <E: Pairing> PolyCommit<E> for GWC19<E> {
         proofs
     }
 
+    /// Verifies that the proof `p` is valid for the given parameters, and
+    /// returns true if it is, and false if it is not.
     fn verify(c: &Self::Commitment, pk: &Self::PK, p: &Self::Proof, z: &[E::ScalarField], v: &[Self::Evaluation], ver_params: &Self::VerifierParams) -> bool {
         let mut rng = test_rng();
         let num_r = z.len();
