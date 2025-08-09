@@ -4,7 +4,7 @@ use util::{poly_generator, point_generator};
 use ark_bls12_381::Bls12_381;
 use ark_ff::UniformRand;
 use ark_std::test_rng;
-use kzg_commitments::kzg10::{KZG10, KzgPK};
+use kzg_commitments::kzg10::{KZG10, KZG_PK};
 use kzg_commitments::poly_commit::PolyCommit;
 
 fn kzg10_helper(poly_count: usize, poly_deg: usize, point_count: usize) -> bool {
@@ -70,7 +70,7 @@ pub fn basic_kzg10_test() {
     type G2 = <ark_ec::models::bls12::Bls12<ark_bls12_381::Config> as ark_ec::pairing::Pairing>::G2;
     
     let (pk, _) = kzg.setup(max_deg);
-    let pk_ = KzgPK::<Bls12_381> {
+    let pk_ = KZG_PK::<Bls12_381> {
         g1_vec: vec![G1::rand(&mut rng); t],
         g2_1: G2::rand(&mut rng),
         g2_x: G2::rand(&mut rng)
