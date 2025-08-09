@@ -10,6 +10,10 @@ This repository includes implementations for three algorithms, each based on a p
 1. [GWC19](https://eprint.iacr.org/2019/953.pdf)
 1. [DJBA21](https://eprint.iacr.org/2020/081.pdf)
 
+## Documentation
+
+To view documentation for the code, please run `cargo doc --release --open`.
+
 ## Usage
 TBD
 
