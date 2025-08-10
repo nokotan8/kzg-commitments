@@ -159,9 +159,6 @@ impl <E: Pairing> PolyCommit<E> for GWC19<E> {
         let lhs = E::pairing(lhs_1, pk.g2_1);
         let rhs = E::pairing(rhs_1, pk.g2_x);
 
-        println!("{:?}", lhs);
-        println!("{:?}", rhs);
-
         lhs == rhs
     }
 }
