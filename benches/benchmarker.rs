@@ -16,13 +16,13 @@ fn benchmark(c: &mut Criterion) {
         (256, 25), (512, 25), (1024, 25)
     ];
 
-    benchmark_kzg10::<Bls12_381>(c, "bls12381", &poly_deg, &poly_count);
-    benchmark_kzg10::<Bls12_377>(c, "bls12377", &poly_deg, &poly_count);
-    benchmark_kzg10::<Bn254>(c, "bn254", &poly_deg, &poly_count);
+    benchmark_kzg10::<Bls12_381>(c, "bls12381", &poly_deg, &poly_count[0..7]);
+    benchmark_kzg10::<Bls12_377>(c, "bls12377", &poly_deg, &poly_count[0..7]);
+    benchmark_kzg10::<Bn254>(c, "bn254", &poly_deg, &poly_count[0..7]);
 
-    benchmark_gwc19::<Bls12_381>(c, "bls12381", &poly_deg, &poly_count);
-    benchmark_gwc19::<Bls12_377>(c, "bls12377", &poly_deg, &poly_count);
-    benchmark_gwc19::<Bn254>(c, "bn254", &poly_deg, &poly_count);
+    benchmark_gwc19::<Bls12_381>(c, "bls12381", &poly_deg, &poly_count[0..10]);
+    benchmark_gwc19::<Bls12_377>(c, "bls12377", &poly_deg, &poly_count[0..10]);
+    benchmark_gwc19::<Bn254>(c, "bn254", &poly_deg, &poly_count[0..10]);
     
     benchmark_djba21::<Bls12_381>(c, "bls12381", &poly_deg, &poly_count);
     benchmark_djba21::<Bls12_377>(c, "bls12377", &poly_deg, &poly_count);
