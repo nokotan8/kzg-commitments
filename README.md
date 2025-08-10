@@ -27,6 +27,12 @@ Contains tests. They can be run with `cargo test --release`.
 ### `benches/`
 
 Contains code used to benchmark the speed of the implementations. They can be run with `cargo bench`.
+
+By default, the algorithms currently run benchmarks over all three algorithms with the following parameters:
+- Group pairings: BLS12-381, -377, and BN254 curves;
+- Degree of polynomial: increasing in powers of 2 from 8 to 128; and 
+- Number of polynomials and points: these two quantities are strictly equal, increasing powers of 2 from 1 to 1024;
+
 > [!NOTE] 
 Depending on your CPU processing power, this may take hours or days. 
 You can modify the slices of `poly_deg` and `poly_count` passed into the benchmarking functions 
