@@ -14,9 +14,6 @@ This repository includes implementations for three algorithms, each based on a p
 
 To view documentation for the code, please run `cargo doc --release --open`.
 
-## Usage
-TBD
-
 ## Directory Structure
 
 ### `src/`
@@ -32,8 +29,8 @@ Contains tests. They can be run with `cargo test --release`.
 Contains code used to benchmark the speed of the implementations. They can be run with `cargo bench`.
 > [!NOTE] 
 Depending on your CPU processing power, this may take hours or days. 
-You can edit `poly_deg_vals` and `poly_count_vals` in `benches/*_benchmarks.rs`
-to remove some benchmarks and reduce the runtime.
+You can modify the slices of `poly_deg` and `poly_count` passed into the benchmarking functions 
+in `benches/benchmarker.rs` to remove some benchmarks and reduce the runtime.
 
 ### `results/`
 
